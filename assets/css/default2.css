@@ -1,0 +1,23 @@
+:root {
+    --grey: #80808045;
+    --smog: #675e5eba;
+    --secondary: #F1EE0F;
+    --primary: #7D3C98;
+    --default: #17202A;
+    --lightgrey: #80808014;
+    --white: white;
+    --belownormal: 14px;
+    --lightblack: #2E4053;
+    --black: #17202A;
+    --lightwhite: #FDFEFE;
+    --white: white;
+    --normalfont: 16px;
+    --smallfont: 11px;
+    --font12: 12px;
+    --font14: 14px;
+    --greycolor: #86868b;
+    --greylight: whitesmoke;
+    --green: green;
+    --red: red;
+    --lightback: #52505005;
+}

@@ -1,0 +1,308 @@
+.hero-image {
+    width: 400px;
+    height: auto;
+    margin: 90px 0px 40px 0px;
+}
+
+.cta {
+    padding-bottom: 40px;
+}
+
+.cta h1 {
+    font-size: 53px;
+    font-weight: 500;
+}
+
+.cta h6 {
+    color: var(--smog);
+}
+
+.cta .button {
+    padding: 10px 25px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 60px;
+}
+
+.cta .button img {
+    padding-right: 10px;
+}
+
+.btn-grad {
+    background-color: #7f53ac;
+    background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+    /* background-image: linear-gradient(to right, #00C9FF 0%, #92FE9D 51%, #00C9FF 100%) */
+}
+
+.btn-grad {
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header {
+    height: 90px;
+    align-items: center;
+    padding: 0px 100px;
+    justify-content: space-between;
+    font-size: var(--normal);
+    color: var(--default);
+    font-weight: 500;
+}
+
+.logo-container .logo {
+    height: 28px;
+    width: auto;
+}
+
+.navigation-bar .profile {
+    margin-left: 20px;
+}
+
+.navigation-bar .link {
+    padding: 0px 15px;
+}
+
+.header img {
+    width: 28px;
+    height: 28px;
+}
+
+.mobile-header .link {
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--lightgrey);
+}
+
+.header .log-box {
+    display: flex;
+    padding: 7px 15px;
+    height: 22px;
+    border-radius: 3px;
+    border: 1px solid #80808026;
+    font-size: 14px;
+}
+
+.header .log-box:hover {
+    background: var(--greylight);
+}
+
+.log-box img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.mobile-header .button {
+    width: 100%;
+    padding: 15px 10px;
+    text-align: center;
+    margin: 15px 10px;
+}
+
+.bg-primary {
+    background: var(--primary);
+    color: var(--white)
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background: var(--lightwhite);
+}
+
+.fixed-top.small {
+    height: 60px;
+}
+
+.fixed-top.small .header {
+    height: 60px;
+    border-bottom: 1px solid var(--lightgrey);
+}
+
+.fixed-top.small .navigation-bar img {
+    width: 22px;
+    height: 22px;
+}
+
+.container-special {
+    margin-top: 50px;
+}
+
+.nologin {
+    font-size: 13px;
+    margin-top: 7px;
+    color: var(--smog);
+}
+
+.main-container {
+    margin-top: 60px;
+    height: calc( 100vh - 60px);
+    overflow-y: scroll;
+}
+
+.single-container img.message {
+    width: 270px;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.message-bar {
+    margin: 30px 0px;
+    max-width: 500px;
+    padding: 0px 20px;
+}
+
+.message-bar h1,
+.players-bar h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.message-bar .info {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.button.normal {
+    padding: 9px 14px;
+    border-radius: 4px;
+    color: white;
+}
+
+.button.normal img {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+.players-bar {
+    width: 75%;
+    margin: 15px 0px 35px 0px
+}
+
+.playerlist {
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.players-bar .players {
+    max-width: calc(100% - 110px);
+    overflow-x: scroll;
+}
+
+.players-bar .manual-scroll {
+    width: 100px;
+}
+
+.manual-scroll span {
+    padding: 10px;
+    background: var(--greylight);
+    border-radius: 50%;
+}
+
+.manual-scroll img {
+    width: 15px;
+    height: 15px;
+}
+
+.players-bar .player-card {
+    border: 1px solid var(--lightgrey);
+    padding: 15px 10px;
+    border-radius: 5px;
+    width: 150px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    background: var(--lightback);
+}
+
+.player-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.player-card p {
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-align: center;
+    max-width: 120px;
+}
+
+.player-card span {
+    color: var(--smog);
+    font-size: 12px;
+}
+
+.user-loader {
+    height: 16px;
+    width: 100%;
+    background: var(--greylight);
+    margin-bottom: 3px;
+    border-radius: 7px;
+}
+
+.user-loader .loaded {
+    width: 25%;
+    background: var(--black);
+    height: 16px;
+    display: block;
+    border-radius: 7px;
+}
+
+.favourite-bar {
+    margin: 50px 0px 25px 0px;
+    width: 70%;
+    text-align: center;
+}
+
+.favourite-bar h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.favourite-bar .canvas {
+    padding: 20px 25px;
+    border: 1px solid var(--greylight);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.canvas img {
+    width: 90px;
+    height: auto;
+    padding: 8px;
+    margin: 25px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.favourite-bar p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.about-container {
+    font-size: 13px;
+    margin-bottom: 25px;
+    color: var(--greycolor);
+}
+
+.about-container a {
+    padding-right: 15px;
+}

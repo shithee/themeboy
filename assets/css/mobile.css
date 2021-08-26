@@ -1,0 +1,75 @@
+@media only screen and (max-width: 970px) {
+    .header {
+        height: 50px;
+        padding: 0px;
+        border-bottom: 1px solid var(--lightgrey);
+        justify-content: center;
+    }
+    .navigation-bar {
+        display: none;
+    }
+    .fixed-top.small .navigation-bar {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        align-self: stretch;
+        left: 0;
+        align-items: center;
+        justify-content: space-around;
+        height: 50px;
+        display: flex;
+        border: 1px solid var(--lightgrey);
+        background: var(--white);
+    }
+    .fixed-top.small .header .log-box {
+        padding: 0px;
+        height: auto;
+        border: none;
+    }
+    .fixed-top.small .header .log-box span {
+        display: none;
+    }
+    .hero-image {
+        width: 80%;
+    }
+    .cta h1 {
+        font-size: 35px;
+        margin: 20px 0px 25px 0px;
+    }
+    .cta {
+        padding: 0px 10px;
+    }
+    .cta .button {
+        width: 82%;
+        justify-content: center;
+    }
+    .fixed-top {
+        height: 50px;
+    }
+    .main-container {
+        height: calc(100vh - 100px);
+        margin: 50px 0px;
+    }
+    .players-bar {
+        width: 90%;
+    }
+    .desktop {
+        display: none;
+    }
+    .players-bar .players {
+        max-width: 100%;
+    }
+    .favourite-bar {
+        width: 100%;
+        margin: 50px 10px 25px 10px;
+    }
+    .canvas img {
+        width: 60px;
+    }
+}
+
+@media only screen and (min-width: 970px) {
+    .mobile {
+        display: none;
+    }
+}
