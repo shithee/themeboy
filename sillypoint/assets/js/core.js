@@ -13,4 +13,12 @@ $(document).ready(function() {
         let css = `transform : translateY(${ i * -1 * height }px);`;
         $('#home').attr('style', css);
     })
+    $('.header').click(function() {
+        $('#home').toggle();
+        $('#menu').toggle();
+        // if($('#home').is(':visible')){
+        //     $('#home').hide();
+        //     $
+        // }
+    })
 });
