@@ -202,6 +202,11 @@ body {
     --bright: #FFFF00;
     --tag: #47e88bd1;
     --hue: #d5f5e317;
+    --darkbackground: #181818;
+    --darkshade: #242526;
+    --darkmini: #3A3B3C;
+    --darkwhite: #F0F3F4;
+    --darkgrey: #E5E7E9;
 }
 
 
@@ -496,4 +501,51 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+
+/* Dark Theme codes */
+
+.theme-dark .fixedheader,
+.theme-dark #menu {
+    background: var(--darkbackground);
+}
+
+.theme-dark .post-wrapper {
+    background: var(--darkshade);
+}
+
+.theme-dark .label,
+.theme-dark .header ion-icon,
+.theme-dark p.small {
+    color: var(--darkgrey);
+}
+
+.theme-dark .page,
+.theme-dark .list .title span,
+.theme-dark p,
+.theme-dark h1.title,
+.theme-dark .post li {
+    color: var(--darkwhite);
+}
+
+.theme-dark .list ion-icon {
+    color: var(--grey);
+}
+
+.theme-dark .slider,
+.theme-dark .share-container {
+    background: var(--darkmini);
+}
+
+.theme-dark .slider:before {
+    background: var(--grey);
+}
+
+.theme-dark input:checked+.slider:before {
+    background: var(--darkwhite);
+}
+
+.theme-dark .list {
+    background: var(--border-light);
 }
