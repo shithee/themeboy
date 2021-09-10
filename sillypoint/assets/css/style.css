@@ -200,6 +200,7 @@ body {
     --whitesmoke: whitesmoke;
     --smallfont: 12px;
     --bright: #FFFF00;
+    --tag: #47e88bd1;
 }
 
 
@@ -321,18 +322,21 @@ img.app,
 }
 
 .card {
-    background: var(--white)
+    background: var(--white);
+    position: relative;
 }
 
 .image-container img {
     width: 100%;
     height: 35vh;
+    object-fit: cover;
 }
 
 .post-container {
-    height: calc( 65vh - 85px);
+    height: calc( 65vh - 65px);
     padding: 5px 12px;
     overflow-y: scroll;
+    /* position: relative; */
 }
 
 .post-container .post {
@@ -361,8 +365,7 @@ img.app,
 .share-container {
     height: 40px;
     width: 40px;
-    z-index: 1;
-    position: fixed;
+    position: absolute;
     bottom: 25px;
     right: 15px;
     background: var(--whitesmoke);
@@ -407,6 +410,7 @@ blockquote {
 h1.title {
     font-size: 17px;
     line-height: 1.5;
+    margin-top: 7px;
 }
 
 .image-container {
@@ -415,10 +419,25 @@ h1.title {
 
 .image-container h6 {
     position: absolute;
-    bottom: 15px;
+    bottom: 39px;
     left: 10px;
-    background: var(--bright);
+    background: var(--tag);
     padding: 4px 9px;
     border-radius: 3px;
     font-size: var(--smallfont);
+}
+
+.post-wrapper {
+    position: absolute;
+    /* top: calc( 35vh - 20px); */
+    background: white;
+    height: calc( 65vh - 30px);
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+    bottom: 0px;
+}
+
+.pagecontainer #home {
+    position: relative;
+    transition: transform 750ms ease-in-out;
 }
