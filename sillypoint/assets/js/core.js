@@ -21,3 +21,4 @@ $(document).ready(function() {
         (this.checked) ? $('body').addClass('theme-dark'): $('body').removeClass('theme-dark');
     })
 });
+// Preloaders.net for gif
