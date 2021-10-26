@@ -228,7 +228,7 @@ body {
 }
 
 .header img {
-    height: 40px;
+    height: 35px;
 }
 
 .header .badge {
@@ -250,13 +250,13 @@ body {
 .page {
     margin-top: 70px;
     height: calc( 100vh - 70px);
-    overflow-y: hidden;
+    overflow-y: scroll;
     padding: 0px 100px 0px 100px;
 }
 
 .splitter {
-    height: calc( 100vh - 70px);
-    overflow-y: scroll;
+    /* height: calc( 100vh - 170px); */
+    /* overflow-y: scroll; */
     justify-content: space-around;
 }
 
@@ -273,17 +273,20 @@ body {
 }
 
 .illustration img {
-    width: 275px;
+    width: 325px;
     border-radius: 5px;
     margin-left: 75px;
 }
 
 .info h1 {
     font-size: 72px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.3;
     margin: 40px 0px 5px 0px;
-    background: -webkit-linear-gradient( #30e8bf, #ff8235);
+}
+
+.gradient {
+    background: -webkit-linear-gradient(#12c2e9, #c471ed, #f64f59);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -291,20 +294,60 @@ body {
 
 .info p {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-top: 20px;
+    color: #666;
 }
 
-.download {
-    width: min-content;
-    margin-top: 20px;
+.download,
+.contact {
+    background: whitesmoke;
+    padding: 15px 25px;
     align-items: center;
-    display: inline-block;
+    margin-top: 30px;
+    border-radius: 5px;
 }
 
-.download img {
-    height: 45px;
-    display: inline-block;
+.contact {
+    align-items: flex-start;
+    padding-top: 25px;
+}
+
+.contact span {
+    margin-right: 10px;
+}
+
+.contact p {
+    margin: 0px 0px 10px;
+}
+
+.download p {
+    margin: 0px 25px 0px 0px;
+    color: var(--primarycolor);
+}
+
+.download span {
+    font-size: 18px;
+    background: var(--darkbackground);
+    color: white;
+    padding: 7px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer {
+    margin: 40px 0px 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer span {
+    color: grey;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-size: 90%;
+    cursor: pointer;
 }
 
 p.small {
@@ -336,6 +379,18 @@ p.fuck {
 .single img {
     height: 20px;
     margin-right: 10px;
+}
+
+.downloads {
+    width: min-content;
+    margin-top: 20px;
+    align-items: center;
+    display: inline-block;
+}
+
+.downloads img {
+    height: 45px;
+    display: inline-block;
 }
 
 @media screen and (max-width: 1100px) {
@@ -374,6 +429,7 @@ p.fuck {
     .feature {
         justify-content: center;
     }
+    .downloads,
     .download {
         justify-content: center;
         margin-bottom: 25px;
@@ -415,5 +471,18 @@ p.fuck {
     }
     .fixedheader {
         height: 60px;
+    }
+    .download {
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+    .download p {
+        margin: 0px 0px 15px;
+    }
+    .contact {
+        align-self: stretch;
+    }
+    .contact span {
+        display: block;
     }
 }
