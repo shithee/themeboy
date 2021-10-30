@@ -196,6 +196,7 @@ body {
     --white: #FDFEFE;
     --yellow: #ecc217;
     --red: #F43F3F;
+    --brightyellow: #FFFC00;
 }
 
 
@@ -292,10 +293,108 @@ button {
     align-items: center;
     width: 100%;
     justify-content: space-around;
+    background: #f5f5f540;
 }
 
 .draft-tabs span {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.draft-tabs .active {
+    color: var(--red);
+}
+
+.draft-contents {
+    padding: 10px 20px;
+}
+
+.draft-element h1 {
+    font-size: 26px;
+    margin: 20px 0px 25px;
+}
+
+.image-list img {
+    height: 250px;
+    margin-bottom: 25px;
+    object-fit: cover;
+}
+
+.editor,
+.editor:focus-visible {
+    min-height: 400px;
+    border: 1px solid #8080801f;
+    outline: none;
+    padding: 15px 10px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.draft-element {
+    margin-bottom: 25px;
+}
+
+select {
+    font-size: 16px;
+    color: #666;
+    height: 40px;
+    padding: 7px 10px;
+    border: 1px solid #8080801f;
+    background: white;
+}
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.post-container .post {
+    margin-top: 20px;
+}
+
+.post ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.post ol {
+    padding-left: 20px;
+    list-style-type: decimal;
+}
+
+.post li {
+    margin-bottom: 7px;
+    line-height: 1.6;
+}
+
+.post li::marker {
+    color: var(--grey);
+}
+
+.post-container h1 {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.post-container p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.post-container {
+    margin-bottom: 25px;
+}
+
+.post-container .catagory {
+    background: whitesmoke;
+    padding: 7px 12px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.post-container img {
+    height: 250px;
+    margin-bottom: 15px;
+    object-fit: cover;
 }
