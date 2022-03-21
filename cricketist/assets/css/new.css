@@ -1,0 +1,572 @@
+@font-face {
+    font-family: Inter;
+    src: url("../fonts/Inter-Bold.ttf") format("truetype");
+    src: url("../fonts/Inter-Medium.ttf") format("truetype");
+    src: url("../fonts/Inter-Regular.ttf") format("truetype");
+}
+
+
+/* Root -- variables */
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: Inter;
+    color: var(--primarycolor);
+    line-height: 1.5;
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-size: 15px;
+}
+
+img.circle {
+    border-radius: 50%;
+}
+
+.f {
+    display: flex;
+}
+
+.cent {
+    justify-content: center;
+    align-items: center;
+}
+
+.w100 {
+    width: 100%
+}
+
+.wauto {
+    width: auto;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.pad {
+    padding: var(--padding);
+}
+
+.b {
+    font-weight: 500;
+}
+
+.jstart {
+    justify-content: start;
+}
+
+.fcol {
+    flex-direction: column;
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.mw {
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+
+/* Default Variables */
+
+:root {
+    --white: white;
+    --border-light: hsla(0, 0%, 50.2%, 0.10980392156862745);
+    --border: hsl(0deg 4% 68%);
+    --max-width: 1120px;
+}
+
+.fixedheader {
+    height: 60px;
+    border-bottom: 1px solid var(--border-light);
+    position: fixed;
+    top: 0;
+    background: var(--white);
+    z-index: 1;
+}
+
+.fixedheader .header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo {
+    height: 30px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.header .icon {
+    height: 20px;
+}
+
+.header .profile img {
+    height: 32px;
+}
+
+.navigation a {
+    padding: 0px 15px;
+}
+
+.navigation a img {
+    padding-right: 5px;
+}
+
+.header .preferences a {
+    margin: 0px 15px;
+}
+
+.button {
+    line-height: 32px;
+    height: 32px;
+    padding: 0px 14px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.maincontainer {
+    margin-top: 60px;
+    padding: 15px 0px;
+}
+
+.maincontainer .featured .col:nth-child(1),
+.maincontainer .featured .col:nth-child(2) {
+    width: 29%;
+}
+
+.maincontainer .featured .col:nth-child(3) {
+    width: 35%;
+}
+
+.featured {
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 50px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+article {
+    padding: 10px;
+    border: 1px solid #a9a9a91c;
+    border-radius: 5px;
+}
+
+article.vertical img.post {
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+article h1 {
+    margin: 10px 0px;
+    font-size: 18px;
+}
+
+article .desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.img40 {
+    width: 40px;
+    height: 40px;
+}
+
+article .author {
+    align-items: center;
+}
+
+article .author .info {
+    color: grey;
+    margin-left: 10px;
+}
+
+p.small {
+    font-size: 12px;
+}
+
+article.horizontal {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+article.horizontal .post {
+    max-width: 30%;
+    height: 150px;
+    object-fit: cover;
+}
+
+article.horizontal .post-content {
+    width: 65%;
+}
+
+article.horizontal h1 {
+    margin: 0px;
+    font-size: 16px;
+}
+
+article.horizontal .author,
+article.horizontal .author img {
+    display: none;
+}
+
+article.horizontal .desc {
+    margin: 10px 0px 0px;
+}
+
+section.lists {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+section.lists article {
+    max-width: 30%;
+    margin-bottom: 35px;
+}
+
+section.lists article:nth-child(6n+1),
+section.lists article:nth-child(6n+2) {
+    max-width: 45%;
+}
+
+section.lists article:nth-child(6n+1) h1,
+section.lists article:nth-child(6n+2) h1 {
+    font-size: 24px;
+}
+
+section.lists article:nth-child(6n+1) img.post,
+section.lists article:nth-child(6n+2) img.post {
+    max-height: 300px;
+}
+
+section.lists article:nth-child(6n+6) {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+}
+
+section.lists article:nth-child(6n+6) img.post {
+    width: 70%;
+    max-height: 400px;
+    height: 400px;
+    margin-right: 30px;
+}
+
+section.lists article:nth-child(6n+6) h1 {
+    font-size: 32px;
+}
+
+section.lists article:nth-child(6n+6) .desc {
+    font-size: 16px;
+    margin: 20px 0px;
+}
+
+section.banner {
+    height: 200px;
+    background: #9a75f30f;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.banner img {
+    height: 150px;
+    margin: 0px 100px 0px;
+}
+
+.banner h1 {
+    font-size: 44px;
+}
+
+.banner p {
+    font-size: 18px;
+    color: grey;
+    margin: 5px 0px 20px 0px;
+}
+
+.banner .button {
+    padding: 6px 16px;
+}
+
+section.footer {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: grey;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+}
+
+.footer .links span {
+    padding-left: 10px;
+}
+
+.postcontainer {
+    width: 800px;
+    margin: auto;
+}
+
+img.blog {
+    height: 400px;
+    object-fit: cover;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.postcontainer .title {
+    font-size: 32px;
+    margin: 20px 0px;
+}
+
+.postcontainer h6.desc {
+    font-size: 18px;
+    color: grey;
+    margin-bottom: 25px;
+}
+
+.postcontainer .information {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.information .info {
+    margin-left: 20px;
+}
+
+.information .options img {
+    height: 25px;
+    padding-left: 10px;
+}
+
+.information .options a {
+    display: flex;
+    align-items: center;
+}
+
+.article {
+    margin: 40px 0px;
+    font-size: 18px;
+}
+
+.article h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.article p {
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.article h2,
+.article h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.article ol {
+    list-style-type: decimal;
+    margin: 0px 0px 20px 25px;
+}
+
+.article li {
+    margin-bottom: 15px;
+}
+
+.article blockquote {
+    background: #9a75f30f;
+    padding: 20px;
+    line-height: 1.8;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.article ul {
+    list-style-type: disc;
+    margin: 0px 0px 20px 25px;
+}
+
+.more {
+    margin-bottom: 25px;
+}
+
+.more .heading {
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.more .list {
+    justify-content: space-between;
+}
+
+.more .list article {
+    width: 30%;
+}
+
+section.searchcontainer {
+    width: 500px;
+    margin: 75px auto;
+}
+
+.input-wrapper {
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid var(--border-light);
+}
+
+.input-wrapper img {
+    height: 20px;
+    margin: 0px 10px 0px 20px;
+}
+
+.input-wrapper input {
+    border: 0px;
+    outline: none;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.autofeed {
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: scroll;
+    border: 1px solid var(--border-light);
+    border-top: none;
+}
+
+.autofeed li {
+    list-style-type: none;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.autofeed li:last-child {
+    border-bottom: none;
+}
