@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home Page.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&family=Inter:wght@100;200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/new.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../assets/js/core.js"></script>
+</head>
+
+<body class="themegrid">
+    <div class="fixedheader w100">
+        <div class="header h100 f mw">
+            <img class="wauto logo point btn1" src="https://www.cricketist.in/favicon.ico" />
+            <div class="preferences f cent">
+                <button class="toggle f cent themebtn btn2">
+                    <svg viewBox="0 0 35 35" class="svgicon fill point" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.188 7.813c0-1.644.331-3.206.931-4.631-5.7 1.381-9.931 6.513-9.931 12.631 0 7.175 5.825 13 13 13 6.119 0 11.25-4.231 12.631-9.931-1.425.6-2.994.931-4.631.931-6.625 0-12-5.375-12-12z">
+                        </path>
+                    </svg>
+                </button>
+                <button class="toggle f cent themebtn btn3" style="display: none;">
+                    <svg viewBox="0 0 35 35" class="svgicon fill point" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 24.188a.963.963 0 00-.963.962v2.887a.963.963 0 001.925 0V25.15a.963.963 0 00-.963-.962zM16 3a.963.963 0 00-.963.962v2.887a.963.963 0 001.925 0V3.961a.963.963 0 00-.963-.962zM7.813 16a.963.963 0 00-.963-.963H3.962a.963.963 0 000 1.925H6.85a.963.963 0 00.963-.963zm20.225-.963h-2.887a.963.963 0 000 1.925h2.887a.963.963 0 000-1.926zM9.531 21.506c-.256 0-.5.1-.681.281l-2.044 2.044c-.181.181-.281.425-.281.681a.96.96 0 00.962.962c.256 0 .5-.1.681-.281l2.044-2.044a.966.966 0 000-1.363.96.96 0 00-.681-.281zm12.938-11.012c.256 0 .5-.1.681-.281l2.044-2.044c.181-.181.281-.425.281-.681a.96.96 0 00-.962-.962c-.256 0-.5.1-.681.281l-2.044 2.044c-.181.181-.281.425-.281.681a.96.96 0 00.962.962zm-14.3-3.688c-.181-.181-.425-.281-.681-.281a.96.96 0 00-.962.962c0 .256.1.5.281.681l2.044 2.044c.181.181.425.281.681.281a.96.96 0 00.962-.962c0-.256-.1-.5-.281-.681L8.169 6.806zM23.15 21.788c-.181-.181-.425-.281-.681-.281s-.5.1-.681.281a.966.966 0 000 1.363l2.044 2.044c.181.181.425.281.681.281a.96.96 0 00.962-.962c0-.256-.1-.5-.281-.681l-2.044-2.044zM16 10c-3.306 0-6 2.694-6 6s2.694 6 6 6 6-2.694 6-6-2.694-6-6-6z">
+                        </path>
+                    </svg>
+                </button>
+
+                <button class="toggle f cent">
+                    <svg viewBox="0 0 35 35" class="svgicon fill point" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21 6c1.325 0 2.581.525 3.531 1.469S26 9.675 26 11v10c0 1.325-.525 2.581-1.469 3.531S22.325 26 21 26H11c-1.325 0-2.581-.525-3.531-1.469S6 22.325 6 21V11c0-1.325.525-2.581 1.469-3.531S9.675 6 11 6h10zm0-2H11c-3.85 0-7 3.15-7 7v10c0 3.85 3.15 7 7 7h10c3.85 0 7-3.15 7-7V11c0-3.85-3.15-7-7-7z">
+                        </path>
+                        <path
+                            d="M22.5 11c-.831 0-1.5-.669-1.5-1.5S21.669 8 22.5 8a1.5 1.5 0 010 3zM16 12c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4zm0-2c-3.313 0-6 2.688-6 6s2.688 6 6 6 6-2.688 6-6-2.688-6-6-6z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="maincontainer w100">
+        <section class="mw f fixedbody allposts" style="display: none;">
+            <div class="hero f w100">
+                <div class="leftsec">
+                    <h1>Trending News</h1>
+                </div>
+                <div class="icons f cent">
+
+                    <button class="toggle f cent point btn4" style="display: none;">
+                        <svg class="listview" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <line  x1="7" x2="25" y1="16" y2="16"/>
+                            <line  x1="7" x2="25" y1="25" y2="25"/>
+                            <line  x1="7" x2="25" y1="7" y2="7"/>
+                        </svg>
+                    </button>
+
+                    <button class="toggle btn5">
+                        <svg class="gridview point" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-grid">
+                            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+                          </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="singlepost w100 f cent">
+                <div class="leftpost">
+                    <h1 class="title ellipsis">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps with interactive diagrams - Hindustan Times</h1>
+                    <p class="ellipsis ellipsis2">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f">
+                        <div class="source_info f cent">
+                            <span class="dot black"></span>
+                            <span class="source">Hindustan Times</span>
+                        </div>
+                        <span class="ago">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg">
+            </div>
+            <div class="singlepost w100 f cent">
+                <div class="leftpost">
+                    <h1 class="title">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f">
+                        <div class="source_info f cent">
+                            <img class="circle" src="../assets/image/logo-full.png" />
+                            <span class="source">Hindustan Times</span>
+                        </div>
+                        <span class="ago">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg">
+            </div>
+            <div class="singlepost w100 f cent">
+                <div class="leftpost w100">
+                    <h1 class="title">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f">
+                        <div class="source_info f cent">
+                            <span class="dot blue"></span>
+                            <span class="source">Hindustan Times</span>
+                        </div>
+                        <span class="ago">56 min ago</span>
+                    </div>
+                </div>
+            </div>
+            <div class="singlepost w100 f cent">
+                <div class="leftpost">
+                    <h1 class="title">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f">
+                        <div class="source_info f cent">
+                            <span class="dot violet"></span>
+                            <span class=" source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg ">
+            </div>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost w100 ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot purple "></span>
+                            <span class="source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+            </div>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot green "></span>
+                            <span class="source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg ">
+            </div>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot "></span>
+                            <span class="source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg ">
+            </div>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot "></span>
+                            <span class="source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg ">
+            </div>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot "></span>
+                            <span class="source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg ">
+            </div>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot "></span>
+                            <span class="source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg ">
+            </div>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot "></span>
+                            <span class="source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg ">
+            </div>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot "></span>
+                            <span class="source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg ">
+            </div>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot "></span>
+                            <span class="source ">Hindustan Times</span>
+                        </div>
+                        <span class="ago ">56 min ago</span>
+                    </div>
+                </div>
+                <img src="../assets/image/1.jpeg ">
+            </div>
+        </section>
+        <section class="mw f fixedbody emptyscr" style="display: none;">
+            <img src="../assets/image/empty.png">
+            <p>Couldn't found news at the moment, Please try again !</p>
+        </section>
+        <section class="mw f fixedbody emptyscr loadscr" style="display: none;">
+            <img src="../assets/image/loader.gif">
+            <p>Loading Stories, Please wait :)</p>
+        </section>
+        <section class="mw f privac">
+            <div class="privacy">
+                <h1>Privacy Policy</h1>
+                <p><strong>Effective date:</strong> 10/21/2021</p>
+                <h3>Introduction</h3>
+                <p>These Privacy Policy (“Privacy Policy”) apply to the use of the website and products provided by Cricketist. (hereinafter also referred as “we” or “us” or "cricketist").</p>
+                <p>This Privacy Policy applies and has effect in respect of all services and other products, software, made available by us, as well as any other online features relating to the website and its content. For example this privacy policy will
+                    be applicable for the our app "Silly Point".</p>
+                <p>If you have any questions or comments about this Privacy Policy, please contact us at hello@crikcetist.in.</p>
+                <p>We may make changes to this Privacy Policy in the future. You should check this page from time to time to ensure you are aware of any changes. Where appropriate we may notify you of such changes.</p>
+                <h3>Personal Information</h3>
+                <p>As of Now, we do not collect a single personal information from the user such as your name, email address, Phone Number and other details. Cricketist website and our apps do not ask you to enter your personal information and sensitive
+                    data and we do not save and share those data.</p>
+                <h3>Cookies</h3>
+                <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.</p>
+                <p>This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies
+                    and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.</p>
+                <h3>Security</h3>
+                <p>Eventhough we are not saving or processing user information we are working to provide a secure data transfer from server to your application. Our API servers has enabled https protocol for the secure data transmission. But remember that
+                    no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.</p>
+                <p></p>
+                <h3>Children’s Privacy</h3>
+                <p>These Services do not address anyone under the age of 13. we do not knowingly or unknowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided
+                    us with personal information, please contact us so that we will be able to do necessary actions.</p>
+                <h3>Log files</h3>
+                <p>During every access of our website user data is transmitted by the respective Internet browser and stored in protocol files, the so-called server log files. The datasets stored here may contain such data as date and time of access, name
+                    website, IP address, referrer URL (original URL from which you arrived at the website), the amount of data transmitted, product and version information of the browser used.</p>
+                <h3>Link to Other Sites</h3>
+                <p>This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy
+                    of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+                <h3>Service Providers</h3>
+                <p>As of now, we donot added any third party companies or inviduals services in our website or our applications.</p>
+                <h3>Changes to this privacy policy</h3>
+                <p>This Privacy Policy may be updated from time to time. We encourage you to review this website for the latest information on our privacy practices. If there are any material changes to this Privacy Policy, you will be notified by posting
+                    a notice on the website prior to the change becoming effective. If you do not accept any changes made to this Privacy Policy, please discontinue the use of the website and the Services.</p>
+                <h3>Contact Us</h3>
+                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at hello@cricketist.in</p>
+            </div>
+        </section>
+        <section class="footer mw f ">
+            <span>© 2022 Cricketist. All Rights Reserved.</span>
+            <div class="links ">
+                <a href="/sillypoint "><span>Instagram</span></a>
+                <a href="/sillypoint "><span>Twitter</span></a>
+                <a href="/about "><span>Youtube</span></a>
+                <a href="/privacy-policy "><span>Privacy Policy</span></a>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

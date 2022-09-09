@@ -174,6 +174,7 @@ img.circle {
 }
 
 .mw {
+    width: 85%;
     max-width: var(--max-width);
     margin: auto;
 }
@@ -186,6 +187,15 @@ img.circle {
     --border-light: hsla(0, 0%, 50.2%, 0.10980392156862745);
     --border: hsl(0deg 4% 68%);
     --max-width: 1120px;
+    --smog: #675e5eba;
+    --hue: #d5f5e317;
+    --darkbackground: #181818;
+    --darkshade: #242526;
+    --darkmini: #3A3B3C;
+    --darkwhite: #F0F3F4;
+    --darkgrey: #E5E7E9;
+    --darktext3: #ada6a6;
+    --darktext2: #cacdd1;
 }
 
 .fixedheader {
@@ -569,4 +579,381 @@ section.searchcontainer {
 
 .autofeed li:last-child {
     border-bottom: none;
+}
+
+.header .toggle svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.toggle .st0 {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.toggle .st1 {
+    fill: none;
+    stroke-width: 2;
+}
+
+.toggle .st2 {
+    fill: none;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}
+
+.singlepost {
+    padding: 10px 20px;
+    max-width: 900px;
+    border: 1px solid var(--border-light);
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.6;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #f5faff;
+    cursor: pointer;
+}
+
+.singlepost img {
+    max-height: 100px;
+    height: auto;
+    padding-left: 25px;
+}
+
+.singlepost .title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0px 15px;
+    color: #383434;
+}
+
+.singlepost p {
+    font-size: 14px;
+    color: var(--smog);
+    margin-bottom: 15px;
+}
+
+.singlepost .footnote {
+    justify-content: space-between;
+    color: var(--smog);
+    font-size: 12px;
+}
+
+.singlepost .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: black;
+    margin-right: 15px;
+}
+
+.singlepost .ago {
+    font-size: 10px;
+}
+
+.allposts {
+    min-height: calc( 100vh - 60px);
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.footnote img {
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+    margin-right: 15px;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.singlepost:hover {
+    border: 1px solid salmon;
+    background-color: #f7e7ea70;
+}
+
+.dot.red {
+    background: red;
+}
+
+.dot.black {
+    background: black;
+}
+
+.dot.blue {
+    background: blue;
+}
+
+.dot.violet {
+    background: violet;
+}
+
+.dot.purple {
+    background-color: purple;
+}
+
+.dot.green {
+    background: green;
+}
+
+body.themedark,
+.themedark .fixedheader {
+    background: var(--darkbackground);
+}
+
+.themedark .fixedheader {
+    border-color: var(--darkmini);
+}
+
+.themedark .singlepost {
+    background: var(--border-light);
+}
+
+.themedark .singlepost .title {
+    color: var(--darkwhite);
+}
+
+.themedark .singlepost p {
+    color: var(--darktext2);
+}
+
+.themedark .singlepost .footnote {
+    color: var(--darktext3);
+}
+
+.themedark .dot.black {
+    background: var(--white);
+}
+
+.themedark .svgicon.fill {
+    fill: var(--darkwhite);
+    stroke: none;
+}
+
+.themedark .svgicon {
+    stroke: var(--darkwhite)
+}
+
+.point {
+    cursor: pointer;
+}
+
+.themedark .allposts .hero {
+    color: var(--darkwhite);
+}
+
+.allposts .hero {
+    max-width: 940px;
+    color: #383434;
+    margin: 5px 0px 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.themedark svg.listview {
+    stroke: var(--darkwhite);
+}
+
+.themedark svg.gridview {
+    color: var(--darkwhite);
+}
+
+svg.listview {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: var(--darkbackground);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke-width: 2;
+}
+
+svg.gridview {
+    width: 20px;
+    height: 20px;
+    color: var(--darkbackground);
+}
+
+.hero .icons span {
+    color: var(--darkgrey);
+}
+
+.themegrid .allposts {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.themegrid .hero {
+    max-width: none;
+}
+
+.themegrid .singlepost {
+    flex-direction: column-reverse;
+    width: 300px;
+    margin-bottom: 30px;
+    padding: 20px;
+    height: 350px;
+}
+
+.themegrid .singlepost img {
+    width: 100%;
+    height: 180px;
+    max-height: 180px;
+    padding: 0px 0px 10px 0px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.themegrid .singlepost .footnote img {
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+}
+
+.emptyscr {
+    height: calc(100vh - 155px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--smog);
+}
+
+.themedark .emptyscr {
+    color: var(--darktext3);
+}
+
+.emptyscr img {
+    max-width: 250px;
+    height: auto;
+}
+
+.loadscr img {
+    height: 150px;
+    width: auto;
+    padding-bottom: 25px;
+}
+
+.loadscr.more {
+    height: auto;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.loadscr.more img {
+    height: 60px;
+    padding-bottom: 10px;
+}
+
+.themedark .privac h1,
+.themedark .privac p,
+.themedark .privac h3 {
+    color: var(--darkwhite);
+}
+
+.privac h1 {
+    font-size: 22px;
+    margin: 25px 0px;
+    line-height: 1.7;
+}
+
+.privac h3 {
+    font-size: 18px;
+    margin: 20px 0px;
+    line-height: 1.7;
+}
+
+.privac p {
+    font-size: 14px;
+    margin: 15px 0px;
+    line-height: 1.7;
+    color: var(--darkmini);
+}
+
+.header .themebtn svg {
+    transform: rotate(20deg);
+}
+
+.header .preferences svg {
+    fill: #3A3B3C;
+}
+
+.header .preferences svg:hover {
+    fill: #242526;
+}
+
+.themedark .header .preferences svg:hover {
+    fill: var(--white);
+}
+
+@media screen and (max-width: 600px) {
+    .mw {
+        width: 95%;
+    }
+    .header .preferences .toggle {
+        padding: 0px;
+    }
+    .singlepost {
+        width: auto;
+        padding: 8px;
+    }
+    .themegrid .singlepost {
+        width: 100%;
+        padding: 10px;
+        max-height: 350px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    section.footer {
+        justify-content: center;
+    }
+    .singlepost img {
+        width: 90px;
+        height: 60px;
+        object-fit: cover;
+    }
+    .footnote img {
+        width: 13px;
+        height: 13px;
+    }
+    .singlepost .title {
+        font-size: 15px;
+    }
+    .singlepost p {
+        font-size: 13px;
+    }
+    .singlepost .dot {
+        width: 13px;
+        height: 13px;
+    }
+    .fixedheader {
+        height: 50px;
+    }
+    .header .logo {
+        height: 25px;
+        width: 25px;
+    }
+    .header .themebtn svg {
+        width: 25px;
+        height: 25px;
+    }
 }
