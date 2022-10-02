@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home Page.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&family=Inter:wght@100;200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/new.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../assets/js/core.js"></script>
+</head>
+
+<body class="themegrid">
+    <div class="fixedheader w100">
+        <div class="header h100 f mw">
+            <img class="wauto logo point btn1" src="https://www.cricketist.in/favicon.ico" />
+            <div class="preferences f cent">
+                <button class="toggle f cent">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                        <path
+                            d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z" />
+                    </svg>
+                </button>
+                <button class="toggle f cent themebtn btn2">
+                    <svg viewBox="0 0 35 35" class="svgicon fill point" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.188 7.813c0-1.644.331-3.206.931-4.631-5.7 1.381-9.931 6.513-9.931 12.631 0 7.175 5.825 13 13 13 6.119 0 11.25-4.231 12.631-9.931-1.425.6-2.994.931-4.631.931-6.625 0-12-5.375-12-12z">
+                        </path>
+                    </svg>
+                </button>
+                <button class="toggle f cent themebtn btn3" style="display: none;">
+                    <svg viewBox="0 0 35 35" class="svgicon fill point" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 24.188a.963.963 0 00-.963.962v2.887a.963.963 0 001.925 0V25.15a.963.963 0 00-.963-.962zM16 3a.963.963 0 00-.963.962v2.887a.963.963 0 001.925 0V3.961a.963.963 0 00-.963-.962zM7.813 16a.963.963 0 00-.963-.963H3.962a.963.963 0 000 1.925H6.85a.963.963 0 00.963-.963zm20.225-.963h-2.887a.963.963 0 000 1.925h2.887a.963.963 0 000-1.926zM9.531 21.506c-.256 0-.5.1-.681.281l-2.044 2.044c-.181.181-.281.425-.281.681a.96.96 0 00.962.962c.256 0 .5-.1.681-.281l2.044-2.044a.966.966 0 000-1.363.96.96 0 00-.681-.281zm12.938-11.012c.256 0 .5-.1.681-.281l2.044-2.044c.181-.181.281-.425.281-.681a.96.96 0 00-.962-.962c-.256 0-.5.1-.681.281l-2.044 2.044c-.181.181-.281.425-.281.681a.96.96 0 00.962.962zm-14.3-3.688c-.181-.181-.425-.281-.681-.281a.96.96 0 00-.962.962c0 .256.1.5.281.681l2.044 2.044c.181.181.425.281.681.281a.96.96 0 00.962-.962c0-.256-.1-.5-.281-.681L8.169 6.806zM23.15 21.788c-.181-.181-.425-.281-.681-.281s-.5.1-.681.281a.966.966 0 000 1.363l2.044 2.044c.181.181.425.281.681.281a.96.96 0 00.962-.962c0-.256-.1-.5-.281-.681l-2.044-2.044zM16 10c-3.306 0-6 2.694-6 6s2.694 6 6 6 6-2.694 6-6-2.694-6-6-6z">
+                        </path>
+                    </svg>
+                </button>
+
+                <button class="toggle f cent">
+                    <svg viewBox="0 0 35 35" class="svgicon fill point" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21 6c1.325 0 2.581.525 3.531 1.469S26 9.675 26 11v10c0 1.325-.525 2.581-1.469 3.531S22.325 26 21 26H11c-1.325 0-2.581-.525-3.531-1.469S6 22.325 6 21V11c0-1.325.525-2.581 1.469-3.531S9.675 6 11 6h10zm0-2H11c-3.85 0-7 3.15-7 7v10c0 3.85 3.15 7 7 7h10c3.85 0 7-3.15 7-7V11c0-3.85-3.15-7-7-7z">
+                        </path>
+                        <path
+                            d="M22.5 11c-.831 0-1.5-.669-1.5-1.5S21.669 8 22.5 8a1.5 1.5 0 010 3zM16 12c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4zm0-2c-3.313 0-6 2.688-6 6s2.688 6 6 6 6-2.688 6-6-2.688-6-6-6z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="maincontainer w100">
+        <section class="mw f fixedbody allposts">
+        </section>
+        <section class="footer mw f ">
+            <span>© 2022 Cricketist. All Rights Reserved.</span>
+            <div class="links ">
+                <a href="/sillypoint "><span>Instagram</span></a>
+                <a href="/sillypoint "><span>Twitter</span></a>
+                <a href="/about "><span>Youtube</span></a>
+                <a href="/privacy-policy "><span>Privacy Policy</span></a>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

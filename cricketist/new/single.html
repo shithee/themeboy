@@ -14,11 +14,17 @@
     <script src="../assets/js/core.js"></script>
 </head>
 
-<body class="themegrid">
+<body class="themegrid themedark">
     <div class="fixedheader w100">
         <div class="header h100 f mw">
             <img class="wauto logo point btn1" src="https://www.cricketist.in/favicon.ico" />
             <div class="preferences f cent">
+                <button class="toggle f cent">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                        <path
+                            d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z" />
+                    </svg>
+                </button>
                 <button class="toggle f cent themebtn btn2">
                     <svg viewBox="0 0 35 35" class="svgicon fill point" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -47,77 +53,164 @@
             </div>
         </div>
     </div>
-    <div class="maincontainer w100">
-        <section class="mw f fixedbody allposts" style="display: none;">
-            <div class="hero f w100">
-                <div class="leftsec">
-                    <h1>Trending News</h1>
+    <div class="maincontainer home_page w100">
+        <section class="fixed_trends">
+            <div class="mw f trending_tab">
+                <div class="nav backward" style="display:none;">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.175 477.175" xml:space="preserve">
+                        <g>
+                            <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                            c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z" /> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                        <g> </g>
+                    </svg>
                 </div>
-                <div class="icons f cent">
+                <div class="topics">
+                    <span class="active">All</span>
+                    <span>Indian cricket</span>
+                    <span>Virat Kohli</span>
+                    <span>World Cup 2022</span>
+                    <span>ms dhoni</span>
+                    <span>Steven Smith</span>
+                    <span>Rohit Sharma</span>
+                    <span>Kevin pieterson</span>
+                    <span>Rahul Dravid</span>
+                    <span>T20 Worldcup</span>
+                    <span>Aus VS IND</span>
+                    <span>Bhumrah</span>
+                    <span>Kevin Pieterson</span>
+                    <span>Australia</span>
+                </div>
+                <div class="nav forward">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 477.175 477.175" xml:space="preserve">
+                        <g>
+                            <path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                                c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z
+                                "/>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        </svg>
+                </div>
+            </div>            
+        </section>
+        <section class="mw f fixedbody allposts">
+            <div class=" hero f w100 ">
+                <div class="leftsec ">
+                    <h1>Latest Posts</h1>
+                </div>
+                <div class="icons f cent ">
 
-                    <button class="toggle f cent point btn4" style="display: none;">
-                        <svg class="listview" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <line  x1="7" x2="25" y1="16" y2="16"/>
-                            <line  x1="7" x2="25" y1="25" y2="25"/>
-                            <line  x1="7" x2="25" y1="7" y2="7"/>
+                    <button class="toggle f cent point btn4 " style="display: none; ">
+                        <svg class="listview " width="32px " height="32px " viewBox="0 0 32 32 "
+                            enable-background="new 0 0 32 32 " version="1.1 " xml:space="preserve "
+                            xmlns="http://www.w3.org/2000/svg " xmlns:xlink="http://www.w3.org/1999/xlink ">
+                            <line x1="7 " x2="25 " y1="16 " y2="16 " />
+                            <line x1="7 " x2="25 " y1="25 " y2="25 " />
+                            <line x1="7 " x2="25 " y1="7 " y2="7 " />
                         </svg>
                     </button>
 
-                    <button class="toggle btn5">
-                        <svg class="gridview point" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-grid">
-                            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
-                          </svg>
+                    <button class="toggle btn5 ">
+                        <svg class="gridview point " viewBox="0 0 16 16 " xmlns="http://www.w3.org/2000/svg "
+                            fill="currentColor " class="bi bi-grid ">
+                            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5
+            1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1
+            13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5
+            0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z " />
+                        </svg>
                     </button>
                 </div>
             </div>
-            <div class="singlepost w100 f cent">
-                <div class="leftpost">
-                    <h1 class="title ellipsis">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps with interactive diagrams - Hindustan Times</h1>
-                    <p class="ellipsis ellipsis2">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
-                    <div class="footnote f">
-                        <div class="source_info f cent">
-                            <span class="dot black"></span>
-                            <span class="source">Hindustan Times</span>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ellipsis ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps with interactive diagrams - Hindustan Times</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot black "></span>
+                            <span class="source ">Hindustan Times</span>
                         </div>
-                        <span class="ago">56 min ago</span>
+                        <span class="ago ">56 min ago</span>
                     </div>
                 </div>
-                <img src="../assets/image/1.jpeg">
+                <img src="../assets/image/1.jpeg ">
             </div>
-            <div class="singlepost w100 f cent">
-                <div class="leftpost">
-                    <h1 class="title">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
-                    <p class="ellipsis ellipsis2">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
-                    <div class="footnote f">
-                        <div class="source_info f cent">
-                            <img class="circle" src="../assets/image/logo-full.png" />
-                            <span class="source">Hindustan Times</span>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <img class="circle " src="../assets/image/logo-full.png " />
+                            <span class="source ">Hindustan Times</span>
                         </div>
-                        <span class="ago">56 min ago</span>
+                        <span class="ago ">56 min ago</span>
                     </div>
                 </div>
-                <img src="../assets/image/1.jpeg">
+                <img src="../assets/image/1.jpeg ">
             </div>
-            <div class="singlepost w100 f cent">
-                <div class="leftpost w100">
-                    <h1 class="title">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
-                    <p class="ellipsis ellipsis2">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
-                    <div class="footnote f">
-                        <div class="source_info f cent">
-                            <span class="dot blue"></span>
-                            <span class="source">Hindustan Times</span>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost w100 ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot blue "></span>
+                            <span class="source ">Hindustan Times</span>
                         </div>
-                        <span class="ago">56 min ago</span>
+                        <span class="ago ">56 min ago</span>
                     </div>
                 </div>
             </div>
-            <div class="singlepost w100 f cent">
-                <div class="leftpost">
-                    <h1 class="title">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
-                    <p class="ellipsis ellipsis2">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
-                    <div class="footnote f">
-                        <div class="source_info f cent">
-                            <span class="dot violet"></span>
+            <div class="singlepost w100 f cent ">
+                <div class="leftpost ">
+                    <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                    <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                    <div class="footnote f ">
+                        <div class="source_info f cent ">
+                            <span class="dot violet "></span>
                             <span class=" source ">Hindustan Times</span>
                         </div>
                         <span class="ago ">56 min ago</span>
@@ -251,24 +344,26 @@
                 <img src="../assets/image/1.jpeg ">
             </div>
         </section>
-        <section class="mw f fixedbody emptyscr" style="display: none;">
-            <img src="../assets/image/empty.png">
+        <section class="mw f fixedbody emptyscr " style="display: none; ">
+            <img src="../assets/image/empty.png ">
             <p>Couldn't found news at the moment, Please try again !</p>
         </section>
-        <section class="mw f fixedbody emptyscr loadscr" style="display: none;">
-            <img src="../assets/image/loader.gif">
+        <section class="mw f fixedbody emptyscr loadscr " style="display: none; ">
+            <img src="../assets/image/loader.gif ">
             <p>Loading Stories, Please wait :)</p>
         </section>
-        <section class="mw f privac">
-            <div class="privacy">
+        <section class="mw f privac " style="display:none; ">
+            <div class="privacy ">
                 <h1>Privacy Policy</h1>
                 <p><strong>Effective date:</strong> 10/21/2021</p>
                 <h3>Introduction</h3>
-                <p>These Privacy Policy (“Privacy Policy”) apply to the use of the website and products provided by Cricketist. (hereinafter also referred as “we” or “us” or "cricketist").</p>
+                <p>These Privacy Policy (“Privacy Policy”) apply to the use of the website and products provided by Cricketist. (hereinafter also referred as “we” or “us” or "cricketist ").</p>
                 <p>This Privacy Policy applies and has effect in respect of all services and other products, software, made available by us, as well as any other online features relating to the website and its content. For example this privacy policy will
-                    be applicable for the our app "Silly Point".</p>
-                <p>If you have any questions or comments about this Privacy Policy, please contact us at hello@crikcetist.in.</p>
-                <p>We may make changes to this Privacy Policy in the future. You should check this page from time to time to ensure you are aware of any changes. Where appropriate we may notify you of such changes.</p>
+                    be applicable for the our app "Silly Point ".</p>
+                <p>If you have any questions or comments about this Privacy Policy, please contact us at hello@crikcetist.in.
+                </p>
+                <p>We may make changes to this Privacy Policy in the future. You should check this page from time to time to ensure you are aware of any changes. Where appropriate we may notify you of such changes.
+                </p>
                 <h3>Personal Information</h3>
                 <p>As of Now, we do not collect a single personal information from the user such as your name, email address, Phone Number and other details. Cricketist website and our apps do not ask you to enter your personal information and sensitive
                     data and we do not save and share those data.</p>
@@ -290,12 +385,14 @@
                 <p>This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy
                     of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
                 <h3>Service Providers</h3>
-                <p>As of now, we donot added any third party companies or inviduals services in our website or our applications.</p>
+                <p>As of now, we donot added any third party companies or inviduals services in our website or our applications.
+                </p>
                 <h3>Changes to this privacy policy</h3>
                 <p>This Privacy Policy may be updated from time to time. We encourage you to review this website for the latest information on our privacy practices. If there are any material changes to this Privacy Policy, you will be notified by posting
                     a notice on the website prior to the change becoming effective. If you do not accept any changes made to this Privacy Policy, please discontinue the use of the website and the Services.</p>
                 <h3>Contact Us</h3>
-                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at hello@cricketist.in</p>
+                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at hello@cricketist.in
+                </p>
             </div>
         </section>
         <section class="footer mw f ">
