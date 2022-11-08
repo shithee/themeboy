@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Picky Html Builder</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/babel-standalone@6/babel.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-email-editor@1.3.0/umd/react-email-editor.min.js"
+      crossorigin
+    ></script>
+
+    <!-- Load our React component. -->
+    <script type="text/babel">
+      "use strict";
+
+      const App = (props) => {
+        const emailEditorRef = React.useRef(null);
+
+        const exportHtml = () => {
+          emailEditorRef.current.editor.exportHtml((data) => {
+            const { design, html } = data;
+            console.log("exportHtml", html);
+          });
+        };
+
+        const onLoad = () => {
+          // editor instance is created
+          // you can load your template here;
+          // const templateJson = {};
+          // emailEditorRef.current.editor.loadDesign(templateJson);
+        };
+
+        const onReady = () => {
+          // editor is ready
+          console.log("onReady");
+        };
+
+        return (
+          <div>
+            <div>
+              <button onClick={exportHtml}>Export HTML</button>
+            </div>
+
+            <EmailEditor
+              ref={emailEditorRef}
+              onLoad={onLoad}
+              onReady={onReady}
+            />
+          </div>
+        );
+      };
+
+      ReactDOM.render(
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
