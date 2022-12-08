@@ -1,0 +1,3 @@
+const serverRequest=async(url,params={})=>{try{let formData=new FormData();if(params){for(const[key,value]of Object.entries(params)){formData.append(key,value);}}
+const apirequest=await fetch(url,{method:'POST',body:formData});let data=await apirequest.json();return data;}catch(e){console.log(e);return{code:404};}};const getDefaultdata=()=>{let type="page";let data={value:{breakpoint:"480px",headAttributes:"","font-size":"14px","line-height":"1.7",headStyles:[],fonts:[],responsive:true,"font-weight":400,"font-family":"Trebuchet MS","text-color":"#000000"}};let attributes={"background-color":"#FFF",width:"600px","css-class":"mjml-body"};let children=[];return{type,data,attributes,children};}
+export{serverRequest,getDefaultdata};
