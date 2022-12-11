@@ -67,15 +67,22 @@ import {
     PickyContainerBackgroundColor,
     PickyUnitField,
     PickyWidth,
+    useField,
+    SelectField,
+    PickySpin, //shitheesh
     // CustomBlocksType
-} from "./plugin.js?v=137";
+} from "./plugin.js?v=178";
+
+let pky_attributes = {
+    name : 'shitheesh'
+}
 
 import { style$1,antd,style,arco } from "./extra.js?v=22";
 
 // importing the utils
 import { serverRequest,getDefaultdata } from "./util.js?49";
 var templateData = getDefaultdata();
-const base_url = 'https://localhost/';
+const base_url = '';
 
 class Uploader {
   constructor(uploadServer, options) {
@@ -321,19 +328,44 @@ function Panel() {
   ));
 }
 
-let picky_attrs = {
-	name : 'shitheesh',
-	address: {
-		age : 23,
-		address : 'Kaliakkavilai'
-	}
-};
-
 function loop_panel() {
   const { focusIdx } = useFocusIdx();
-  // console.log(useFocusIdx());
+  const [p_lists, setpl] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState([]);
+  const [p_arrays, setpa] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState([]);
+  // Shitheesh
+  let loader = document.querySelector('.picky_loop_loader');
+  // console.log(loader);
+  // loader.style.display = 'none';
+  C__Users_Picky_Desktop_email_node_modules_react.exports.useEffect(() => {    
+    let p_lists = [{ value: '860', label : 'Connector 1'},{ value: '861', label : 'Connector 2'}];
+    setpl(p_lists);
+  },[]);
+
+  let res = useField(`${focusIdx}.attributes.list`);
+  let conn = res.input.value;
+  C__Users_Picky_Desktop_email_node_modules_react.exports.useEffect(() => {
+    if(conn){
+      if(loader){
+        loader.classList.add("pickyshow");
+        let sib = loader.parentNode.nextElementSibling;
+        sib.style.display = 'none';
+      }
+      let p_arrays = [{ value: '860.p', label : 'Email Builder.P'},{ value: '860.k', label : 'Email Builder.K'}];
+      setpa(p_arrays);
+      if(loader){
+        loader.classList.remove("pickyshow");
+        let sib = loader.parentNode.nextElementSibling;
+        sib.style.display = 'block';
+      }
+    }
+  },[conn]);
+  let product_types = [{
+    value: 'connector',
+    label: 'Connector',
+  }];
+    // console.log(focusIdx);
   return  React__default.createElement(AttributesPanelWrapper, null,  React__default.createElement(Collapse, {
-    defaultActiveKey: ["1","2","3"]
+    defaultActiveKey: ["1","2","3","4"]
   },  React__default.createElement(Collapse.Panel, {
     key: "1",
     header: "Loop Settings"
@@ -351,6 +383,32 @@ function loop_panel() {
       name: `${focusIdx}.attributes.variable`
     }),
     React__default.createElement(PickyWidth,{ label : 'Width of Loop Block'}),
+  )),
+  React__default.createElement(Collapse.Panel, {
+    key: "4",
+    header: "Sample Loop Array"
+  },  React__default.createElement(Stack, {
+    vertical: true
+  },  /*React__default.createElement(SelectField, {
+      label: "Type",
+      name: `${focusIdx}.attributes.type`,
+      options : product_types
+    }),*/
+    React__default.createElement(SelectField, {
+      label: "Select Connector",
+      name: `${focusIdx}.attributes.list`,
+      options : p_lists
+    }),
+    React__default.createElement(PickySpin, {
+      size : 30,
+      className : 'picky_loop_loader picky_loader',
+      block : true
+    }),
+    React__default.createElement(SelectField, {
+      label: "Select Loop Array",
+      name: `${focusIdx}.attributes.array`,
+      options : p_arrays
+    }),
   )),
   React__default.createElement(Collapse.Panel, {
     key: "2",
@@ -438,8 +496,27 @@ const Unsubscribe = {
   validParentType: [BasicType.PAGE, AdvancedType.WRAPPER, BasicType.WRAPPER],
   render(params) {
     let { data, idx, mode, context, dataSource } = params;
-  	const { info } = data.data.value;
-  	const attributesUnsubs = data.attributes;
+    const { info } = data.data.value;
+    const attributesUnsubs = data.attributes;
+//    console.log(PickygetContentEditableClassName(BasicType.TEXT, `${idx}.data.value.info`));
+    // const instance = React__default.createElement(Wrapper, {
+    //   "css-class": mode === 'testing' ? getPreviewClassName(idx, data.type) : '',
+    //   border: "none",
+    //   direction: "ltr",
+    // //   "text-align": attributesUnsubs['padding'],
+    //   "background-color": attributesUnsubs['container-background-color'],
+    //   padding: attributesUnsubs['padding'],
+    //   height: attributesUnsubs['height']
+    // },
+    // React__default.createElement(Text, {
+    //   "font-size": attributesUnsubs['font-size'],
+    //   'font-style': attributesUnsubs['font-style'], 
+    // //   padding: "0px",
+    //   "line-height": attributesUnsubs['line-height'],
+    //   align: attributesUnsubs['align'],
+    //   color: attributesUnsubs['color'],
+    //   "css-class": PickygetContentEditableClassName(BasicType.TEXT, `${idx}.data.value.info`).join(' ')
+    // }, info));
     const insta = React__default.createElement(Wrapper, {
       width: "100%"
     }, React__default.createElement(Section, {
@@ -478,6 +555,8 @@ const PickyLoop = {
       attributes: {
           "limit": 100,
           "variable":"loop",
+          "type":"connector",
+          "sample":"860.p",
           "outer-border":"none",
           "outer-radius":"0px",
           "outer-padding":"10px 10px 10px 10px",
@@ -493,12 +572,14 @@ const PickyLoop = {
   },
   validParentType: [BasicType.PAGE, AdvancedType.WRAPPER, BasicType.WRAPPER],
   render(params) {
+    // console.log(params);
     let { data, idx, mode, context, dataSource } = params;
-  	const { info } = data.data.value;
-  	const attributesUnsubs = data.attributes;
-  	let variable = (attributesUnsubs['variable']) ? attributesUnsubs['variable'] : 'loop';
-  	let direction_params = `loop.${variable}.${attributesUnsubs['limit']}`;
-//   	console.log(direction_params);
+    const { info } = data.data.value;
+    const attributesUnsubs = data.attributes;
+    let variable = (attributesUnsubs['variable']) ? attributesUnsubs['variable'] : 'loop';
+    let direction_params = `loop.${variable}.${attributesUnsubs['limit']}`;
+    let sample_array = (attributesUnsubs['array']) ? `pky${attributesUnsubs['array']}` : '';
+    
     const instance = React__default.createElement(Section, {
        direction: direction_params,
        padding: attributesUnsubs['outer-padding'],
@@ -507,7 +588,7 @@ const PickyLoop = {
        "border": attributesUnsubs['outer-border'],
        "border-radius": attributesUnsubs['outer-radius'],
        "background-color": attributesUnsubs['outer-background'],
-       "css-class": mode === 'testing' ? getPreviewClassName(idx, data.type) + ' picky_loop_container' : '',
+       "css-class": mode === 'testing' ? getPreviewClassName(idx, data.type) + ` picky_loop_container ${sample_array}` : '',
     },React__default.createElement(PickyBasicBlock, {
       params: params,
       tag: "mj-column"
@@ -684,6 +765,7 @@ const onUploadImage = async (blob) => {
     }
 };
 
+
 var email_editor = {};
 
 email_editor.currentSelection;
@@ -692,20 +774,24 @@ email_editor.active;
 email_editor.selection;
 email_editor.root;
 
-email_editor.backuproot = (el) => {	
-	let shadowRootSelection = el.shadowRoot.getSelection();
+email_editor.backuproot = (el) => {
+  let shadowRootSelection = el.shadowRoot.getSelection();
     email_editor.selection = document.createRange();
     email_editor.selection.setStart(shadowRootSelection.anchorNode, shadowRootSelection.anchorOffset);
     email_editor.selection.setEnd(shadowRootSelection.focusNode, shadowRootSelection.focusOffset);
     
     var range = shadowRootSelection.getRangeAt(0);
     email_editor.currentSelection = {"startContainer": range.startContainer, "startOffset":range.startOffset,"endContainer":range.endContainer, "endOffset":range.endOffset};
+    // console.log(email_editor.selection,email_editor.currentSelection);
 }
 
 email_editor.restoreroot = (el)=>{
-	email_editor.currentSelection.startContainer = email_editor.currentSelection.endContainer =
-	email_editor.selection.startContainer.querySelectorAll('[contenteditable=true]')[0].childNodes[0];
-	var selection = el.shadowRoot.getSelection();
+    // console.log(email_editor.selection.startContainer);
+    if(email_editor.selection.startContainer.tagName == 'TD'){
+      email_editor.currentSelection.startContainer = email_editor.currentSelection.endContainer =
+      email_editor.selection.startContainer.querySelectorAll('[contenteditable=true]')[0].childNodes[0];
+    }
+  var selection = el.shadowRoot.getSelection();
     selection.removeAllRanges();
     var range = document.createRange();
     range.setStart(email_editor.currentSelection.startContainer, email_editor.currentSelection.startOffset);
@@ -714,47 +800,200 @@ email_editor.restoreroot = (el)=>{
 }
 
 email_editor.restoreinput = () =>{ 
-	let inp = email_editor.active;
-	let caretPos = email_editor.caret;
-	if(inp != null) {
-        if(inp.createTextRange) {
-            var range = inp.createTextRange();
-            range.move('character', caretPos);
-            range.select();
+  let inp = email_editor.active;
+  console.log(email_editor.active);
+  let caretPos = email_editor.caret;
+  inp.selectionEnd = caretPos;
+  inp.focus();
+  // if(inp != null) {
+  //       if(inp.createTextRange) {
+  //           var range = inp.createTextRange();
+  //           range.move('character', caretPos);
+  //           range.select();
+  //       }
+  //       else {
+  //           if(inp.selectionStart) {
+  //               inp.focus();
+  //               inp.setSelectionRange(caretPos, caretPos);
+  //               console.log(inp);
+  //           }
+  //           else
+  //               inp.focus();
+  //       }
+  //   }
+}
+
+function handleEdit(e) {
+  let el = e.target;
+  if(el.closest('#easy-email-editor')){
+    // Shitheesh
+    let selection = el.shadowRoot.getSelection();
+    if(selection.anchorNode){
+      email_editor.backuproot(el);
+      email_editor.root = el;
+      email_editor.caret = undefined;
+      let act = e.composedPath()[0];
+      email_editor.active = act;
+    }    
+  }else if(el.classList.contains('arco-input')){
+    // console.log(el);
+    email_editor.caret = el.selectionStart;
+    email_editor.active = el;
+  }
+}
+
+document.addEventListener('keyup',handleEdit,false);
+document.addEventListener('click',handleEdit,false);
+
+var Jsontree = {};
+// container,json,Name,Prefix for JSON
+Jsontree.create = (c, j,n,p) => {
+    let h = (!Jsontree.empty(j)) ? `
+            <ul class="JSONtree treeCss tree">
+                <li class="branch">
+                    <div class="treehead parenthead">
+                        ${Jsontree.expander('close')}
+                        <a class="treeHrefCss" href="#">${n}</a>
+                    </div>
+                    <ul>${Jsontree.generate(j,p)}</ul>
+                </li>
+            </ul>` : 
+            `<div class="empty-tree">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"/></svg>
+                <div class="info-tree">Looks like there is no array found in this loop block, please select a valid sample array in the loop settings.</div>
+            </div>`;
+    // let tree = new DOMParser().parseFromString(h, "text/html");
+    // console.log(tree);
+    c.innerHTML = h;
+    if(!Jsontree.empty(j)){
+        for (let attrs of c.querySelectorAll(".atrs")) {
+            // attrs.addEventListener("click", (e) => {
+            //   let key = e.target.dataset.key;
+            //   // setatrpop(true);
+            //   if(key) insert_attr(key);
+            // });
         }
-        else {
-            if(inp.selectionStart) {
-                inp.focus();
-                inp.setSelectionRange(caretPos, caretPos);
+        for (let item of c.querySelectorAll(".treehead")) {
+            item.addEventListener("click", (e) => {
+                let br = e.target.closest('.branch');
+                // Determine whether show or Hide
+                let plus = br.querySelector('svg.open-icon');
+                let type = (Jsontree.hidden(plus)) ? 'close' : 'open';
+                let children = br.querySelector('ul').children;
+                for (let child of children) {
+                    child.style.display = (type == 'open') ? 'block' : 'none';
+                }
+                // console.log(e);
+                
+                if(type == 'open'){
+                    // Closing the particular Branch
+                    br.querySelector('svg.open-icon').style.display = "none";
+                    br.querySelector('svg.close-icon').style.display = "block";
+                }else{
+                    // Opening the branch
+                    br.querySelector('svg.open-icon').style.display = "block";
+                    br.querySelector('svg.close-icon').style.display = "none";
+
+                }
+            });
+        }
+        c.querySelector('.parenthead').click();
+    }
+    
+};
+
+Jsontree.empty = (value) => {
+    return (
+        (value == null) ||
+        (value.hasOwnProperty('length') && value.length === 0) ||
+        (value.constructor === Object && Object.keys(value).length === 0)
+    );
+}
+
+Jsontree.search = (cont,key) => {
+    if (key) {
+        key = key.toLowerCase();
+        let li = cont.querySelectorAll('li');
+        for (let list of li) {
+            if(!list.classList.contains('branch')){
+                let value = list.innerText.trim().toLowerCase();
+                if (value.includes(key)) {
+                    Jsontree.display(list,'show');
+                } else {
+                    Jsontree.display(list,'hide');
+                }
+            }else{
+                Jsontree.display(list,'hide');
+                let current_parent = list;
+                let sublist = list.querySelectorAll('li');
+                for (let innerlist of sublist) {
+                    if(innerlist.classList.contains('branch')){
+                        let value = innerlist.innerText.trim().toLowerCase();
+                        if (value.includes(key)) {
+                            Jsontree.display(innerlist.querySelector('.open-icon'),'hide');
+                            Jsontree.display(innerlist.querySelector('.close-icon'),'show');
+                            Jsontree.display(current_parent,'show');
+                        }
+                    }else{
+                        let value = innerlist.innerText.trim().toLowerCase();
+                        if (value.includes(key)) {
+                            Jsontree.display(current_parent,'show');
+                        }
+                    }
+                }
             }
-            else
-                inp.focus();
+        }
+    } else {
+        let li = cont.querySelectorAll('li');
+        for (let list of li) {
+            Jsontree.display(list,'show');
+            let head = list.querySelectorAll('.treehead');
+            for (let h of head) {
+                Jsontree.display(h.querySelector('.open-icon'),'hide');
+                Jsontree.display(h.querySelector('.close-icon'),'show');
+            }
         }
     }
 }
 
-// console.log(document.querySelector('#VisualEditorEditMode'));
+Jsontree.display = (el,type) => {
+    el.style.display = (type == 'show') ? 'block' : 'none';
+}
 
-document.addEventListener('keyup', function(e) {
-	let el = e.target;
-	if(el.closest('#easy-email-editor')){
-		email_editor.backuproot(el);
-		email_editor.root = el;
-		email_editor.caret = undefined;
-		let act = e.composedPath()[0];
-		email_editor.active = act;
-	}else if(el.classList.contains('arco-input')){
-		email_editor.caret = el.selectionStart;
-		email_editor.active = el;
-	}
-});
-const insert_attr = () => {
-	if(email_editor && email_editor.caret){
-		email_editor.restoreinput();
-	}else if(email_editor){
-		email_editor.restoreroot(email_editor.root);
-	}
-	document.execCommand("insertHTML", false, '{{text}}');
+Jsontree.hidden = (el) => {
+    var style = window.getComputedStyle(el);
+    return (style.display === 'none');
+}
+
+Jsontree.generate = (j,p) => {
+    let html = '';
+
+    for (const [key, value] of Object.entries(j)) {
+        let k = (p || p===0) ? `${p}.${key}` : key;
+        if(Array.isArray(value) || typeof value === "object"){
+            html += `<li class="branch" style="display:none;">
+                        <div class="treehead">
+                            ${Jsontree.expander('close')}
+                            <span class="atrs">${key}</span>
+                        </div>
+                        <ul>${Jsontree.generate(value,k)}</ul>
+                    </li>`
+        }else{
+            html += `<li style="display:none;">
+                        <span class="atrs" data-key="${k}">${key}</span>
+                        <span><i class="treeEmptyCss">${value}</i></span>
+                    </li>`;
+        }
+    }
+
+    // console.log(html);
+    return html;
+}
+
+Jsontree.expander = (t='open') => {
+    return `
+        <svg class="close-icon" style="${(t=='open') ? '' : 'display:none;'}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM184 232H328c13.3 0 24 10.7 24 24s-10.7 24-24 24H184c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg>
+        <svg class="open-icon" style="${(t=='close') ? '' : 'display:none;'}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>`;
 }
 
 // const showPersonalInfo = () => {
@@ -775,10 +1014,12 @@ function Editor() {
   const [tmpname, setName] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState("Template New");
   const template_id = document.getElementById('root').dataset.id;
   const [perpop, setperpop] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState(false);
+  const [atrpop, setatrpop] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState(false);
+  const [searchkey, setatrkey] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState("");
   
   // Fetching the Template details from the server, if its edit mode
   C__Users_Picky_Desktop_email_node_modules_react.exports.useEffect(() => {
-		const gettemplatedata = async (id,action='fetch_template') => {
+    const gettemplatedata = async (id,action='fetch_template') => {
             let url = `${base_url}builder/builder.php?id=${id}&action=${action}`;
             let resp = await serverRequest(url);
             if(resp.code == 200 && resp.data && resp.data.json){
@@ -787,23 +1028,90 @@ function Editor() {
                 setTemplate(temp_json.content);
                 setName(resp.data.template_name);
             }
-		};
-		let urlSearchParams = new URLSearchParams(window.location.search);
+    };
+    let urlSearchParams = new URLSearchParams(window.location.search);
         let params = Object.fromEntries(urlSearchParams.entries());
         let import_id = parseInt(params.import);
-		if(template_id){
-		    gettemplatedata(template_id);
-		}else if(parseInt(import_id)){
-		    gettemplatedata(import_id,'import_template');
-		}else{
-		    setName('Template New');
-		}
-	}, []);
+    if(template_id){
+        gettemplatedata(template_id);
+    }else if(parseInt(import_id)){
+        gettemplatedata(import_id,'import_template');
+    }else{
+        setName('Template New');
+    }
+  }, []);
 //   console.log(template);
   const { importTemplate } = useImportTemplate();
   const { exportTemplate } = useExportTemplate();
   const { width } = useWindowSize();
   const smallScene = width < 900;
+  const showAttribute = (e) => {
+    setatrkey('');
+    let variable = (e.target.tagName == 'SVG') ? e.target.parentNode.dataset.array : e.target.dataset.array;
+    let json = {
+      name: "shitheesh",
+      info: {
+          job: "php developer",
+          company: "Picky Assist",
+          login : 'PeSgVkYp3s6v9yPPeSgVkYp3s6v9y$B&E)H@McQfTjWmZq4eSgVkYp3s6v9y$B&E)H@McQfTjWmZq4$B&E)H@McQfTjWmZq4'
+      },
+      languages: [
+          {
+              name: "React JS",
+              experience: 3,
+          },
+          {
+              name: "Php",
+              experience: 4,
+          },
+          {
+              name: "Node JS",
+              experience: 3,
+          },
+      ],
+  };
+    // json = null;
+    
+    setTimeout(() => {
+      let modal_loader = document.querySelector('.picky_attr_loader');
+      let modal_cont = document.querySelector('.picky_attr_container');
+      modal_loader.classList.add('pickyshow');
+      modal_cont.style.display = 'none';
+      // Things After loading the JSOn data
+      modal_loader.classList.remove('pickyshow');
+      modal_cont.style.display = 'block';
+      let container = modal_cont.querySelector('.json_tree_container');
+      if(Jsontree.empty(json)){
+        modal_cont.querySelector('.tree_search_container').style.display = 'none';
+      }else{
+        modal_cont.querySelector('.tree_search_container').style.display = 'block';
+      }
+      Jsontree.create(container,json,'Loop Array','');
+    }, 100);
+    // 
+    setatrpop(true);
+  }
+  const searchtree = (str) =>{ 
+    setatrkey(str);
+    let cont = document.querySelector('.json_tree_container');
+    Jsontree.search(cont,str);
+  }
+  const insertAttr = (el) => {
+    // 
+    if(el.classList.contains('atrs')){
+      setatrpop(false);
+      let key = el.dataset.key;
+      setTimeout(() => {
+        if(email_editor && email_editor.caret){
+          email_editor.restoreinput();
+        }else if(email_editor){
+          email_editor.restoreroot(email_editor.root);
+        }
+        document.execCommand("insertHTML", false, `{{${key}}}`);
+      },100);
+    }
+  }
+
   const onCopyHtml = (values) => {
     const html = mjml(JsonToMjml({
       data: values.content,
@@ -891,7 +1199,7 @@ function Editor() {
     data: initialValues,
     height: "calc(100vh - 85px)",
     onUploadImage:onUploadImage,
-    mergeTags:picky_attrs,
+    mergeTags: pky_attributes,
     autoComplete: true,
     fontList,
     onSubmit
@@ -906,10 +1214,31 @@ function Editor() {
         value : tmpname,
         onChange : (e) =>{ changetemplatename(e.target.value); }
       }),
-      React__default.createElement("button", {
-        className : 'arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square',
-        onClick: () => insert_attr()
-      }, "Personalization"),
+      React__default.createElement("div", {
+          className: "picky_style_button show_picky_attrs",
+          style: { display: 'none' },
+          onClick: (e) => showAttribute(e)
+        }, React__default.createElement("svg", {
+          width: "18px",
+          height: "18px",
+          xmlns: "http://www.w3.org/2000/svg",
+          viewBox: "0 0 640 512"
+        },React__default.createElement("path", {
+          d: "M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
+        }))),
+        React__default.createElement("div", {
+          className: "picky_style_button"
+        }, React__default.createElement("svg", {
+          width: "16px",
+          height: "16px",
+          // onClick: () => setperpop(!perpop),
+          onClick: (e) => showAttribute(e),
+          xmlns: "http://www.w3.org/2000/svg",
+          viewBox: "0 0 192 512"
+        },React__default.createElement("path", {
+            // d:"M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"
+          d: "M144 80c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z"
+        }))),
       React__default.createElement("button", {
         className : 'arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square',
         onClick: () => submit()
@@ -938,6 +1267,54 @@ function Editor() {
     React__default.createElement("p", null, React__default.createElement("b", null, "Example")), 
     React__default.createElement("p", null, "Dear ", React__default.createElement("span", {className: "arco-typography-primary"}, "{{name}}"), " Your billing amount due is ", React__default.createElement("span", {className: "arco-typography-primary"}, "{{amount_due}}"), " and here is the payment link ", React__default.createElement("span", {className: "arco-typography-primary"}, "{{payment_link}}")),
     React__default.createElement("p", null, "After saving the template you will get the option to map these values with relevant attributes and the system will automatically replace these tags with relevant values.")
+  ),
+  React__default.createElement(PickyModal, {
+      title: "Loop Attributes",
+      alignCenter: false,
+      style: {
+        top: 50
+      },
+      visible: atrpop,
+      footer: null,
+      onCancel: () => {
+        setatrpop(!atrpop);
+      }
+    },
+    React__default.createElement(PickySpin, {
+      size : 30,
+      className : 'picky_attr_loader picky_loader',
+      block : true
+    }), 
+    React__default.createElement("div", {
+      className: "picky_attr_container",
+      style : {
+        display : 'none'
+      }
+    }, React__default.createElement("div", {
+      className: "tree_search_container"
+    }, React__default.createElement("input", {
+      type: "text",
+      value : searchkey,
+      placeholder: 'Search Attributes',
+      onChange : (e) =>{ searchtree(e.target.value); },
+      className: "picky_attr_search"
+    }),
+    React__default.createElement("svg", {
+      width: "16px",
+      height: "16px",
+      onClick: () => searchtree(''),
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 512 512",
+      className : 'close_search_tree',
+      style : {
+        display : (searchkey) ? 'block' : 'none'
+      }
+    },React__default.createElement("path", {
+      d: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+    }))), React__default.createElement("div", {
+      className: "json_tree_container custom_scrollbar_element scrolling",
+      onClick : (e) =>{ insertAttr(e.target); }
+    }))
   )
 );
 }

@@ -131,3 +131,267 @@ body{
 }
 .dv2{font-size: 16px;
     font-weight: 500;}
+.picky_style_button{
+    width: 32px;
+    height: 32px;
+    background: whitesmoke;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.picky_style_button:hover{ background : #f3ebeb; }
+.picky_loader{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+    display: none;
+}
+.picky_loader.pickyshow{
+    display: flex;
+}
+
+.JSONtree{
+    font-size: 16px;
+}
+.close_search_tree{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: #f51818e8;
+    fill: currentColor;
+    cursor: pointer;
+}
+.tree_search_container{
+    position: relative;
+}
+.json_tree_container{
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.tree, .tree ul {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.tree ul {
+    margin-left: 1em;
+    position: relative
+}
+
+.tree ul ul {
+    margin-left: .5em
+}
+
+.tree ul:before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid
+}
+
+.tree li {
+    margin: 0;
+    padding: 0 1em;
+    line-height: 2em;
+    /* color:#369; */
+    font-weight: 400;
+    position: relative
+}
+
+.tree ul li:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 0;
+    border-top: 1px solid;
+    margin-top: -1px;
+    position: absolute;
+    top: 1em;
+    left: 0
+}
+
+.tree ul li:last-child:before {
+    background: #fff;
+    height: auto;
+    top: 1em;
+    bottom: 0
+}
+
+.indicator {
+    margin-right: 5px;
+    cursor: pointer;
+    color: #06d79c;
+}
+
+.indicator:hover {
+    color: #000;
+}
+
+.tree li a {
+    text-decoration: none;
+    /* color:#369; */
+}
+
+/* .tree li button, .tree li button:active, .tree li button:focus {
+    text-decoration: none;
+    color:#333;
+    border:none;
+    background:transparent;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    outline: 0;
+} */
+
+.treeHrefCss {
+    color: #06d79c;
+    margin-left: 2px;
+}
+
+.treeDateCss {
+    color: #06d79c;
+    margin-left: 2px;
+}
+
+.treeEmptyCss {
+    color: #9E9E9E;
+    margin-left: 2px;
+}
+
+.treeBoldCss {
+    color: #000;
+    margin-left: 2px;
+}
+
+.treeCss span.atrs:hover {
+    color: #06d79c;
+    cursor: pointer;
+}
+
+.treeCss a:hover {
+    color: #06d79c;
+    cursor: pointer;
+}
+
+.treeCss b:hover {
+    text-decoration: underline;
+    color: #06d79c;
+    cursor: pointer;
+}
+.JSONtree svg{
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    color:  #06d79c;
+    cursor: pointer;
+}
+.treehead{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: max-content;
+}
+li i.treeEmptyCss{
+    word-break: break-all;
+    font-size: 90%;
+}
+.empty-tree{
+    border: 1px solid #80808026;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #726e6e05;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 7px;
+}
+.empty-tree svg{
+    width:  36px;
+    height:  36px;
+    fill: currentColor;
+    margin-bottom: 20px;
+    color:  #06d79c;
+}
+input.picky_attr_search{
+    width: 100%;
+    border: 1px solid #80808029;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: .3s;
+    height: 40px;
+    font-size: 16px;
+    font-family: Inter;
+    margin-bottom: 20px;
+  }
+  .info-tree{
+    font-size: 14px;
+  }
+.custom_scrollbar_element{
+    scrollbar-color: rgba(145, 145, 145, 0.4) transparent;
+    scrollbar-width: none;
+}
+.custom_scrollbar_element.scrolling{
+    scrollbar-width: auto;
+}
+.custom_scrollbar_element::-webkit-scrollbar {
+    width: 9px !important;
+    background : transparent !important;
+    display: block;
+    opacity: 0;
+    height: 8px;
+}
+.custom_scrollbar_element::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    border-radius : 5px !important;
+    border : none !important;
+    box-shadow : none !important;
+}
+.custom_scrollbar_element::-webkit-scrollbar-thumb:hover {
+   background: transparent !important; 
+   box-shadow : none !important;
+}
+.custom_scrollbar_element::-webkit-scrollbar-thumb:active {
+   background: transparent !important; 
+   box-shadow : none !important;
+}
+.custom_scrollbar_element::-webkit-scrollbar-button{
+   display : none !important;
+}
+
+.custom_scrollbar_element.scrolling::-webkit-scrollbar{
+    width : 9px !important;
+    display: block; 
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-track {
+    background: rgba(224, 224, 224, 0.4) !important;
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-thumb {
+    background: rgba(145, 145, 145, 0.4) !important;
+    border-radius : 5px !important;
+    border : none !important;
+    box-shadow : none !important;
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-thumb:hover {
+   background: #c2c2c2 !important; 
+   box-shadow : none !important;
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-thumb:active {
+   background: #c2c2c2 !important; 
+   box-shadow : none !important;
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-button{
+   display : none !important;
+}
