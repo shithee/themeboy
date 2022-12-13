@@ -69,6 +69,7 @@ import {
     PickyWidth,
     useField,
     SelectField,
+    useBlock,
     PickySpin, //shitheesh
     // CustomBlocksType
 } from "./plugin.js?v=178";
@@ -1007,6 +1008,102 @@ Jsontree.expander = (t='open') => {
 //     });
 // }
 
+function AttributeModal({atrpop, setatrpop,searchkey, setatrkey}){
+  // const { focusBlock, setValueByIdx } = useBlock();
+  const searchtree = (str) =>{ 
+    setatrkey(str);
+    let cont = document.querySelector('.json_tree_container');
+    Jsontree.search(cont,str);
+  }
+  const insertAttr = (el) => {
+    // 
+    // console.log(focusBlock);
+
+    if(el.classList.contains('atrs')){
+      setatrpop(false);
+      let key = el.dataset.key;
+      setTimeout(() => {
+        if(email_editor && email_editor.caret){
+          email_editor.restoreinput();
+        }else if(email_editor){
+          email_editor.restoreroot(email_editor.root);
+        }
+        document.execCommand("insertText", false, `{{${key}}}`);
+        var evt = new MouseEvent("click", {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+            clientX: 20,
+            /* whatever properties you want to give it */
+        });
+        email_editor.currentSelection.startContainer.dispatchEvent(evt);
+
+        email_editor.currentSelection.startContainer.dispatchEvent(
+          new KeyboardEvent("keyup", {
+            key: "Backspace",
+            keyCode: 8, // example values.
+            code: "Backspace", // put everything you need in this object.
+            which: 8,
+            shiftKey: false, // you don't need to include values
+            ctrlKey: false,  // if you aren't going to use them.
+            metaKey: false   // these are here for example's sake.
+          })
+        );
+        // email_editor.currentSelection.startContainer.dispatchEvent(new Event('click',{ originalEvent: true }));
+      },100);
+    }
+  }
+
+  return React__default.createElement(PickyModal, {
+      title: "Loop Attributes",
+      alignCenter: false,
+      style: {
+        top: 50
+      },
+      visible: atrpop,
+      footer: null,
+      onCancel: () => {
+        setatrpop(!atrpop);
+      }
+    },
+    React__default.createElement(PickySpin, {
+      size : 30,
+      className : 'picky_attr_loader picky_loader',
+      block : true
+    }), 
+    React__default.createElement("div", {
+      className: "picky_attr_container",
+      style : {
+        display : 'none'
+      }
+    }, React__default.createElement("div", {
+      className: "tree_search_container"
+    }, React__default.createElement("input", {
+      type: "text",
+      value : searchkey,
+      placeholder: 'Search Attributes',
+      onChange : (e) =>{ searchtree(e.target.value); },
+      className: "picky_attr_search"
+    }),
+    React__default.createElement("svg", {
+      width: "16px",
+      height: "16px",
+      onClick: () => searchtree(''),
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 512 512",
+      className : 'close_search_tree',
+      style : {
+        display : (searchkey) ? 'block' : 'none'
+      }
+    },React__default.createElement("path", {
+      d: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+    }))), React__default.createElement("div", {
+      className: "json_tree_container custom_scrollbar_element scrolling",
+      onClick : (e) =>{ insertAttr(e.target); }
+    }))
+  );
+}
+
 
 function Editor() {
   const [downloadFileName, setDownloadName] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState("download.mjml");
@@ -1040,12 +1137,7 @@ function Editor() {
         setName('Template New');
     }
   }, []);
-//   console.log(template);
-  const { importTemplate } = useImportTemplate();
-  const { exportTemplate } = useExportTemplate();
-  const { width } = useWindowSize();
-  const smallScene = width < 900;
-  const showAttribute = (e) => {
+const showAttribute = (e) => {
     setatrkey('');
     let variable = (e.target.tagName == 'SVG') ? e.target.parentNode.dataset.array : e.target.dataset.array;
     let json = {
@@ -1091,27 +1183,13 @@ function Editor() {
     // 
     setatrpop(true);
   }
-  const searchtree = (str) =>{ 
-    setatrkey(str);
-    let cont = document.querySelector('.json_tree_container');
-    Jsontree.search(cont,str);
-  }
-  const insertAttr = (el) => {
-    // 
-    if(el.classList.contains('atrs')){
-      setatrpop(false);
-      let key = el.dataset.key;
-      setTimeout(() => {
-        if(email_editor && email_editor.caret){
-          email_editor.restoreinput();
-        }else if(email_editor){
-          email_editor.restoreroot(email_editor.root);
-        }
-        document.execCommand("insertHTML", false, `{{${key}}}`);
-      },100);
-    }
-  }
 
+//   console.log(template);
+  const { importTemplate } = useImportTemplate();
+  const { exportTemplate } = useExportTemplate();
+  const { width } = useWindowSize();
+  const smallScene = width < 900;
+  
   const onCopyHtml = (values) => {
     const html = mjml(JsonToMjml({
       data: values.content,
@@ -1268,54 +1346,77 @@ function Editor() {
     React__default.createElement("p", null, "Dear ", React__default.createElement("span", {className: "arco-typography-primary"}, "{{name}}"), " Your billing amount due is ", React__default.createElement("span", {className: "arco-typography-primary"}, "{{amount_due}}"), " and here is the payment link ", React__default.createElement("span", {className: "arco-typography-primary"}, "{{payment_link}}")),
     React__default.createElement("p", null, "After saving the template you will get the option to map these values with relevant attributes and the system will automatically replace these tags with relevant values.")
   ),
-  React__default.createElement(PickyModal, {
-      title: "Loop Attributes",
-      alignCenter: false,
-      style: {
-        top: 50
-      },
-      visible: atrpop,
-      footer: null,
-      onCancel: () => {
-        setatrpop(!atrpop);
-      }
-    },
-    React__default.createElement(PickySpin, {
-      size : 30,
-      className : 'picky_attr_loader picky_loader',
-      block : true
-    }), 
-    React__default.createElement("div", {
-      className: "picky_attr_container",
-      style : {
-        display : 'none'
-      }
-    }, React__default.createElement("div", {
-      className: "tree_search_container"
-    }, React__default.createElement("input", {
-      type: "text",
-      value : searchkey,
-      placeholder: 'Search Attributes',
-      onChange : (e) =>{ searchtree(e.target.value); },
-      className: "picky_attr_search"
-    }),
-    React__default.createElement("svg", {
-      width: "16px",
-      height: "16px",
-      onClick: () => searchtree(''),
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "0 0 512 512",
-      className : 'close_search_tree',
-      style : {
-        display : (searchkey) ? 'block' : 'none'
-      }
-    },React__default.createElement("path", {
-      d: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
-    }))), React__default.createElement("div", {
-      className: "json_tree_container custom_scrollbar_element scrolling",
-      onClick : (e) =>{ insertAttr(e.target); }
-    }))
-  )
+  React__default.createElement(AttributeModal, {
+    atrpop, setatrpop,searchkey, setatrkey
+  }),
+  // React__default.createElement(PickyModal, {
+  //     title: "Loop Attributes",
+  //     alignCenter: false,
+  //     style: {
+  //       top: 50
+  //     },
+  //     visible: atrpop,
+  //     footer: null,
+  //     onCancel: () => {
+  //       setatrpop(!atrpop);
+  //     }
+  //   },
+  //   React__default.createElement(PickySpin, {
+  //     size : 30,
+  //     className : 'picky_attr_loader picky_loader',
+  //     block : true
+  //   }), 
+  //   React__default.createElement("div", {
+  //     className: "picky_attr_container",
+  //     style : {
+  //       display : 'none'
+  //     }
+  //   }, React__default.createElement("div", {
+  //     className: "tree_search_container"
+  //   }, React__default.createElement("input", {
+  //     type: "text",
+  //     value : searchkey,
+  //     placeholder: 'Search Attributes',
+  //     onChange : (e) =>{ searchtree(e.target.value); },
+  //     className: "picky_attr_search"
+  //   }),
+  //   React__default.createElement("svg", {
+  //     width: "16px",
+  //     height: "16px",
+  //     onClick: () => searchtree(''),
+  //     xmlns: "http://www.w3.org/2000/svg",
+  //     viewBox: "0 0 512 512",
+  //     className : 'close_search_tree',
+  //     style : {
+  //       display : (searchkey) ? 'block' : 'none'
+  //     }
+  //   },React__default.createElement("path", {
+  //     d: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+  //   }))), React__default.createElement("div", {
+  //     className: "json_tree_container custom_scrollbar_element scrolling",
+  //     onClick : (e) =>{ insertAttr(e.target); }
+  //   }))
+  // )
 );
 }
 ReactDOM.render( React__default.createElement(Editor, null), document.getElementById("root"));
+
+/*
+
+function restructure_array($arr,$ex){
+    $response = array();
+    foreach($arr as $key=>$value){
+        if($key == 'pky_formatter'){
+            foreach ($value as $j=>$f){
+                $response[$ex[$j]] = $ex['pky_'.$j];
+            }
+        }else if($key == 'pky_http'){
+            foreach ($value as $j=>$f){
+                $response[$ex[$j]] = restructure_array($f,$ex);
+            }
+        }else{
+            $response[$key] = $value;
+        }
+    }
+    return $response;
+}*/
