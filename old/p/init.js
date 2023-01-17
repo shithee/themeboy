@@ -1029,6 +1029,9 @@ function AttributeModal({atrpop, setatrpop,searchkey, setatrkey}){
           email_editor.restoreroot(email_editor.root);
         }
         document.execCommand("insertText", false, `{{${key}}}`);
+        // email_editor.root.tabIndex = -1;
+        // email_editor.root.focus();
+        // email_editor.currentSelection.startContainer.parentNode.focus();
         var evt = new MouseEvent("click", {
             view: window,
             bubbles: true,
@@ -1038,17 +1041,17 @@ function AttributeModal({atrpop, setatrpop,searchkey, setatrkey}){
         });
         email_editor.currentSelection.startContainer.dispatchEvent(evt);
 
-        email_editor.currentSelection.startContainer.dispatchEvent(
-          new KeyboardEvent("keyup", {
-            key: "Backspace",
-            keyCode: 8, // example values.
-            code: "Backspace", // put everything you need in this object.
-            which: 8,
-            shiftKey: false, // you don't need to include values
-            ctrlKey: false,  // if you aren't going to use them.
-            metaKey: false   // these are here for example's sake.
-          })
-        );
+        // email_editor.currentSelection.startContainer.dispatchEvent(
+        //   new KeyboardEvent("keyup", {
+        //     key: "Backspace",
+        //     keyCode: 8, // example values.
+        //     code: "Backspace", // put everything you need in this object.
+        //     which: 8,
+        //     shiftKey: false, // you don't need to include values
+        //     ctrlKey: false,  // if you aren't going to use them.
+        //     metaKey: false   // these are here for example's sake.
+        //   })
+        // );
         // email_editor.currentSelection.startContainer.dispatchEvent(new Event('click',{ originalEvent: true }));
       },100);
     }
