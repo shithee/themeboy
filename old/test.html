@@ -47,3 +47,36 @@
 </body>
 
 </html>
+
+<?php
+function updateUppercaseValue($array) {
+    // print_r($array['children']);
+    if (isset($array['children'])) {
+        foreach ($array['children'] as &$child) {
+            if (isset($child['data'])) {
+                $child['data'] = upperCaseValueArray($child['data']);
+                print_r($child['data']);
+            }
+            updateUppercaseValue($child);
+        }
+    }
+    return $array;
+}
+
+function upperCaseValueArray($value) {
+    // print_r($value);
+    $response = array();
+    if(is_array($value)) {
+        foreach($value as $key=>$val) {
+            if(is_array($val)){
+                $response[$key] = upperCaseValueArray($val);
+            }else{
+                $response[$key] = upperCaseValue($val);
+            }
+        }
+    }
+    return $response;
+}
+
+
+?>

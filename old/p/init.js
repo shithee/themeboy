@@ -69,21 +69,17 @@ import {
     PickyWidth,
     useField,
     SelectField,
-    useBlock,
-    PickySpin, //shitheesh
+    PickySpin
     // CustomBlocksType
-} from "./plugin.js?v=178";
-
-let pky_attributes = {
-    name : 'shitheesh'
-}
+} from "./plugin.js?v=243";
 
 import { style$1,antd,style,arco } from "./extra.js?v=22";
 
 // importing the utils
-import { serverRequest,getDefaultdata } from "./util.js?49";
+import { serverRequest,getDefaultdata } from "./util.js?50";
 var templateData = getDefaultdata();
 const base_url = '';
+// const base_url = 'https://pickyassist.com/alpha/';
 
 class Uploader {
   constructor(uploadServer, options) {
@@ -100,6 +96,7 @@ class Uploader {
     this.el = this.createInput();
   }
   createInput() {
+    //   console.log("shitheesh");
     Array.from(document.querySelectorAll(".uploader-form-input")).forEach((el2) => {
       el2 && document.body.removeChild(el2);
     });
@@ -328,42 +325,58 @@ function Panel() {
   ))
   ));
 }
-
 function loop_panel() {
   const { focusIdx } = useFocusIdx();
+  let product_types = [{
+    value: 'connector',
+    label: 'Connector',
+  },
+  {
+    value: 'chatbot',
+    label: 'Chatbots',
+  }];
+  let attr_url = `${base_url}connector/helpers/attribute/functions.php`;
   const [p_lists, setpl] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState([]);
   const [p_arrays, setpa] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState([]);
-  // Shitheesh
-  let loader = document.querySelector('.picky_loop_loader');
-  // console.log(loader);
-  // loader.style.display = 'none';
-  C__Users_Picky_Desktop_email_node_modules_react.exports.useEffect(() => {    
-    let p_lists = [{ value: '860', label : 'Connector 1'},{ value: '861', label : 'Connector 2'}];
-    setpl(p_lists);
+  
+  C__Users_Picky_Desktop_email_node_modules_react.exports.useEffect(() => {
+      const fetch_connectors = async() => {
+        let resp = await serverRequest(attr_url,{ flag : btoa('get_all_connectors_json') });
+        if(resp && resp.code == 200){
+            setpl(resp.response);
+        }
+      }
+      fetch_connectors();
   },[]);
 
   let res = useField(`${focusIdx}.attributes.list`);
   let conn = res.input.value;
   C__Users_Picky_Desktop_email_node_modules_react.exports.useEffect(() => {
     if(conn){
+      let loader = document.querySelector('.picky_loop_loader');
       if(loader){
         loader.classList.add("pickyshow");
         let sib = loader.parentNode.nextElementSibling;
+        loader.parentNode.style.display = 'block';
         sib.style.display = 'none';
       }
-      let p_arrays = [{ value: '860.p', label : 'Email Builder.P'},{ value: '860.k', label : 'Email Builder.K'}];
-      setpa(p_arrays);
-      if(loader){
-        loader.classList.remove("pickyshow");
-        let sib = loader.parentNode.nextElementSibling;
-        sib.style.display = 'block';
+      const fetch_arrays = async(id) => {
+        let resp = await serverRequest(attr_url,{ flag : btoa('get_loop_array_json'),loop_id : id });
+        if(resp && resp.code == 200){
+            setpa(resp.response);
+        }
+        if(loader){
+            loader.classList.remove("pickyshow");
+            let sib = loader.parentNode.nextElementSibling;
+            loader.parentNode.style.display = 'none';
+            sib.style.display = 'block';
+        }
       }
+      fetch_arrays(conn);
     }
   },[conn]);
-  let product_types = [{
-    value: 'connector',
-    label: 'Connector',
-  }];
+    // let res = useField(`${focusIdx}.attributes.array`);
+    // console.log(res.input.value);
     // console.log(focusIdx);
   return  React__default.createElement(AttributesPanelWrapper, null,  React__default.createElement(Collapse, {
     defaultActiveKey: ["1","2","3","4"]
@@ -464,7 +477,11 @@ function loop_panel() {
     // inline: true,
     alignment: "center"
   }),
-  React__default.createElement(PickyPadding,null)
+  React__default.createElement(PickyPadding,null),
+//   React__default.createElement(PickyPadding, {
+//       title : 'Margin',
+//       attributeName : 'margin'
+//   })
   ))
   ));
 }
@@ -519,10 +536,11 @@ const Unsubscribe = {
     //   "css-class": PickygetContentEditableClassName(BasicType.TEXT, `${idx}.data.value.info`).join(' ')
     // }, info));
     const insta = React__default.createElement(Wrapper, {
-      width: "100%"
+      width: "100%",
+      padding: '0px'
     }, React__default.createElement(Section, {
     //   align: attributesUnsubs['text-align']
-    padding: '0px'
+        padding: '0px'
     }, React__default.createElement(Column, {
       "css-class": mode === 'testing' ? getPreviewClassName(idx, data.type) : '',
       border: "none",
@@ -534,7 +552,7 @@ const Unsubscribe = {
     }, React__default.createElement(Text, {
       "font-size": attributesUnsubs['font-size'],
       'font-style': attributesUnsubs['font-style'], 
-    //   padding: "0px",
+      padding: "0px",
       "line-height": attributesUnsubs['line-height'],
       align: attributesUnsubs['align'],
       color: attributesUnsubs['color'],
@@ -561,6 +579,7 @@ const PickyLoop = {
           "outer-border":"none",
           "outer-radius":"0px",
           "outer-padding":"10px 10px 10px 10px",
+          "margin" : "0px 0px 0px 0px",
           padding : '10px 10px 10px 10px',
           border: "none",
           "border-radius":"0px",
@@ -580,6 +599,8 @@ const PickyLoop = {
     let variable = (attributesUnsubs['variable']) ? attributesUnsubs['variable'] : 'loop';
     let direction_params = `loop.${variable}.${attributesUnsubs['limit']}`;
     let sample_array = (attributesUnsubs['array']) ? `pky${attributesUnsubs['array']}` : '';
+    
+//    console.log(attributesUnsubs);
     
     const instance = React__default.createElement(Section, {
        direction: direction_params,
@@ -751,9 +772,11 @@ const beautifyMJML = (str) => {
     return ml;
 }
 const onUploadImage = async (blob) => {
+    console.log(blob.size);
+    return false;
     var mb = blob.size / 1024 / 1024;
     if(mb > 2){
-        message.error('Please update image in less than 5 MB');
+        message.error('Please update image in less than 2 MB');
         return null;
     }
     let url = `${base_url}builder/builder.php?action=upload_file`;
@@ -775,24 +798,53 @@ email_editor.active;
 email_editor.selection;
 email_editor.root;
 
-email_editor.backuproot = (el) => {
-  let shadowRootSelection = el.shadowRoot.getSelection();
+email_editor.backuproot = (el,wdw=false) => {
+    
+    // console.log(el.shadowRoot);
+    
+  let shadowRootSelection = (wdw) ? window.getSelection() : el.shadowRoot.getSelection();
+  
     email_editor.selection = document.createRange();
     email_editor.selection.setStart(shadowRootSelection.anchorNode, shadowRootSelection.anchorOffset);
     email_editor.selection.setEnd(shadowRootSelection.focusNode, shadowRootSelection.focusOffset);
     
     var range = shadowRootSelection.getRangeAt(0);
     email_editor.currentSelection = {"startContainer": range.startContainer, "startOffset":range.startOffset,"endContainer":range.endContainer, "endOffset":range.endOffset};
-    // console.log(email_editor.selection,email_editor.currentSelection);
+    // if(shadowRootSelection.anchorNode.parentNode.tagName == 'A'){
+    
+    // console.log(range.startContainer.parentNode);
+    
+    // console.log(range.startContainer.parentNode,range.startContainer.parentNode.contentEditable);
+    if(range.startContainer.parentNode.contentEditable !== 'true'){
+        if(range.startContainer.parentNode.closest('[contenteditable]')){
+            email_editor.focus = [...range.startContainer.parentNode.closest('[contenteditable]').childNodes].indexOf(range.startContainer.parentNode);
+        }
+    }else{
+        email_editor.focus = undefined;
+    }
+        
+    let parent = range.startContainer.parentNode;
+    if(parent.contentEditable){
+        parent = parent.closest('[contenteditable]');
+    }
+    if(parent && parent.closest('.picky_loop_container')){
+        let idx = parent.dataset.content_editableIdx;
+        idx = idx.replace('.data.value.content','');
+        window.attrs[idx] = parent.innerHTML;
+    }
+    // }
 }
 
-email_editor.restoreroot = (el)=>{
+email_editor.restoreroot = (el,text)=>{
     // console.log(email_editor.selection.startContainer);
+    // console.log(email_editor.selection.startContainer.querySelectorAll('[contenteditable=true]')[0].childNodes);
     if(email_editor.selection.startContainer.tagName == 'TD'){
       email_editor.currentSelection.startContainer = email_editor.currentSelection.endContainer =
-      email_editor.selection.startContainer.querySelectorAll('[contenteditable=true]')[0].childNodes[0];
+      (typeof email_editor.focus === "undefined") ? email_editor.selection.startContainer.querySelectorAll('[contenteditable=true]')[0].childNodes[0] :
+      email_editor.selection.startContainer.querySelector('[contenteditable=true]').childNodes[email_editor.focus].childNodes[0];
     }
-  var selection = el.shadowRoot.getSelection();
+    let firefox = (navigator.userAgent.indexOf("Firefox") > 0) ? true : false;
+  var selection = (firefox) ? window.getSelection() : el.shadowRoot.getSelection();
     selection.removeAllRanges();
     var range = document.createRange();
     range.setStart(email_editor.currentSelection.startContainer, email_editor.currentSelection.startOffset);
@@ -802,42 +854,65 @@ email_editor.restoreroot = (el)=>{
 
 email_editor.restoreinput = () =>{ 
   let inp = email_editor.active;
-  console.log(email_editor.active);
   let caretPos = email_editor.caret;
-  inp.selectionEnd = caretPos;
-  inp.focus();
-  // if(inp != null) {
-  //       if(inp.createTextRange) {
-  //           var range = inp.createTextRange();
-  //           range.move('character', caretPos);
-  //           range.select();
-  //       }
-  //       else {
-  //           if(inp.selectionStart) {
-  //               inp.focus();
-  //               inp.setSelectionRange(caretPos, caretPos);
-  //               console.log(inp);
-  //           }
-  //           else
-  //               inp.focus();
-  //       }
-  //   }
+  if(inp != null) {
+        if(inp.createTextRange) {
+            var range = inp.createTextRange();
+            range.move('character', caretPos);
+            range.select();
+        }
+        else {
+            if(inp.selectionStart) {
+                inp.focus();
+                inp.setSelectionRange(caretPos, caretPos);
+            }
+            else
+                inp.focus();
+        }
+    }
 }
 
 function handleEdit(e) {
   let el = e.target;
+//   return false;
   if(el.closest('#easy-email-editor')){
     // Shitheesh
-    let selection = el.shadowRoot.getSelection();
+    let firefox = (navigator.userAgent.indexOf("Firefox") > 0) ? true : false;
+    let selection = (firefox) ? window.getSelection() : el.shadowRoot.getSelection();
     if(selection.anchorNode){
-      email_editor.backuproot(el);
+      email_editor.backuproot(el,firefox);
       email_editor.root = el;
       email_editor.caret = undefined;
       let act = e.composedPath()[0];
       email_editor.active = act;
-    }    
+    }
+    if(!firefox){
+        // let selection = el.shadowRoot.getSelection();
+        // if(selection.anchorNode){
+        //   email_editor.backuproot(el);
+        //   email_editor.root = el;
+        //   email_editor.caret = undefined;
+        //   let act = e.composedPath()[0];
+        //   email_editor.active = act;
+        // }
+    }else{
+        
+        // email_editor.backuproot(el,true);
+    //  let shadowRootSelection = window.getSelection();
+    //  console.log(shadowRootSelection);
+      
+        // email_editor.selection = document.createRange();
+        // email_editor.selection.setStart(shadowRootSelection.anchorNode, shadowRootSelection.anchorOffset);
+        // email_editor.selection.setEnd(shadowRootSelection.focusNode, shadowRootSelection.focusOffset);
+        
+        // var range = window.getSelection().getRangeAt(0);
+        // console.log(range);
+        // var preCaretRange = range.cloneRange();
+        // preCaretRange.selectNodeContents(div);
+        // preCaretRange.setEnd(range.endContainer, range.endOffset);
+        // var cursorPos = preCaretRange.toString().length;
+    }
   }else if(el.classList.contains('arco-input')){
-    // console.log(el);
     email_editor.caret = el.selectionStart;
     email_editor.active = el;
   }
@@ -997,117 +1072,6 @@ Jsontree.expander = (t='open') => {
         <svg class="open-icon" style="${(t=='close') ? '' : 'display:none;'}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>`;
 }
 
-// const showPersonalInfo = () => {
-//     console.log('triggered');
-//     console.log(PickyModal);
-//     PickyModal.info({
-//         title: 'Content Personalization',
-//         okText : 'Got it',
-//         content:
-//           "<h1>This is an info description which directly indicates a neutral informative change or action.</h1> <p>(e.g., 'We are providing new services for all developers.')</p> ",
-//     });
-// }
-
-function AttributeModal({atrpop, setatrpop,searchkey, setatrkey}){
-  // const { focusBlock, setValueByIdx } = useBlock();
-  const searchtree = (str) =>{ 
-    setatrkey(str);
-    let cont = document.querySelector('.json_tree_container');
-    Jsontree.search(cont,str);
-  }
-  const insertAttr = (el) => {
-    // 
-    // console.log(focusBlock);
-
-    if(el.classList.contains('atrs')){
-      setatrpop(false);
-      let key = el.dataset.key;
-      setTimeout(() => {
-        if(email_editor && email_editor.caret){
-          email_editor.restoreinput();
-        }else if(email_editor){
-          email_editor.restoreroot(email_editor.root);
-        }
-        document.execCommand("insertText", false, `{{${key}}}`);
-        // email_editor.root.tabIndex = -1;
-        // email_editor.root.focus();
-        // email_editor.currentSelection.startContainer.parentNode.focus();
-        var evt = new MouseEvent("click", {
-            view: window,
-            bubbles: true,
-            cancelable: true,
-            clientX: 20,
-            /* whatever properties you want to give it */
-        });
-        email_editor.currentSelection.startContainer.dispatchEvent(evt);
-
-        // email_editor.currentSelection.startContainer.dispatchEvent(
-        //   new KeyboardEvent("keyup", {
-        //     key: "Backspace",
-        //     keyCode: 8, // example values.
-        //     code: "Backspace", // put everything you need in this object.
-        //     which: 8,
-        //     shiftKey: false, // you don't need to include values
-        //     ctrlKey: false,  // if you aren't going to use them.
-        //     metaKey: false   // these are here for example's sake.
-        //   })
-        // );
-        // email_editor.currentSelection.startContainer.dispatchEvent(new Event('click',{ originalEvent: true }));
-      },100);
-    }
-  }
-
-  return React__default.createElement(PickyModal, {
-      title: "Loop Attributes",
-      alignCenter: false,
-      style: {
-        top: 50
-      },
-      visible: atrpop,
-      footer: null,
-      onCancel: () => {
-        setatrpop(!atrpop);
-      }
-    },
-    React__default.createElement(PickySpin, {
-      size : 30,
-      className : 'picky_attr_loader picky_loader',
-      block : true
-    }), 
-    React__default.createElement("div", {
-      className: "picky_attr_container",
-      style : {
-        display : 'none'
-      }
-    }, React__default.createElement("div", {
-      className: "tree_search_container"
-    }, React__default.createElement("input", {
-      type: "text",
-      value : searchkey,
-      placeholder: 'Search Attributes',
-      onChange : (e) =>{ searchtree(e.target.value); },
-      className: "picky_attr_search"
-    }),
-    React__default.createElement("svg", {
-      width: "16px",
-      height: "16px",
-      onClick: () => searchtree(''),
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "0 0 512 512",
-      className : 'close_search_tree',
-      style : {
-        display : (searchkey) ? 'block' : 'none'
-      }
-    },React__default.createElement("path", {
-      d: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
-    }))), React__default.createElement("div", {
-      className: "json_tree_container custom_scrollbar_element scrolling",
-      onClick : (e) =>{ insertAttr(e.target); }
-    }))
-  );
-}
-
-
 function Editor() {
   const [downloadFileName, setDownloadName] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState("download.mjml");
   const [template, setTemplate] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState(templateData);
@@ -1116,12 +1080,14 @@ function Editor() {
   const [perpop, setperpop] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState(false);
   const [atrpop, setatrpop] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState(false);
   const [searchkey, setatrkey] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState("");
+  const [loaded, setLoaded] = C__Users_Picky_Desktop_email_node_modules_react.exports.useState(false);
   
   // Fetching the Template details from the server, if its edit mode
   C__Users_Picky_Desktop_email_node_modules_react.exports.useEffect(() => {
     const gettemplatedata = async (id,action='fetch_template') => {
             let url = `${base_url}builder/builder.php?id=${id}&action=${action}`;
             let resp = await serverRequest(url);
+            setLoaded(true);
             if(resp.code == 200 && resp.data && resp.data.json){
                 let temp_json = JSON.parse(resp.data.json);
                 // console.log(temp_json);
@@ -1138,61 +1104,93 @@ function Editor() {
         gettemplatedata(import_id,'import_template');
     }else{
         setName('Template New');
+            setLoaded(true);
     }
   }, []);
-const showAttribute = (e) => {
-    setatrkey('');
-    let variable = (e.target.tagName == 'SVG') ? e.target.parentNode.dataset.array : e.target.dataset.array;
-    let json = {
-      name: "shitheesh",
-      info: {
-          job: "php developer",
-          company: "Picky Assist",
-          login : 'PeSgVkYp3s6v9yPPeSgVkYp3s6v9y$B&E)H@McQfTjWmZq4eSgVkYp3s6v9y$B&E)H@McQfTjWmZq4$B&E)H@McQfTjWmZq4'
-      },
-      languages: [
-          {
-              name: "React JS",
-              experience: 3,
-          },
-          {
-              name: "Php",
-              experience: 4,
-          },
-          {
-              name: "Node JS",
-              experience: 3,
-          },
-      ],
-  };
-    // json = null;
-    
-    setTimeout(() => {
-      let modal_loader = document.querySelector('.picky_attr_loader');
-      let modal_cont = document.querySelector('.picky_attr_container');
-      modal_loader.classList.add('pickyshow');
-      modal_cont.style.display = 'none';
-      // Things After loading the JSOn data
-      modal_loader.classList.remove('pickyshow');
-      modal_cont.style.display = 'block';
-      let container = modal_cont.querySelector('.json_tree_container');
-      if(Jsontree.empty(json)){
-        modal_cont.querySelector('.tree_search_container').style.display = 'none';
-      }else{
-        modal_cont.querySelector('.tree_search_container').style.display = 'block';
-      }
-      Jsontree.create(container,json,'Loop Array','');
-    }, 100);
-    // 
-    setatrpop(true);
-  }
-
 //   console.log(template);
   const { importTemplate } = useImportTemplate();
   const { exportTemplate } = useExportTemplate();
   const { width } = useWindowSize();
   const smallScene = width < 900;
-  
+  const showAttribute = (e) => {
+    setatrkey('');
+    
+    // if(variable){
+        setTimeout(async() => {
+          let modal_loader = document.querySelector('.picky_attr_loader');
+          let modal_cont = document.querySelector('.picky_attr_container');
+          modal_loader.classList.add('pickyshow');
+          modal_cont.style.display = 'none';
+          // Things After loading the JSOn data
+          let variable = (e.target.tagName != 'path') ? e.target.dataset.array : e.target.closest('.show_picky_attrs').dataset.array;
+        //   console.log(e.target.tagName,e.target.closest('.show_picky_attrs').dataset.array);
+          let resp = await serverRequest(
+            `${base_url}connector/helpers/attribute/functions.php`,
+            { flag : btoa('get_loop_attribute_json'),loop_id : variable }
+          );
+          let json = (resp.code == 200) ? resp.response : {};
+          modal_loader.classList.remove('pickyshow');
+          modal_cont.style.display = 'block';
+          let container = modal_cont.querySelector('.json_tree_container');
+          if(Jsontree.empty(json)){
+            modal_cont.querySelector('.tree_search_container').style.display = 'none';
+          }else{
+            modal_cont.querySelector('.tree_search_container').style.display = 'block';
+          }
+          Jsontree.create(container,json,'Loop Array','');
+          modal_cont.querySelector('.picky_attr_search').focus();
+        }, 100);
+    // }
+    setatrpop(true);
+  }
+  const searchtree = (str) =>{ 
+    setatrkey(str);
+    let cont = document.querySelector('.json_tree_container');
+    Jsontree.search(cont,str);
+  }
+  const insertTextAtCursor = (text) =>{
+      let selection = document.getSelection();
+    //   console.log(selection)
+    //   let range = selection.getRangeAt(0);
+    //   range.deleteContents();
+    //   let node = document.createTextNode(text);
+    //   range.insertNode(node);
+    
+    //     for(let position = 0; position != text.length; position++)
+    //     {
+    //         selection.modify("move", "right", "character");
+    //     };
+   }
+  const insertAttr = (el) => {
+    // 
+    if(el.classList.contains('atrs')){
+      setatrpop(false);
+      let key = el.dataset.key;
+      setTimeout(() => {
+        // console.log(email_editor.caret);
+        if(email_editor && (email_editor.caret || email_editor.caret == 0 )){
+          email_editor.restoreinput();
+          document.execCommand("insertHTML", false, `{{${key}}}`);
+        }else if(email_editor){
+          email_editor.restoreroot(email_editor.root,`{{${key}}}`);
+        //   return false;
+          document.execCommand("insertHTML", false, `{{${key}}}`);
+          let firefox = (navigator.userAgent.indexOf("Firefox") > 0) ? true : false;
+          email_editor.backuproot(email_editor.root.closest('#VisualEditorEditMode'),firefox);
+          
+          let btn = document.querySelector(".show_picky_attrs");
+          let idx = btn.dataset.idx;
+          var evt = new MouseEvent("click", {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+            clientX: 20
+           });
+           email_editor.currentSelection.startContainer.dispatchEvent(evt);
+        }
+      },100);
+    }
+  }
   const onCopyHtml = (values) => {
     const html = mjml(JsonToMjml({
       data: values.content,
@@ -1280,12 +1278,20 @@ const showAttribute = (e) => {
     data: initialValues,
     height: "calc(100vh - 85px)",
     onUploadImage:onUploadImage,
-    mergeTags: pky_attributes,
+    // mergeTags: pky_attributes,
     autoComplete: true,
     fontList,
     onSubmit
   }, ({ values }, { submit }) => {
-    return  React__default.createElement(React__default.Fragment, null,  React__default.createElement(PageHeader, {
+      return (!loaded) ? React__default.createElement("div",{
+          className : 'picky_main_loader'
+      },
+          React__default.createElement(PickySpin, {
+              size : 50,
+              className : 'picky_loop_loader picky_loader pickyshow',
+              block : true 
+          })
+        ) :  React__default.createElement(React__default.Fragment, null,  React__default.createElement(PageHeader, {
       title: "",
       extra:  React__default.createElement(Stack, {
         alignment: "center"
@@ -1297,7 +1303,7 @@ const showAttribute = (e) => {
       }),
       React__default.createElement("div", {
           className: "picky_style_button show_picky_attrs",
-          style: { display: 'none' },
+          style: { display: 'none'},
           onClick: (e) => showAttribute(e)
         }, React__default.createElement("svg", {
           width: "18px",
@@ -1308,17 +1314,15 @@ const showAttribute = (e) => {
           d: "M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
         }))),
         React__default.createElement("div", {
-          className: "picky_style_button"
+          className: "picky_icon_button"
         }, React__default.createElement("svg", {
-          width: "16px",
-          height: "16px",
-          // onClick: () => setperpop(!perpop),
-          onClick: (e) => showAttribute(e),
+          width: "26px",
+          height: "26px",
+          onClick: () => setperpop(!perpop),
           xmlns: "http://www.w3.org/2000/svg",
-          viewBox: "0 0 192 512"
+          viewBox: "0 0 512 512"
         },React__default.createElement("path", {
-            // d:"M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"
-          d: "M144 80c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z"
+            d: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"
         }))),
       React__default.createElement("button", {
         className : 'arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square',
@@ -1349,77 +1353,54 @@ const showAttribute = (e) => {
     React__default.createElement("p", null, "Dear ", React__default.createElement("span", {className: "arco-typography-primary"}, "{{name}}"), " Your billing amount due is ", React__default.createElement("span", {className: "arco-typography-primary"}, "{{amount_due}}"), " and here is the payment link ", React__default.createElement("span", {className: "arco-typography-primary"}, "{{payment_link}}")),
     React__default.createElement("p", null, "After saving the template you will get the option to map these values with relevant attributes and the system will automatically replace these tags with relevant values.")
   ),
-  React__default.createElement(AttributeModal, {
-    atrpop, setatrpop,searchkey, setatrkey
-  }),
-  // React__default.createElement(PickyModal, {
-  //     title: "Loop Attributes",
-  //     alignCenter: false,
-  //     style: {
-  //       top: 50
-  //     },
-  //     visible: atrpop,
-  //     footer: null,
-  //     onCancel: () => {
-  //       setatrpop(!atrpop);
-  //     }
-  //   },
-  //   React__default.createElement(PickySpin, {
-  //     size : 30,
-  //     className : 'picky_attr_loader picky_loader',
-  //     block : true
-  //   }), 
-  //   React__default.createElement("div", {
-  //     className: "picky_attr_container",
-  //     style : {
-  //       display : 'none'
-  //     }
-  //   }, React__default.createElement("div", {
-  //     className: "tree_search_container"
-  //   }, React__default.createElement("input", {
-  //     type: "text",
-  //     value : searchkey,
-  //     placeholder: 'Search Attributes',
-  //     onChange : (e) =>{ searchtree(e.target.value); },
-  //     className: "picky_attr_search"
-  //   }),
-  //   React__default.createElement("svg", {
-  //     width: "16px",
-  //     height: "16px",
-  //     onClick: () => searchtree(''),
-  //     xmlns: "http://www.w3.org/2000/svg",
-  //     viewBox: "0 0 512 512",
-  //     className : 'close_search_tree',
-  //     style : {
-  //       display : (searchkey) ? 'block' : 'none'
-  //     }
-  //   },React__default.createElement("path", {
-  //     d: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
-  //   }))), React__default.createElement("div", {
-  //     className: "json_tree_container custom_scrollbar_element scrolling",
-  //     onClick : (e) =>{ insertAttr(e.target); }
-  //   }))
-  // )
+   React__default.createElement(PickyModal, {
+      title: "Loop Attributes",
+      alignCenter: false,
+      style: {
+        top: 50
+      },
+      visible: atrpop,
+      footer: null,
+      onCancel: () => {
+        setatrpop(!atrpop);
+      }
+    },
+    React__default.createElement(PickySpin, {
+      size : 30,
+      className : 'picky_attr_loader picky_loader',
+      block : true
+    }), 
+    React__default.createElement("div", {
+      className: "picky_attr_container",
+      style : {
+        display : 'none'
+      }
+    }, React__default.createElement("div", {
+      className: "tree_search_container"
+    }, React__default.createElement("input", {
+      type: "text",
+      value : searchkey,
+      placeholder: 'Search Attributes',
+      onChange : (e) =>{ searchtree(e.target.value); },
+      className: "picky_attr_search"
+    }),
+    React__default.createElement("svg", {
+      width: "16px",
+      height: "16px",
+      onClick: () => searchtree(''),
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 512 512",
+      className : 'close_search_tree',
+      style : {
+        display : (searchkey) ? 'block' : 'none'
+      }
+    },React__default.createElement("path", {
+      d: "M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+    }))), React__default.createElement("div", {
+      className: "json_tree_container custom_scrollbar_element scrolling",
+      onClick : (e) =>{ insertAttr(e.target); }
+    }))
+    )
 );
 }
 ReactDOM.render( React__default.createElement(Editor, null), document.getElementById("root"));
-
-/*
-
-function restructure_array($arr,$ex){
-    $response = array();
-    foreach($arr as $key=>$value){
-        if($key == 'pky_formatter'){
-            foreach ($value as $j=>$f){
-                $response[$ex[$j]] = $ex['pky_'.$j];
-            }
-        }else if($key == 'pky_http'){
-            foreach ($value as $j=>$f){
-                $response[$ex[$j]] = restructure_array($f,$ex);
-            }
-        }else{
-            $response[$key] = $value;
-        }
-    }
-    return $response;
-}*/
