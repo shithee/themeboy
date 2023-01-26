@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1.0, width=device-width">
+      <title>Theme Boy</title>
+      <link rel="stylesheet" href="assets/css/style.css">
+   </head>
+   <body>
+      <link rel="stylesheet" href="style.css?v=1674743780">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <div class="page-wrapper ">
+         <div class="container_Bulder">
+            <div class="buldee_list_outer search_container">
+               <div class="pad_20">
+                  <div class="dd_flex_just_cont_center">
+                     <div>
+                        <span class="text_hed_bulder">Saved Templates</span>
+                     </div>
+                     <div style="">
+                        <div class="icons_outer_box">
+                           <div class="sort_btn sort_list" role="button" id="sort_btn">
+                              <div class="button_comman bg_green">
+                                 <div class="btn_margin">
+                                    <svg width="16px" height="16px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                       <path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z" />
+                                    </svg>
+                                    Sort
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="sort_outer" style="display: none;">
+                              <div class="sorted_date">
+                                 <div class="radio_box">
+                                    <input id="radio-1" class="sort_now" value="modified" name="radio" type="radio" checked>
+                                    <label for="radio-1" class="radio-label">Last Edit Date</label>
+                                 </div>
+                                 <div class="radio_box">
+                                    <input id="radio-2" class="sort_now" value="created" name="radio" type="radio">
+                                    <label for="radio-2" class="radio-label">Created Date</label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="" style="">
+                     <div class="search-box mar_btm_20">
+                        <input class="search-input search_key" type="text" placeholder="Search saved templates ..">
+                        <span class="close_btN_hdg clear_search" style="display:none;">
+                           <svg width="16px" height="16px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                              <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path>
+                           </svg>
+                        </span>
+                        <button class="search-btn">
+                           <span>
+                              <svg width="18px" height="18px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                 <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z" />
+                              </svg>
+                           </span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <div class="scroll_bar_jjd custom_scrollbar_element scrolling pad_20" id="SavedTemplatesJS">
+                  <div class="list_details_ourer jusTT_not_dat search_empty" style="margin-top: 20vh;border:none;display:none;">
+                     <div class="No_data_font_img" style="">
+                        <div class="no_template_found">
+                           <img src="https://localhost/builder/editor/image/empty.png" alt="">
+                        </div>
+                        <div class="email_text_details">
+                           <span>No saved templates found</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="38" data-modified="1674727067" data-created="1674712231">
+                     <div class="image_set bg_sky_blue">
+                        <span class="upper">o</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Take this value></span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="40" data-modified="1674717468" data-created="1674716796">
+                     <div class="image_set bg_green">
+                        <span class="upper">T</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Template New</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="37" data-modified="1674716555" data-created="1674706100">
+                     <div class="image_set bg_vilolet">
+                        <span class="upper">I</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Invoice Duplicate</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="27" data-modified="1674659552" data-created="1672654579">
+                     <div class="image_set bg_orange">
+                        <span class="upper">I</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Issue </span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="35" data-modified="1674621154" data-created="1674621154">
+                     <div class="image_set Bg_vilot">
+                        <span class="upper">I</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Invoice Duplicate</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="34" data-modified="1674620841" data-created="1674620841">
+                     <div class="image_set bg_sky_blue">
+                        <span class="upper">I</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Invoice Duplicate</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="33" data-modified="1674620477" data-created="1674620477">
+                     <div class="image_set bg_green">
+                        <span class="upper">I</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Invoice Duplicate</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="31" data-modified="1674571627" data-created="1674561223">
+                     <div class="image_set bg_vilolet">
+                        <span class="upper">S</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Sendingotp Duplicate</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="28" data-modified="1673939110" data-created="1673939110">
+                     <div class="image_set bg_orange">
+                        <span class="upper">T</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Testing finally</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="5" data-modified="1669185720" data-created="1669185720">
+                     <div class="image_set Bg_vilot">
+                        <span class="upper">R</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Restaurant Template</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="3" data-modified="1669115299" data-created="1669115299">
+                     <div class="image_set bg_sky_blue">
+                        <span class="upper">I</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Imported Template</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="2" data-modified="1669110229" data-created="1669110229">
+                     <div class="image_set bg_green">
+                        <span class="upper">T</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Template New</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list_details_ourer Active_lists search_parent" data-text="Duplicate this Template" data-id="1" data-modified="1669101089" data-created="1669101089">
+                     <div class="image_set bg_vilolet">
+                        <span class="upper">E</span>
+                     </div>
+                     <div class="email_text_details">
+                        <span class="searchable_text">Email Template November 2022</span>
+                     </div>
+                     <div class="dlt_icon">
+                        <div class="preview_template">
+                           <div class="dlt_btn">
+                              <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                 <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="dlt_btn dlt_confirmation ask_delete" data-type="show">
+                           <svg width="13px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                              <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div>
+                        <div style="display:none ;" class="dlt_confirmation_outer">
+                           <div class="confirmDeleteNote">
+                              <span>Are you sure ?</span>
+                              <strong class="text-danger YesConfirmDeleteNote delete_template">Yes</strong>
+                              <strong class="text-default NoConfirmDeleteNote ask_delete" data-type="hide">No</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bulder_content_block search_container">
+               <div>
+                  <div class="bulDEr_header_blok">
+                     <div>
+                        <span class="email_text_details">Email Bulk Scheduler</span>
+                     </div>
+                     <div>
+                        <div class="icons_outer_box">
+                           <div class="sort_btn sort_list" role="button" id="sort_btn">
+                              <div class="button_comman bg_green">
+                                 <div class="btn_margin">
+                                    <svg width="14px" height="14px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"/></svg>
+                                    Active
+                                 </div>
+                              </div>
+                              <button class="btn btn-success btn-sm right miniapp_save_modal">Save</button>
+                           </div>
+                           <div class="sort_outer" style="display: none;">
+                              <div class="sorted_date">
+                                 <div class="radio_box">
+                                    <input id="radio-1" class="sort_now" value="modified" name="radio" type="radio" checked="">
+                                    <label for="radio-1" class="radio-label">Last Edit Date</label>
+                                 </div>
+                                 <div class="radio_box">
+                                    <input id="radio-2" class="sort_now" value="created" name="radio" type="radio">
+                                    <label for="radio-2" class="radio-label">Created Date</label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="act_cnter_block">
+                  <div class="section_A custom_scrollbar_element scrolling">
+                     <div style="" class="w-100 left shedule_box">
+                        <div class="jsonIRLIn">
+                           <div class="row">
+                              <div class="">
+                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left w-100">
+                                    <div class="title-button-details">
+                                       <h4 class="bold-600  jsonpopsubhd">Scheduler </h4>
+                                       <p class="mb-1">Scheduler helps you to take period actions like sending a reminder to a group of customers on every Friday to remind something, you need to create your workflow in the connector and link the connector with the scheduler
+                                       </p>
+                                       <a target="_blank" href="http:// ">Read More</a>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-3">
+                                    <div class="input-group inputGroupASM  ">
+                                       <div class="float-label__wrapper">
+                                          <div class="float-label__wrapper">
+                                             <div class="float-label__wrapper"><label>Name </label><input type="text" class="float-label form-control inputASM" placeholder="Name " required="" style="padding-right: 30px;"></div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-2">
+                                    <div class="input-group inputGroupASM ">
+                                       <div class="float-label__wrapper">
+                                          <div class="float-label__wrapper"><label>Description </label><textarea onkeyup="setHeight(this)" class="float-label form-control inputASM " id="textarea" rows="2" placeholder="Description " style="height: 2px; overflow-y: hidden;"></textarea></div>
+                                       </div>
+                                       <div class="input-group-append">                                                                
+                                       </div>
+                                    </div>
+                                    <div class="right">
+                                       <span class="text-danger mt-1 text_fontsize_char">123</span>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left ">
+                                    <div class="title-button-details">
+                                       <h4 class="bold-600  jsonpopsubhd mb-3">Select Schedule  </h4>
+                                       <div class="ouiter_boxtytdd">
+                                          <div class="box_outer_checked_on" data-block="simple-schedule">
+                                             <div class="title-button-details mb-0">
+                                                <h5 class="bold-600">Simple Schedule </h5>
+                                                <p class="mb-0">Create a easy and simply schedule like running daily, weekly, monthly </p>
+                                             </div>
+                                          </div>
+                                          <div class="box_outer_checked_on Active_checked" data-block="Advanced-Schedule">
+                                             <div class="title-button-details mb-0">
+                                                <h5 class="bold-600">Advanced Schedule  </h5>
+                                                <p class="mb-0">Create advanced schedule runs only on specific week, day, date, month etc </p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-2">
+                                    <div id="simple-schedule" class="w-100 left comman_shedule" style="display: none;">
+                                       <div class="row bg_greYcolor" style="padding-top: 23px;">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class=" float-label__wrapper">
+                                                <label style="display: inline-block;    z-index: 10;">Select Interval </label>
+                                                <span style="display: block;" class="close-btn-clear "><i class="fa fa-times bold-400"></i></span>
+                                                <select name="" id="cntact_dop" placeholder="Select a person..." tabindex="-1" class="selectized" style="display: none;">
+                                                   <option value="" selected="selected"></option>
+                                                </select>
+                                                <div class="selectize-control single">
+                                                   <div class="selectize-input items not-full has-options"><input type="text" autocomplete="off" tabindex="" placeholder="Select Module..." style="width: 99.6719px;"></div>
+                                                   <div class="selectize-dropdown single" style="display: none; width: 100px; top: 40px; left: 0px;">
+                                                      <div class="selectize-dropdown-content"></div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-5 w-100">
+                                             <div class="title-button-details mb-2">
+                                                <h4 class="bold-600  jsonpopsubhd  ">Hourly  </h4>
+                                                <p>Select Hour 
+                                                </p>
+                                             </div>
+                                             <div class="w-100">
+                                                <div class="dd_claneder_outer">
+                                                   <div role="button" class="btn_month_comman ">
+                                                      All 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman Active_mnth">
+                                                      12am  
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      1 am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2 am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3 am 
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class=" float-label__wrapper">
+                                                <label style="display: inline-block;    z-index: 10;">Timezone </label>
+                                                <span style="display: block;" class="close-btn-clear "><i class="fa fa-times bold-400"></i></span>
+                                                <select name="" class="selectize_all selectized" placeholder="Select a person..." tabindex="-1" style="display: none;">
+                                                   <option value="" selected="selected"></option>
+                                                </select>
+                                                <div class="selectize-control selectize_all single">
+                                                   <div class="selectize-input items not-full has-options"><input type="text" autocomplete="off" tabindex="" placeholder="Select Module..." style="width: 99.6719px;"></div>
+                                                   <div class="selectize-dropdown single selectize_all" style="display: none; width: 100px; top: 40px; left: 0px;">
+                                                      <div class="selectize-dropdown-content"></div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="box_details_outer">
+                                                <h4 class="texT-hfghf">Runs in every <span class="text-success">1 hourly  IST </span></h4>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="title-button-details mb-2">
+                                                <h4 class="bold-600  jsonpopsubhd  ">Daily  </h4>
+                                                <p>Day to Run
+                                                </p>
+                                             </div>
+                                             <div class="w-100">
+                                                <div class="dd_claneder_outer">
+                                                   <div style="width:auto ;" role="button" class="btn_month_comman ">
+                                                      All Days
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman Active_mnth">
+                                                      Sun 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Mon 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Tue
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Wed
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Thu
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Fri
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Sat 
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-5 w-100">
+                                             <div class="">
+                                                <div class="title-button-details mb-2">
+                                                   <h4 class="bold-600  jsonpopsubhd ">Time </h4>
+                                                </div>
+                                             </div>
+                                             <div class="w-100">
+                                                <div class="dd_claneder_outer">
+                                                   <div role="button" class="btn_month_comman ">
+                                                      All 
+                                                   </div>
+                                                   <div style="width:auto;" role="button" class="btn_month_comman Active_mnth">
+                                                      12am (midnight) 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      1am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      4am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      5am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      6am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      7am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      8am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      9am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      10am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      11am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      12pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      1pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      4pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      5pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      6pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      7pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      8pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      9pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      10pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      11pm 
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class=" float-label__wrapper">
+                                                <label style="display: inline-block;    z-index: 10;">Timezone </label>
+                                                <span style="display: block;" class="close-btn-clear "><i class="fa fa-times bold-400"></i></span>
+                                                <select name="" class="selectize_all selectized" placeholder="Select a person..." tabindex="-1" style="display: none;">
+                                                   <option value="" selected="selected"></option>
+                                                </select>
+                                                <div class="selectize-control selectize_all single">
+                                                   <div class="selectize-input items not-full has-options"><input type="text" autocomplete="off" tabindex="" placeholder="Select Module..." style="width: 99.6719px;"></div>
+                                                   <div class="selectize-dropdown single selectize_all" style="display: none; width: 100px; top: 40px; left: 0px;">
+                                                      <div class="selectize-dropdown-content"></div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="box_details_outer">
+                                                <h4 class="texT-hfghf">Runs on every <span class="text-success">Sunday, Monday </span> at <span class="text-info">1 AM IST</span> </h4>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-3 w-100">
+                                             <div class="title-button-details mb-2">
+                                                <h4 class="bold-600  jsonpopsubhd  ">Weekly   </h4>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="w-100 left">
+                                                <div class="w-100 left mb-4">
+                                                   <div class="w-100 left  float-label__wrapper">
+                                                      <label style="display: inline-block;    z-index: 10; ">Select Week to Run</label>
+                                                      <div class="selAppCustCss w-100 left bg-white" style="border: 0px solid transparent !important;height: auto;">
+                                                         <select class="select2 selAppCustCssSelect select2-multiple form-controlAgent form-control inputASM select2-hidden-accessible" style="width: 100%" multiple="" data-placeholder="Choose" data-select2-id="54" tabindex="-1" aria-hidden="true">
+                                                            <optgroup label="">
+                                                               <option value="Every Week">Every Week
+                                                               </option>
+                                                               <option value="First Week">First Week
+                                                               </option>
+                                                               <option value="Second Week">Second Week
+                                                               </option>
+                                                               <option value="Third Week">Third Week
+                                                               </option>
+                                                               <option value="Fourth Week">Fourth Week
+                                                               </option>
+                                                            </optgroup>
+                                                         </select>
+                                                         <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="55" style="width: 100%;">
+                                                            <span class="selection">
+                                                               <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                                                  <ul class="select2-selection__rendered">
+                                                                     <li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li>
+                                                                  </ul>
+                                                               </span>
+                                                            </span>
+                                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                                         </span>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="w-100 left">
+                                                <div class="w-100 left mb-4">
+                                                   <div class="w-100 left  float-label__wrapper">
+                                                      <label style="display: inline-block;    z-index: 10; ">Day to Run</label>
+                                                      <div class="selAppCustCss w-100 left bg-white" style="border: 0px solid transparent !important;height: auto;">
+                                                         <select class="select2 selAppCustCssSelect select2-multiple form-controlAgent form-control inputASM select2-hidden-accessible" style="width: 100%" multiple="" data-placeholder="Choose" data-select2-id="56" tabindex="-1" aria-hidden="true">
+                                                            <optgroup label="">
+                                                               <option value="All Days">All Days
+                                                               </option>
+                                                               <option value="Sunday">Sunday
+                                                               </option>
+                                                               <option value="Monday">Monday
+                                                               </option>
+                                                               <option value="Tuesday">Tuesday
+                                                               </option>
+                                                               <option value="Wednesday">Wednesday
+                                                               </option>
+                                                               <option value="Thursday">Thursday
+                                                               </option>
+                                                               <option value="Friday">Friday
+                                                               </option>
+                                                               <option value="Saturday">Saturday
+                                                               </option>
+                                                            </optgroup>
+                                                         </select>
+                                                         <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="57" style="width: 100%;">
+                                                            <span class="selection">
+                                                               <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                                                  <ul class="select2-selection__rendered">
+                                                                     <li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li>
+                                                                  </ul>
+                                                               </span>
+                                                            </span>
+                                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                                         </span>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-5 w-100">
+                                             <div class="">
+                                                <div class="title-button-details mb-2">
+                                                   <h4 class="bold-600  jsonpopsubhd ">Time </h4>
+                                                </div>
+                                             </div>
+                                             <div class="w-100">
+                                                <div class="dd_claneder_outer">
+                                                   <div role="button" class="btn_month_comman ">
+                                                      All 
+                                                   </div>
+                                                   <div style="width:auto;" role="button" class="btn_month_comman Active_mnth">
+                                                      12am (midnight) 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      1am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      4am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      5am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      6am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      7am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      8am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      9am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      10am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      11am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      12pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      1pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      4pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      5pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      6pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      7pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      8pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      9pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      10pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      11pm 
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="box_details_outer">
+                                                <h4 class="texT-hfghf">Runs on 1st week of every month on the days<span class="text-success">Sunday, Monday </span> at the time<span class="text-info">12.32 PM IST </span> </h4>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-5 w-100">
+                                             <div class="title-button-details mb-2">
+                                                <h4 class="bold-600  jsonpopsubhd  ">Monthly  </h4>
+                                                <p>Select Month
+                                                </p>
+                                             </div>
+                                             <div class="w-100">
+                                                <div class="dd_claneder_outer">
+                                                   <div style="width: auto;" role="button" class="btn_month_comman ">
+                                                      Every Month
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman Active_mnth">
+                                                      Jan  
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Feb 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Mar 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Apr 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      May
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Jun 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Jul 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Aug
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Sep 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Oct 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Nov 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Dec 
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class=" float-label__wrapper">
+                                                <label style="display: inline-block;    z-index: 10;">Day of the Month  </label>
+                                                <span style="display: block;" class="close-btn-clear "><i class="fa fa-times bold-400"></i></span>
+                                                <select name="" class="selectize_all selectized" placeholder="Select a person..." tabindex="-1" style="display: none;">
+                                                   <option value="" selected="selected"></option>
+                                                </select>
+                                                <div class="selectize-control selectize_all single">
+                                                   <div class="selectize-input items not-full has-options"><input type="text" autocomplete="off" tabindex="" placeholder="Select Module..." style="width: 99.6719px;"></div>
+                                                   <div class="selectize-dropdown single selectize_all" style="display: none; width: 100px; top: 40px; left: 0px;">
+                                                      <div class="selectize-dropdown-content"></div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-5 w-100">
+                                             <div class="">
+                                                <div class="title-button-details mb-2">
+                                                   <h4 class="bold-600  jsonpopsubhd ">Time </h4>
+                                                </div>
+                                             </div>
+                                             <div class="w-100">
+                                                <div class="dd_claneder_outer">
+                                                   <div role="button" class="btn_month_comman ">
+                                                      All 
+                                                   </div>
+                                                   <div style="width:auto;" role="button" class="btn_month_comman Active_mnth">
+                                                      12am (midnight) 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      1am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      4am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      5am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      6am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      7am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      8am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      9am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      10am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      11am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      12pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      1pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      4pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      5pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      6pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      7pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      8pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      9pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      10pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      11pm 
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class=" float-label__wrapper">
+                                                <label style="display: inline-block;    z-index: 10;">Timezone </label>
+                                                <span style="display: block;" class="close-btn-clear "><i class="fa fa-times bold-400"></i></span>
+                                                <select name="" class="selectize_all selectized" placeholder="Select a person..." tabindex="-1" style="display: none;">
+                                                   <option value="" selected="selected"></option>
+                                                </select>
+                                                <div class="selectize-control selectize_all single">
+                                                   <div class="selectize-input items not-full has-options"><input type="text" autocomplete="off" tabindex="" placeholder="Select Module..." style="width: 99.6719px;"></div>
+                                                   <div class="selectize-dropdown single selectize_all" style="display: none; width: 100px; top: 40px; left: 0px;">
+                                                      <div class="selectize-dropdown-content"></div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="box_details_outer">
+                                                <h4 class="texT-hfghf">Run on day <span class="text-success">1,4,5,8 month of Jan, Feb, March at 1.32 PM IST</span>  </h4>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="w-100 left">
+                                                <div class="w-100 left mb-4">
+                                                   <div class="w-100 left  float-label__wrapper">
+                                                      <label style="display: inline-block;    z-index: 10; ">Select Connector</label>
+                                                      <div class="selAppCustCss w-100 left bg-white" style="border: 0px solid transparent !important;height: auto;">
+                                                         <select class="select2 selAppCustCssSelect select2-multiple form-controlAgent form-control inputASM select2-hidden-accessible" style="width: 100%" multiple="" data-placeholder="Choose" data-select2-id="58" tabindex="-1" aria-hidden="true">
+                                                            <optgroup label="">
+                                                               <option value="Connector">Connector
+                                                               </option>
+                                                               <option value="Connector">Connector
+                                                               </option>
+                                                               <option value="Second Week">Connector
+                                                               </option>
+                                                               <option value="Third Week">Connector
+                                                               </option>
+                                                               <option value="Fourth Week">Connector
+                                                               </option>
+                                                            </optgroup>
+                                                         </select>
+                                                         <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="59" style="width: 100%;">
+                                                            <span class="selection">
+                                                               <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                                                  <ul class="select2-selection__rendered">
+                                                                     <li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li>
+                                                                  </ul>
+                                                               </span>
+                                                            </span>
+                                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                                         </span>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class=" float-label__wrapper">
+                                                <label style="display: inline-block;    z-index: 10;">End Date (optional) </label>
+                                                <span style="display: block;" class="close-btn-clear "><i class="fa fa-times bold-400"></i></span>
+                                                <select name="" class="selectize_all selectized" placeholder="Select a person..." tabindex="-1" style="display: none;">
+                                                   <option value="" selected="selected"></option>
+                                                </select>
+                                                <div class="selectize-control selectize_all single">
+                                                   <div class="selectize-input items not-full has-options"><input type="text" autocomplete="off" tabindex="" placeholder="Select Module..." style="width: 99.6719px;"></div>
+                                                   <div class="selectize-dropdown single selectize_all" style="display: none; width: 100px; top: 40px; left: 0px;">
+                                                      <div class="selectize-dropdown-content"></div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="w-100 left">
+                                                <div class=" float-label__wrapper">
+                                                   <label style="display: inline-block;    z-index: 10;">Select Date </label>
+                                                   <div class="ChBdyWrpDate date_picker" id="reportrange">
+                                                      <i class="fa fa-calendar mr-1"></i>   <span class="bold-200 reportrange_span ">December 28, 2022 - January 26, 2023</span>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div id="Advanced-Schedule" class="w-100 left comman_shedule" style="display: block;">
+                                       <div class="row bg_greYcolor">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="title-button-details mb-2">
+                                                <h4 class="bold-600  jsonpopsubhd  ">Month </h4>
+                                                <p>Select one or many month to run the schedule
+                                                </p>
+                                             </div>
+                                             <div class="w-100">
+                                                <div class="dd_claneder_outer">
+                                                   <div role="button" class="btn_month_comman ">
+                                                      All 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman Active_mnth">
+                                                      Jan  
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Feb 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Mar 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Apr 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      May
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Jun 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Jul 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Aug
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Sep 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Oct 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Nov 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      Dec 
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="title-button-details mb-2">
+                                                <h4 class="bold-600  jsonpopsubhd ">All Weeks </h4>
+                                                <p>Select one or many week to run the schedule
+                                                </p>
+                                             </div>
+                                             <div class="w-100 left">
+                                                <div class="ouiter_boxtytdd mb-4">
+                                                   <div class="all_weak_btn Active_week" role="button" data-block="all-weeks">
+                                                      All Weeks
+                                                   </div>
+                                                   <div class="all_weak_btn" role="button" data-block="Specific-Weeks">
+                                                      Specific Weeks
+                                                   </div>
+                                                </div>
+                                                <div class="w-100 left">
+                                                   <div class="w-100 left week_outer" id="all-weeks" style="display:block ;">
+                                                      <div class="dd_claneder_outer">
+                                                         <div role="button" class="btn_month_comman ">
+                                                            All 
+                                                         </div>
+                                                         <div role="button" class="btn_month_comman Active_mnth">
+                                                            Sun 
+                                                         </div>
+                                                         <div role="button" class="btn_month_comman ">
+                                                            Mon 
+                                                         </div>
+                                                         <div role="button" class="btn_month_comman ">
+                                                            Tue
+                                                         </div>
+                                                         <div role="button" class="btn_month_comman ">
+                                                            Wed
+                                                         </div>
+                                                         <div role="button" class="btn_month_comman ">
+                                                            Thu
+                                                         </div>
+                                                         <div role="button" class="btn_month_comman ">
+                                                            Fri
+                                                         </div>
+                                                         <div role="button" class="btn_month_comman ">
+                                                            Sat 
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="w-100 left week_outer" id="Specific-Weeks">
+                                                      <div class="w-100 left mb-3">
+                                                         <div class="title-button-details mb-2">
+                                                            <h5 class="bold-600">Week 1 </h5>
+                                                            <p>Select one or many days from the week 1 to run the schedule</p>
+                                                         </div>
+                                                         <div>
+                                                            <div class="dd_claneder_outer">
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  All 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman Active_mnth">
+                                                                  Sun 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Mon 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Tue
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Wed
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Thu
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Fri
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Sat 
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                      <div class="w-100 left mb-3">
+                                                         <div class="title-button-details mb-2">
+                                                            <h5 class="bold-600">Week 2 </h5>
+                                                            <p>Select the day from the week 2 to run the schedule</p>
+                                                         </div>
+                                                         <div>
+                                                            <div class="dd_claneder_outer">
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  All 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman Active_mnth">
+                                                                  Sun 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Mon 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Tue
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Wed
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Thu
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Fri
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Sat 
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                      <div class="w-100 left mb-3">
+                                                         <div class="title-button-details mb-2">
+                                                            <h5 class="bold-600">Week 3 </h5>
+                                                            <p>Select the day from the week 3 to run the schedule</p>
+                                                         </div>
+                                                         <div>
+                                                            <div class="dd_claneder_outer">
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  All 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman Active_mnth">
+                                                                  Sun 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Mon 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Tue
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Wed
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Thu
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Fri
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Sat 
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                      <div class="w-100 left mb-3">
+                                                         <div class="title-button-details mb-2">
+                                                            <h5 class="bold-600">Week 4 </h5>
+                                                            <p>Select the day from the week 4 to run the schedule</p>
+                                                         </div>
+                                                         <div>
+                                                            <div class="dd_claneder_outer">
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  All 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman Active_mnth">
+                                                                  Sun 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Mon 
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Tue
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Wed
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Thu
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Fri
+                                                               </div>
+                                                               <div role="button" class="btn_month_comman ">
+                                                                  Sat 
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="title-button-details mb-2">
+                                                <h4 class="bold-600  jsonpopsubhd ">Day </h4>
+                                                <p>Select the dates to run the schedule</p>
+                                             </div>
+                                             <div class="w-100">
+                                                <div class="dd_claneder_outer">
+                                                   <div role="button" class="btn_month_comman ">
+                                                      All 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman Active_mnth">
+                                                      1 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      4
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      5
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      6
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      7 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      8 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      9
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      10 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      11 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      12 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      13 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      14 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      15 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      16
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      17 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      18 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      19 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      20
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      21
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      22 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      23 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      24 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      25
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      26 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      27 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      28 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      29 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      30
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      31
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="">
+                                                <div class="title-button-details mb-2">
+                                                   <h4 class="bold-600  jsonpopsubhd ">Hour </h4>
+                                                   <p>Select the hour to run the schedule</p>
+                                                </div>
+                                             </div>
+                                             <div class="w-100">
+                                                <div class="dd_claneder_outer">
+                                                   <div role="button" class="btn_month_comman ">
+                                                      All 
+                                                   </div>
+                                                   <div style="width:auto;" role="button" class="btn_month_comman Active_mnth">
+                                                      12am (midnight) 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      1am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      4am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      5am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      6am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      7am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      8am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      9am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      10am
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      11am 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      12pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      1pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      2pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      3pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      4pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      5pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      6pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      7pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      8pm
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      9pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      10pm 
+                                                   </div>
+                                                   <div role="button" class="btn_month_comman ">
+                                                      11pm 
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class=" float-label__wrapper">
+                                                <label style="display: inline-block;    z-index: 10;">Timezone</label>
+                                                <span style="display: block;" class="close-btn-clear "><i class="fa fa-times bold-400"></i></span>
+                                                <select name="" class="selectize_all selectized" placeholder="Select a person..." tabindex="-1" style="display: none;">
+                                                   <option value="" selected="selected"></option>
+                                                </select>
+                                                <div class="selectize-control selectize_all single">
+                                                   <div class="selectize-input items not-full has-options"><input type="text" autocomplete="off" tabindex="" placeholder="Select Module..." style="width: 99.6719px;"></div>
+                                                   <div class="selectize-dropdown single selectize_all" style="display: none; width: 100px; top: 40px; left: 0px;">
+                                                      <div class="selectize-dropdown-content"></div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left mb-4 w-100">
+                                             <div class="box_details_outer">
+                                                <h4 class="texT-hfghf">Run on these months <span class="text-success">Jan, Feb, March </span>  on these days <span class="text-info">1,4,5,8</span>  on these times at 1.32 PM in this Timezone IST  </h4>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="section_B custom_scrollbar_element scrolling">
+                     <div class="json_in_rightRightIn scrollbar-inner">
+                        <!----loader--->
+                        <div class="pull-left w-100">
+                           <div class="timeline-wrapper">
+                              <div class="timeline-item2">
+                                 <div class="animated-background3">
+                                    <div class="background-masker3 header-top"></div>
+                                    <div class="background-masker3 header-left"></div>
+                                    <div class="background-masker3 header-right"></div>
+                                    <div class="background-masker3 header-bottom"></div>
+                                    <div class="background-masker3 subheader-left"></div>
+                                    <div class="background-masker3 subheader-right"></div>
+                                    <div class="background-masker3 subheader-bottom"></div>
+                                    <div class="background-masker3 content-top"></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!----loader End--->
+                        <div class="w-100 left p-3">
+                           <div class="row left w-100 panelJson m-0 p-3 mb-3">
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss">
+                                    <h6 class="mb-0 text-black left w-100 bold-600 mb-1">Total Requests
+                                    </h6>
+                                    <small class="left w-100">Life Time Value </small>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss">
+                                    <h4 class="mb-0 text-success left w-100 text-right bold-600">1233
+                                    </h4>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row left w-100 panelJson m-0 p-3 mb-3">
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss">
+                                    <h6 class="mb-0 text-black left w-100 bold-600 mb-1">Requests</h6>
+                                    <small class="left w-100">From 23 Aug 2020</small>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss text-right">
+                                    <h4 class="mb-0 text-success left w-100 bold-600">1233</h4>
+                                    <small class="left w-100 text-danger pointer">Reset </small>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row left w-100 panelJson m-0 p-3 mb-3">
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss">
+                                    <h6 class="mb-0 text-black left w-100 bold-600 mb-1">Last Received
+                                    </h6>
+                                    <small class="left w-100 text-black pointer">23 Aug 2020 12.23.34 PM
+                                    </small>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss text-right">
+                                    <h4 class="mb-0 text-success left w-100 bold-600">23 Min Ago </h4>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row left w-100 panelJson m-0 p-3 mb-3">
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss">
+                                    <h6 class="mb-0 text-black left w-100 bold-600 mb-1">Connecter
+                                       Created
+                                    </h6>
+                                    <small class="left w-100 text-black">23 Aug 2020 12.23.34 PM
+                                    </small>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss text-right">
+                                    <h4 class="mb-0 text-success left w-100 bold-600">230 Days Ago </h4>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row left w-100 panelJson m-0 p-3 mb-3">
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss">
+                                    <h6 class="mb-0 text-black left w-100 bold-600 mb-1">The Billing
+                                       Cycle
+                                    </h6>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left p-0">
+                                 <div class="w-100 left JsonBxCss text-right">
+                                    <h4 class="mb-0 text-success left w-100 bold-600">1550 </h4>
+                                    <small class="left w-100 text-danger">1500 Left</small>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="w-100 left mb-3">
+                              <div class="deleteConnector">
+                                 <button class="SimulateTestBtn" data-toggle="modal"
+                                    data-target=".ConnectFormsModal">
+                                 <i class="fa fa-plus mr-2" style="font-weight: 200;"></i>Mini App
+                                 Builder
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="w-100 left mb-3">
+                              <div class="deleteConnector">
+                                 <button class="SimulateTestBtn" data-toggle="modal"
+                                    data-target=".SimulateTestPopup">
+                                 <i class="fa fa-rocket mr-2" style="font-weight: 200;"></i>Simulate
+                                 Test
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="w-100 left">
+                              <div class="deleteConnector">
+                                 <button class="deleteConnectorBtn" id="deleteConnectorBtn">
+                                 <span>Delete Connector</span>
+                                 </button>
+                                 <button style="display: none;" class="confirmDeleteConnectorBtn"
+                                    id="confirmDeleteConnectorBtn">
+                                 <span>Delete "Connector"?</span>
+                                 <strong id="confirmDeleteConnectorYes"
+                                    class="text-danger">Yes</strong>
+                                 <strong id="confirmDeleteConnectorNo"
+                                    class="text-default">No</strong>
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="w-100 left">
+                           <div class="CBTitleDiv">
+                              <h6 class="m-0"><b>Logs </b></h6>
+                           </div>
+                        </div>
+                        <!--loader-->
+                        <div class="pull-left w-100">
+                           <div class="timeline-wrapper">
+                              <div class="timeline-item2">
+                                 <div class="animated-background3">
+                                    <div class="background-masker3 header-top"></div>
+                                    <div class="background-masker3 header-left"></div>
+                                    <div class="background-masker3 header-right"></div>
+                                    <div class="background-masker3 header-bottom"></div>
+                                    <div class="background-masker3 subheader-left"></div>
+                                    <div class="background-masker3 subheader-right"></div>
+                                    <div class="background-masker3 subheader-bottom"></div>
+                                    <div class="background-masker3 content-top"></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!--loader-->
+                        <div class="w-100 left p-3">
+                           <div class="LogDotted-box">
+                              <div class="LogDotted-boxIn">
+                                 <span><i class="fa fa-clock mr-2"></i>29, July 2020 12.30 PM</span>
+                                 <button style="display: none;" data-target=".LogDetailsPopup"
+                                    data-toggle="modal"
+                                    class="btn btn-sm btn-default LogDotted-btn"><span
+                                    class="text-success">View</span></button>
+                              </div>
+                           </div>
+                           <div class="LogDotted-box">
+                              <div class="LogDotted-boxIn">
+                                 <span><i class="fa fa-clock mr-2"></i>29, July 2020 12.30 PM</span>
+                                 <button style="display: none;" data-target=".LogDetailsPopup"
+                                    data-toggle="modal"
+                                    class="btn btn-sm btn-default LogDotted-btn"><span
+                                    class="text-success">View</span></button>
+                              </div>
+                           </div>
+                           <div class="LogDotted-box">
+                              <div class="LogDotted-boxIn">
+                                 <span><i class="fa fa-clock mr-2"></i>29, July 2020 12.30 PM</span>
+                                 <button style="display: none;" data-target=".LogDetailsPopup"
+                                    data-toggle="modal"
+                                    class="btn btn-sm btn-default LogDotted-btn"><span
+                                    class="text-success">View</span></button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         $(document).ready(function(){
+             // $('.PARightSBIn').scrollbar();
+              $(document).off('mouseover','.custom_scrollbar_element');
+              $(document).on('mouseover','.custom_scrollbar_element',function(){
+                    $(this).addClass('scrolling');
+                });    
+                $(document).off('mouseout','.custom_scrollbar_element');
+                $(document).on('mouseout','.custom_scrollbar_element',function(){
+                     $(this).removeClass('scrolling');
+                });
+             $(document).on('keyup','.search_key', function(){
+                 let key = $(this).val().toLowerCase();
+                 let c = $(this).closest('.search_container');
+                 if(key){
+                     let count = 0;
+                     c.find('.searchable_text').each(function(){
+                         let value = $(this).text().trim().toLowerCase();
+                         if(value.includes(key)){
+                             $(this).closest('.search_parent').show();
+                             count++;
+                         }else{
+                             $(this).closest('.search_parent').hide();
+                         }
+                     });
+                     if(count<1){
+                         c.find('.search_empty').show();
+                     }else{
+                         c.find('.search_empty').hide();
+                     }
+                     $(this).siblings('.close_btN_hdg').show();
+                 }else{
+                     $(this).siblings('.close_btN_hdg').hide();
+                     if(c.find('.search_parent').length){
+                         c.find('.search_empty').hide();
+                     }
+                     c.find('.search_parent').show();
+                 }
+             });
+             $(document).on('click','.clear_search', function(){
+                 $(this).closest('.search_container').find('.search_key').val('').trigger('keyup');
+             });
+             $(document).on('click','.sort_list', function(){
+                 $(this).siblings('.sort_outer').toggle();
+             });
+             $(document).on('change','.sort_now', function(){
+                 $(this).closest('.sort_outer').hide();
+                 let val = $(this).val();
+                 let el = $(this).closest('.search_container').find('.search_parent');
+                 sort_div(el,val);
+             }); 
+             $(document).on('click','.list_details_ourer', function(e){
+                 let id = $(this).data('id');
+                 let t = $(e.target);
+                 
+                 if(t.hasClass('ask_delete') || t.closest('.ask_delete').length){
+                     return false;
+                 }
+                 if(t.hasClass('delete_template') || t.closest('.delete_template').length){
+                     return false;
+                 }
+                 if(t.hasClass('preview_template') || t.closest('.preview_template').length){
+                     return false;
+                 }
+                 if($(this).closest('.bldr_vw_oly').length){
+                     return false;
+                 }
+                 if(id){
+                     let url = `https://localhost/templates/build/${id}`;
+                     // window.location = url;
+                     if(params && params.open == 'inline'){
+                         window.location.href = url;
+                     }else{
+                         window.open(url,'_blank');
+                     }
+                 }
+             });
+             $(document).on('click','.ask_delete', function(e){
+                 e.stopPropagation();
+                 let type = $(this).data('type');
+                 let p =$(this).closest('.list_details_ourer');
+                 let el = p.find('.dlt_confirmation_outer');
+                 $('.list_details_ourer').find('.dlt_confirmation_outer').hide();
+                 (type == 'show') ? el.show() : el.hide();
+             });
+             $(document).on('click','.delete_template', function(e){
+                 let p = $(this).closest('.list_details_ourer');
+                 let id = p.data('id');
+                 if($(this).data('active')) return false;
+                 
+                 let btn = $(this);
+                 btn.data('active',true);
+                 $.post("https://localhost/builder/builder.php", {action : "remove_template", id }, function(res){
+                     btn.data('active',false);
+                     if(res){
+                         let json = JSON.parse(res);
+                         if(json.code == 200){
+                             toast(true,'Template deleted Successfully...!');
+                             btn.closest('.list_details_ourer').remove();
+                             if($('#SavedTemplatesJS').find('.Active_lists').length <1){
+                                 $('#SavedTemplatesJS').find('.search_empty').show();
+                             }
+                         }else{
+                             toast(false,'Failed to delete template!');
+                         }
+                     }
+                 });
+             });
+             $(document).on('click','.closes', function(e){
+                 let close = $(this).data('close');
+                 if(close){
+                     $(this).closest(close).hide();
+                 }
+             });
+             $(document).on('click','.stop_this', function(e){
+                 e.preventDefault();
+             });
+             $(document).on('click','.preview_template', function(e){
+                 e.preventDefault();
+                 let p = $(this).closest('.search_parent');
+                 let id = p.data('id');
+                 let name = p.find('.searchable_text').text().trim();
+                 if(id){
+                     let url = `https://localhost//connector/helpers/actions/functions.php?id=${id}&action=get_email_preview`;
+                     let m = $('.modals');
+                     m.find('.name').text(name);
+                     
+                     m.find('.change_view').data('url',url).removeClass('active').first().addClass('active');
+                     m.find('.act_cont').removeClass('mobile_view');
+                     let link = `https://localhost/templates/build?import=${id}`;
+                     m.find('.open_template').text(p.data('text')).attr('href',link);
+                     preview(m,url);
+                 }
+             });
+             $(document).on('click','.change_view', function(e){
+                 $('.change_view').removeClass('active');
+                 $(this).addClass('active');
+                 let cnt = $(this).closest('.modals').find('.act_cont');
+                 if($(this).data('type') == 'mobile'){
+                     cnt.addClass('mobile_view');
+                     height();
+                 }else{
+                     cnt.removeClass('mobile_view');
+                     height();
+                 }
+             });
+             
+             // $(document).on('load','iframe', function(e){
+             //     console.log('loaded');
+             // });
+             
+             
+         });
+         function preview(m,url){
+             m.find('.cs,.act_cont').hide();
+             m.find('.loasder_outer').show();
+             m.show();
+             let cont = m.find('.act_cont');
+             let html = $(`<iframe class="custom_scrollbar_element scrolling" scrolling="no" style="border: 0px;"></iframe>`);
+             cont.empty();
+             html.attr('width',cont.width());
+             html.attr('height',cont.height());
+             html.hide();
+             cont.append(html);
+             html.attr('src',url);
+             
+            setTimeout(function () {
+                html.show();
+                m.find('.act_cont').show();
+                m.find('.loasder_outer').hide();
+                m.find('.cs').show();
+                let s = height();
+                if(!s){
+                    var intervalId = setInterval(function() {
+                        let status = height();
+                        if(status){
+                            clearInterval(intervalId);
+                        }
+                     }, 1000);
+                }
+                
+            },1500);
+            setTimeout(function () {
+                height();
+            }, 3000);
+         }
+         function height(){
+             if(!$("iframe").length || !$('.modals').is(':visible')){
+                 return true;
+             }
+             let height = $("iframe").contents().find('body').outerHeight();
+             if(height > 0){
+                 $("iframe").height(height);
+                 return true;
+             }else{
+                 return false;
+             }
+         }
+         function sort_div(el,param){
+             el.sort(function(a, b){
+                 return $(b).data(param) - $(a).data(param);
+             }).appendTo('#SavedTemplatesJS');
+         }
+      </script>
+   </body>
+</html>
