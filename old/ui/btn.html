@@ -4,27 +4,266 @@
       <meta charset="utf-8">
       <meta name="viewport" content="initial-scale=1.0, width=device-width">
       <title>Theme Boy</title>
-      <link rel="stylesheet" href="assets/css/style.css">
    </head>
-   <body>
-      <link rel="stylesheet" href="style.css?v=1674743780">
+   <body style="padding: 30px;">
+      <style>
+         .load_mini_buttons{ display: flex;flex-wrap: wrap; }
+         i{padding-right:  10px; }
+         .tag{ padding: 10px;border: 1px solid red;margin-right: 20px; }
+      </style>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <div class="load_mini_buttons"></div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <div class="load_mini_buttons">
+      </div>
+      <div class="iframe_container picky_iframe_container" style="display: none;margin-top: 50px;border: 1px dotted green;overflow-y: scroll;height: 400px;"></div>
+      <div class="empty_btn_cntn_html" style="display:none;">
+         <div class="no_btns_fnd">Couldn't find any buttons in the list</div>
+      </div>
+      <div class="loading_iframe_html" style="display:none;">
+         <div>
+            <div class="loading_iframe" style="display:none;">Loading website</div>
+            <div class="website_iframe" style="display:none;">Actual website loaded here</div>
+         </div>
+      </div>
+      <div class="loding_min_contnt_html" style="display:none;">
+         <div>Loading mini buttons</div>
+      </div>
       <script type="text/javascript">
          $(document).ready(function(){
+            let html = '<div class="tag" title="$desc"><i class="fa $icon"></i>$name</div>';
             let data = [
                {
                   id : 1,
                   name : 'Open Google contact',
-                  icon : 'fa-google',
-                  color : 'red',
+                  icon : 'fa-user',
+                  color : 'violet',
                   desc : 'This will open the user ID of the profile',
                   type : 'url',
-                  url : 'https://google.com'
+                  url : 'https://google.com?q=',
+                  open : 'new' // inline
+               },
+               {
+                  id : 2,
+                  name : 'Send Mail to the Customer',
+                  icon : 'fa-at',
+                  color : 'green',
+                  type : 'connector',
+                  url : 'https://connector.gl/o90975htree453',
+                  open : 'new' // inline
                }
             ];
-            function initialize_mini_buttons(el,subscriber_id){
+            // console.log(JSON.stringify(data));
+            initialize_mini_buttons(
+               $('.load_mini_buttons'),
+               null,
+               html
+            );
+            function initialize_mini_buttons(el,sub=null,html_str){
+               let loading = $($('.loding_min_contnt_html').html());
+               el.html(loading);
+               $.get( "server.json", { subscriber_id : sub }, function(res){
+                  // let data = JSON.parse(res);
+                  let data = res;
+                  if(data && data.length){
+                     el.empty();
+                     data.map( mini => {
+                        let app_html = html_str;
+                        if(app_html){
+                           app_html = app_html.replace('$icon',mini.icon);
+                           app_html = app_html.replace('$name',mini.name);
+                           if(mini.desc) app_html = app_html.replace('$desc',mini.desc);
+                           let app_el = $(app_html);
+                           app_el.css('color',mini.color);
+                           app_el.addClass('handle_mini_app form_trigger_class');
+                           app_el.data({
+                              id : mini.id,
+                              type : mini.type,
+                              url : mini.url,
+                              open : mini.open,
+                              subscriber : sub,
+                              name : mini.name
+                           })
+                           el.append(app_el);
+                        }
+                     });
+                  }else{
+                     let html = $($('.empty_btn_cntn_html').html());
+                     el.html(html).show();
+                  }
+               });               
+            }
+            function build_json_from_url(url){
+               let validation = true;
+               const searchParams = new URLSearchParams(new URL(url).search);
+               const params = {};
+               for (const [key, value] of searchParams) {
+                  params[key] = value;
+                  if(!value) validation = false;
+               }
+               return {params, status : validation };
+            }
+            function build_url_from_json(url, params) {
+              const urlObject = new URL(url);
+              const searchParams = new URLSearchParams(urlObject.search);
+              for (const key in params) {
+                if (params.hasOwnProperty(key)) {
+                  searchParams.set(key, params[key]);
+                }
+              }
+              urlObject.search = searchParams.toString();
+              return urlObject.toString();
+            }
+            function isValidHttpUrl(string) {
+              let url;
+              try {
+                url = new URL(string);
+              } catch (_) {
+                return false;
+              }
+              return url.protocol === "http:" || url.protocol === "https:";
+            }
+            $(document).on('click','.handle_mini_app', function(e){
+               let data = $(this).data();
+               handle_mini_actions($(this),data);
+            });
+            // This is the event which triggers the form
+            $(document).on('formOpen','.handle_mini_app', function(e){
+               let el = $('.iframe_container');
+               el.show();
+               $(this).trigger('formOpened',[el]);
+            });
+            // This is the event which we get after the form opening
+            $(document).on('formOpened','.handle_mini_app', function(e,payload){
+               // Now form has been opened, we can do whatever we want
+               let data = $(this).data();
+               handle_mini_actions($(this),data, { form : payload });
+            });
+            // This is the event which we get after the form opening
+            $(document).on('formSubmit','.handle_mini_app', function(e,payload){
+               // Now form has been opened, we can do whatever we want
+               let data = $(this).data();
+               handle_mini_actions($(this),data, payload);
+            });
 
+            // setTimeout(function(){
+            // // To fake the Form Submit Event
+            //    $('.handle_mini_app').last().trigger('formSubmit',[
+            //       { 
+            //          form : $('.iframe_container'),
+            //          input : { a: 1, b: 2},
+            //          proceed : true,
+            //          connector : 2
+            //       }
+            //    ]);
+            // },3000);
+            function open_iframe_in_div(m,url,data=null){
+               m.empty();
+               let container = $($('.loading_iframe_html').html());
+               m.append(container);
+               m.show();
+               let cont = container.find('.website_iframe');
+               container.find('.loading_iframe').show();
+               let html = $(`<iframe class="custom_scrollbar_element scrolling" scrolling="no" style="border: 0px;"></iframe>`);
+              cont.empty();
+              html.attr('width',cont.width());
+              html.attr('height',cont.height());
+              html.hide();
+              cont.append(html);
+              html.attr('src',url);
+           
+                setTimeout(function () {
+                    html.show();
+                    m.find('.website_iframe').show();
+                     m.find('.loading_iframe').hide();
+                     let s = set_iframe_height();
+                     if(!s){
+                         var intervalId = setInterval(function() {
+                             let status = set_iframe_height(html);
+                             if(status){
+                                 clearInterval(intervalId);
+                             }
+                          }, 1000);
+                     }                     
+                },1500);
+                setTimeout(function () {
+                    set_iframe_height(html);
+                }, 3000);
+            }
+         function set_iframe_height(el){
+            if(!el || !el.length || !$('.picky_iframe_container').is(':visible')){
+                return true;
+            }
+            let height = el.contents().find('body').outerHeight();
+            if(height > 0){
+                el.height(height);
+                return true;
+            }else{
+                return false;
+            }
+         }
+            function handle_mini_actions(el,data,payload=null){
+               // console.log(data,payload)
+               let url = data.url;
+               // this is the section which we will After submitting in the form or empty form
+               if((payload && payload.proceed) || data.proceed){
+                  payload.input = (payload.input) ? payload.input : {};
+                  url = build_url_from_json(url,payload.input);
+                  if(data.open == 'new'){
+                     window.open(url,'_blank');
+                  }else{
+                     open_iframe_in_div(payload.form,url);
+                  }
+                  return false;
+               }
+               if(data.type == 'url'){
+                  // Mini app need to load the URL of an external site
+                  if(!isValidHttpUrl(url)) return false;                  
+                  let url_check = build_json_from_url(url);
+                  if(url_check.status == true){ // URL has everything in it
+                     if(data.open == 'new'){
+                        window.open(url,'_blank');
+                     }else{
+                        // has already triggered the form and just need to laad the URL
+                        if(payload && payload.form && payload.form.length){
+                           open_iframe_in_div(payload.form,url);
+                        }else{
+                           // need to trigger the form to open so that we can load iframe in it
+                           el.trigger('formOpen');
+                        }                        
+                     }
+                  }else{
+                     // The URL parameters are incomplete, Can give the option to fill if they need
+                     if(payload && payload.form && payload.form.length){
+                        let params = {
+                           url : url,
+                           name : data.name,
+                           params : url_check.params,
+                           type : 'url'
+                        }
+                        // open_forms_to_fill(payload.form,params);
+                        // This function will get show all the options
+                     }else{
+                        // need to trigger the form to open so that we can load iframe in it
+                        el.trigger('formOpen');
+                     }
+                  }
+               }else if(data.type == 'connector'){
+                  // this is the section which we will After submitting in the form
+                  if(payload && payload.form && payload.form.length){
+                     let params = {
+                        url : data.url,
+                        name : data.name,
+                        params : [],
+                        connector : data.id,
+                        type : 'connector'
+                     }
+                     // open_forms_to_fill(payload.form,params);
+                     // This function will get show all the options
+                  }else{
+                     // need to trigger the form to open so that we can load iframe in it
+                     el.trigger('formOpen');
+                  }
+               }
             }
          });
       </script>
