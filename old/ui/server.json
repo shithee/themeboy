@@ -1,1 +1,0 @@
-[{"id":1,"name":"Open Google contact","icon":"fa-user","color":"violet","desc":"This will open the user ID of the profile","type":"url","url":"https://google.com?q=","open":"new"},{"id":2,"name":"Send Mail to the Customer","icon":"fa-at","color":"green","type":"connector","url":"https://connector.gl/o90975htree453","open":"new","proceed":"true"}]
