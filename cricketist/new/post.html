@@ -14,117 +14,207 @@
     <script src="../assets/js/core.js"></script>
 </head>
 
-<body class="theme-dark">
+<body class="themegrid themedark">
     <div class="fixedheader w100">
         <div class="header h100 f mw">
-            <img class="wauto logo" src="../assets/image/logo-full.png" />
-            <div class="navigation f">
-                <a class="f cent" href="">
-                    <img class="icon" src="../assets/icons/home.png" /> Home
-                </a>
-                <a class="f cent" href="">
-                    <img class="icon" src="../assets/icons/explore.png" /> Search
-                </a>
-                <a class="f cent" href="">
-                    <img class="icon" src="../assets/icons/topics.png" /> Topics
-                </a>
-                <a class="f cent" href="">
-                    <img class="icon" src="../assets/icons/flash.png" /> Silly Point
-                </a>
-            </div>
-            <div class="preferences f cent">
-                <button class="toggle">
-                    <img class="icon" src="../assets/icons/dark.png" />
-                </button>
-                <a class="button" href="">Start writing
-                </a>
-                <a class="profile" href="">
-                    <img class="circle" src="../assets/image/profile.jpg" />
-                </a>
-            </div>
+            <img class="wauto logo point btn1" src="https://www.cricketist.in/favicon.ico" />
+            <div class="header_set f cent">
+                <div class="preferences f cent">
+                    <button class="toggle f cent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                            <path d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z"></path>
+                           <!--  <path d="M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path> -->
+                        </svg>
+                        <span class="nav_info">Home</span>
+                    </button>
+                    <button class="toggle f cent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                            <path
+                                d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z" />
+                        </svg>
+                        <span class="nav_info">Explore</span>
+                    </button>
+                    <button class="toggle f cent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                            <path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z"></path>
+                        </svg>
+                        <span class="nav_info">Favourites</span>
+                    </button>
+                    <button class="toggle f cent" style="display:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+                            <path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
+                        </svg>
+                    </button>                    
+                    <button class="toggle f cent active">
+                        <img src="../assets/image/profile.jpg" />
+                    </button>
+                </div>
+                <div class="promotion">
+                    <div class="icn_btn prmy_background">
+                        <svg viewBox="0 0 24 24"><g><path d="M11 11V4h2v7h7v2h-7v7h-2v-7H4v-2h7z"></path></g></svg>
+                        <span>Write Post</span>
+                    </div>
+                </div>
+             </div>
         </div>
     </div>
     <div class="maincontainer w100">
         <section class="postcontainer f fcol">
-            <img class="blog" src="../assets/image/6.jpeg" />
+            <img class="blog" src="../assets/image/6.jpeg">
             <h1 class="title bold">10 Entrepreneurial Considerations to 100x Your Creative Project’s Success</h1>
             <h6 class="desc">A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</h6>
             <div class="information f">
                 <div class="author f">
-                    <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                    <img class="w100 circle img40" src="../assets/image/profile.jpg">
                     <div class="info">
                         <div class="">Cosmin Angheluta</div>
-                        <p class="small">Mar 22 . 2 min read</p>
+                        <p class="small">Mar 22 • 2 min read</p>
                     </div>
                 </div>
-                <div class="options f cent">
-                    <a href=""><img src="../assets/icons/twitter.png" /></a>
-                    <a href=""><img src="../assets/icons/facebook.png" /></a>
-                    <a href=""><img src="../assets/icons/whatsapp.png" /></a>
-                    <a href=""><img src="../assets/icons/link.png" /></a>
-                </div>
+                <div class="icons_container f cent">
+                                <div class="single_icon" tooltip="Read post">
+                                    <svg viewBox="0 0 24 24"><path d="M7.751 7c.412 0 .747.334.747.747a.74.74 0 01-.64.734l-.105.006h-.769l-.108.004-.128.009c-.646 0-1.178.491-1.242 1.12l-.006.128v7.502c0 .647.492 1.18 1.122 1.244l.128.006h7.498a1.25 1.25 0 001.243-1.122l.007-1.128a.75.75 0 011.5 0v1a2.75 2.75 0 01-2.583 2.745l-.167.005H6.75a2.75 2.75 0 01-2.745-2.582L4 17.25V9.748A2.748 2.748 0 016.748 7H7.75zm11.497-3a.75.75 0 01.75.75v7a.75.75 0 11-1.5 0V6.559L12 13.059a.75.75 0 01-1.06-1.061L17.435 5.5h-5.188a.75.75 0 110-1.5h7z" fill="currentcolor" fill-rule="evenodd"></path></svg>
+                                </div>
+                                <div class="single_icon" tooltip="Copy link">
+                                    <svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.091 8.625a.844.844 0 01.115 1.68l-.115.008c-.727 0-1.324.552-1.396 1.26l-.008.143v6.19c0 .728.554 1.327 1.263 1.4l.144.006h6.185c.728 0 1.327-.553 1.399-1.262l.007-.144a.844.844 0 111.687 0 3.094 3.094 0 01-2.905 3.088L12.28 21H6.094a3.094 3.094 0 01-3.088-2.905L3 17.906v-6.19a3.091 3.091 0 013.091-3.091zM17.906 3a3.094 3.094 0 013.088 2.905l.005.189v6.187a3.094 3.094 0 01-2.905 3.088l-.188.006h-6.189A3.094 3.094 0 018.63 12.47l-.005-.189V6.094a3.094 3.094 0 012.905-3.088L11.717 3h6.189zm0 1.688h-6.189c-.728 0-1.327.553-1.399 1.262l-.007.144v6.187c0 .728.554 1.327 1.263 1.4l.143.007h6.189c.728 0 1.327-.554 1.399-1.263l.007-.144V6.094c0-.728-.554-1.327-1.263-1.4l-.143-.006z" fill="currentcolor" fill-rule="evenodd"></path></svg>
+                                </div>
+                                <div class="single_icon" tooltip="Share on Whatsapp">
+                                    <svg height="1em" viewBox="0 0 23 23" width="1em" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 pointer-events-none"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
+                                </div>
+                                <div class="single_icon" tooltip="Share on Twitter">
+                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 pointer-events-none"><path d="M30.75 6.844c-1.087.481-2.25.806-3.475.956a6.079 6.079 0 002.663-3.35 12.02 12.02 0 01-3.844 1.469A6.044 6.044 0 0021.675 4a6.052 6.052 0 00-6.05 6.056c0 .475.05.938.156 1.381A17.147 17.147 0 013.306 5.106a6.068 6.068 0 001.881 8.088c-1-.025-1.938-.3-2.75-.756v.075a6.056 6.056 0 004.856 5.937 6.113 6.113 0 01-1.594.212c-.388 0-.769-.038-1.138-.113a6.06 6.06 0 005.656 4.206 12.132 12.132 0 01-8.963 2.507A16.91 16.91 0 0010.516 28c11.144 0 17.231-9.231 17.231-17.238 0-.262-.006-.525-.019-.781a12.325 12.325 0 003.019-3.138z"></path></svg>
+                                </div>
+                                <div class="single_icon" tooltip="Facebook">
+                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 pointer-events-none"><path d="M26.675 4H5.325C4.594 4 4 4.594 4 5.325v21.35C4 27.406 4.594 28 5.325 28H16v-9.5h-2.869V15H16v-2.588c0-3.1 2.15-4.787 4.919-4.787 1.325 0 2.75.1 3.081.144v3.237h-2.206c-1.506 0-1.794.713-1.794 1.762v2.231h3.587l-.469 3.5h-3.119v9.5h6.675c.731 0 1.325-.594 1.325-1.325V5.324c0-.731-.594-1.325-1.325-1.325z"></path></svg>
+                                </div>
+                            </div>
             </div>
             <div class="article">
-                <p>Yes and no. I think history has told us a lot. I've watched the PSL quite closely and I've actually watched a few old games lately on YouTube, like the Pakistan v England and Pakistan v India series in 2004 and 2006. Just to get a gauge
+                <blockquote>Yes and no. I think history has told us a lot. I've watched the PSL quite closely and I've actually watched a few old games lately on YouTube, like the <a href="">Pakistan v England</a> and Pakistan v India series in 2004 and 2006. Just to get a gauge
                     on what the wickets are like. Now, obviously it has been 20-odd years and I'm certainly not saying the wickets are going to be the same but all those wickets look like pretty good cricket wickets. They spun late and they were good
                     for batting. Like I always say, you prepare for the worst. You train hard, you play easy. The conditions that we are most foreign to as Australians is spin. So, you obviously work on spin, reverse swing and those things. And if it
-                    swings conventionally and the wickets are nice and bouncy, then you adapt to those conditions. And obviously we've got plenty of training on those types of wickets here.</p>
+                    swings conventionally and the wickets are nice and bouncy, then you adapt to those conditions. And obviously we've got plenty of training on those types of wickets here.</blockquote>
+                    <h1>Cricket</h1>
+                    
+                    <!-- image -->
+                    <img src="../assets/image/1.jpg" alt="Cricket Ball">
+                    
+                    <!-- introduction -->
+                    <p><b>Cricket</b> is a popular sport played in many countries around the world. It is a bat-and-ball game that is similar to baseball, but with some differences in the rules and gameplay.</p>
+                    
+                    <!-- history -->
+                    <h2>History of Cricket</h2>
+                    <p><i>Cricket</i> has a long and interesting history that dates back to the 16th century. It originated in England and has since become a popular sport in many other countries.</p>
+                    
+                    <!-- rules -->
+                    <h2>Rules of Cricket</h2>
+                    <ul>
+                      <li>Cricket is played with two teams of 11 players each. The game is divided into innings, with each team getting a chance to bat and bowl.</li>
+                      <li>The batting team scores runs by hitting the ball and running between two sets of wickets, while the bowling team tries to get the batting team out by catching the ball or hitting the wickets with the ball.</li>
+                      <li>The team that scores the most runs at the end of the game wins. If the game ends in a tie, a tie-breaker is played.</li>
+                    </ul>
+                    
+                    <!-- equipment -->
+                    <h2>Equipment for Cricket</h2>
+                    <ol>
+                      <li>Bat: The cricket bat is usually made of wood and has a flat front surface with a slightly curved back. It is used by the batsman to hit the ball.</li>
+                      <li>Ball: The cricket ball is made of cork covered with leather. It is hard and can be bowled at high speeds by the bowler.</li>
+                      <li>Stumps: The stumps are three vertical posts that are placed in the ground. The bails are placed on top of the stumps.</li>
+                      <li>Pads: The pads are worn by the batsman to protect their legs from the ball.</li>
+                      <li>Gloves: The gloves are worn by the batsman to protect their hands from the ball.</li>
+                      <li>Helmets: The helmets are worn by the batsman and the wicket-keeper to protect their head and face from the ball.</li>
+                    </ol>
+            </div>
+            <div class="tagcloud f topics_list">
+                <div class="box boxy f cent view">
+                    <svg viewBox="0 0 24 24" class="svgicon fill point" xmlns="http://www.w3.org/2000/svg">
+                        <g><path d="M12 1.75c-5.11 0-9.25 4.14-9.25 9.25 0 4.77 3.61 8.7 8.25 9.2v2.96l1.15-.17c1.88-.29 4.11-1.56 5.87-3.5 1.79-1.96 3.17-4.69 3.23-7.97.09-5.54-4.14-9.77-9.25-9.77zM13 14H9v-2h4v2zm2-4H9V8h6v2z"></path></g>
+                    </svg>
+                    <span>Virat Kohli</span>
+                </div>
+                <div class="box boxy f cent view">
+                    <span>Steve Smith</span>
+                </div>
+                <div class="box boxy f cent view">
+                    <span>India vs Australia</span>
+                </div>
+                <div class="box boxy f cent view">
+                    <span>Borer Gavaskar Trophy</span>
+                </div>
+                <div class="box boxy f cent view">
+                    <span>Pat Cummins</span>
+                </div>
+                <div class="box boxy f cent view">
+                    <span>Test Cricket</span>
+                </div>
+                <div class="box boxy f cent view">
+                    <span>Indian Cricket</span>
+                </div>
+                <div class="box boxy f cent view">
+                    <span>Australia</span>
+                </div>
             </div>
         </section>
-        <section class="more mw f fcol">
-            <div class="heading">Posts you may like,</div>
-            <div class="list f cent">
-                <article class="vertical">
-                    <img class="w100 post" src="../assets/image/4.jpeg" />
-                    <div class="post-content">
-                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
-                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
-                        <div class="author f">
-                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
-                            <div class="info">
-                                <div class="">Cosmin Angheluta</div>
-                                <p class="small">Mar 22 . 2 min read</p>
-                            </div>
+            <div class="related_posts f mw">                
+                <div class="singlepost w100 f cent ">
+                    <div class="leftpost ">
+                        <h1 class="title ellipsis ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps with interactive diagrams - Hindustan Times</h1>
+                        <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                        <div class="footnote f ">
+                            <span class="f cent">
+                                <span class="dot black "></span>
+                                <div class="source_info f fcol ">
+                                    <span class="source ">Shitheesh Unnikrishnan</span>
+                                    <span class="ago ">56 years ago</span>
+                                </div>
+                            </span>
+                            <span class="more_action">
+                                <svg viewBox="0 0 16 16"><path d="M8 2.5a1.22 1.22 0 0 1 1.25 1.17A1.21 1.21 0 0 1 8 4.84a1.21 1.21 0 0 1-1.25-1.17A1.22 1.22 0 0 1 8 2.5zm0 8.66a1.17 1.17 0 1 1-1.25 1.17A1.21 1.21 0 0 1 8 11.16zm0-4.33a1.17 1.17 0 1 1 0 2.34 1.17 1.17 0 1 1 0-2.34z"/></svg>
+                            </span>
                         </div>
                     </div>
-                </article>
-                <article class="vertical">
-                    <img class="w100 post" src="../assets/image/5.jpeg" />
-                    <div class="post-content">
-                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
-                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
-                        <div class="author f">
-                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
-                            <div class="info">
-                                <div class="">Cosmin Angheluta</div>
-                                <p class="small">Mar 22 . 2 min read</p>
-                            </div>
+                    <img src="../assets/image/1.jpeg ">
+                </div>
+                <div class="singlepost w100 f cent ">
+                    <div class="leftpost ">
+                        <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>                    
+                        <div class="footnote f ">
+                            <span class="f cent">
+                                <img class="circle " src="../assets/image/profile.jpg " />
+                                <div class="source_info f fcol ">
+                                    <span class="source ">Shitheesh Unnikrishnan</span>
+                                    <span class="ago ">56 years ago</span>
+                                </div>
+                            </span>
+                            <span class="more_action">
+                                <svg viewBox="0 0 16 16"><path d="M8 2.5a1.22 1.22 0 0 1 1.25 1.17A1.21 1.21 0 0 1 8 4.84a1.21 1.21 0 0 1-1.25-1.17A1.22 1.22 0 0 1 8 2.5zm0 8.66a1.17 1.17 0 1 1-1.25 1.17A1.21 1.21 0 0 1 8 11.16zm0-4.33a1.17 1.17 0 1 1 0 2.34 1.17 1.17 0 1 1 0-2.34z"/></svg>
+                            </span>
                         </div>
                     </div>
-                </article>
-                <article class="vertical">
-                    <img class="w100 post" src="../assets/image/1.jpeg" />
-                    <div class="post-content">
-                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
-                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
-                        <div class="author f">
-                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
-                            <div class="info">
-                                <div class="">Cosmin Angheluta</div>
-                                <p class="small">Mar 22 . 2 min read</p>
+                    <img src="../assets/image/1.jpeg ">
+                </div>
+                <div class="singlepost w100 f cent ">
+                    <div class="leftpost w100 ">
+                        <h1 class="title ">Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="ellipsis ellipsis2 ">Learn to keep the readers attention first, and then talk about your experience.A startup-VC relationship at the (pre)seed stage is similar to a shotgun wedding: be sure it’s a good fit before jumping the broom!</p>
+                        <div class="footnote f ">
+                            <div class="source_info f cent ">
+                                <span class="dot blue "></span>
+                                <span class="source ">Hindustan Times</span>
                             </div>
+                            <span class="ago ">56 min ago</span>
                         </div>
                     </div>
-                </article>
+                </div>
             </div>
-        </section>
-        <section class="footer mw f">
-            <span>© 2021 Cricketist. All Rights Reserved.</span>
-            <div class="links">
-                <a href="/sillypoint"><span>Instagram</span></a>
-                <a href="/sillypoint"><span>Twitter</span></a>
-                <a href="/about"><span>About</span></a>
-                <a href="/privacy-policy"><span>Privacy Policy</span></a>
+        <section class="footer mw f ">
+            <span>© 2022 Cricketist. All Rights Reserved.</span>
+            <div class="links ">
+                <a href="/sillypoint "><span>Instagram</span></a>
+                <a href="/sillypoint "><span>Twitter</span></a>
+                <a href="/about "><span>Youtube</span></a>
+                <a href="/privacy-policy "><span>Privacy Policy</span></a>
             </div>
         </section>
     </div>
