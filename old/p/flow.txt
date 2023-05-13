@@ -1,0 +1,136 @@
+<?php
+
+$settings = array(
+    "interaction" => true,
+    "header" => "Hello, Things have been so cool these days ",
+    "media" => true,
+    "footer" => "Ok, Thats how it goes",
+    "message" => "_MI _becomes  Akeal Hosein, Romario Shepherd (WI) vs ENG, Barbados, ~2022~",
+    "replies" => array(
+        array(
+            "text" => "Albert Einstein",
+            "settings" => "{\"background\":\"#fcfcfc\",\"border\":\"#e3e3e3\",\"text\":\"#000\",\"hbackground\":\"#06d79c\",\"hborder\":\"#06d79c\",\"htext\":\"#fff\"}",
+            "id" => "4kytn_ax1e0kb_6a6n9u3"
+        ),
+        array(
+            "text" => "Nikola Tesla",
+            "settings" => "{\"background\":\"#fcfcfc\",\"border\":\"#e3e3e3\",\"text\":\"#000\",\"hbackground\":\"#06d79c\",\"hborder\":\"#06d79c\",\"htext\":\"#fff\"}",
+            "id" => "4kytn_ax1e0kb_0bi2wn8"
+        ),
+        array(
+            "text" => "Steve Jobs",
+            "settings" => "{\"background\":\"#fcfcfc\",\"border\":\"#e3e3e3\",\"text\":\"#000\",\"hbackground\":\"#06d79c\",\"hborder\":\"#06d79c\",\"htext\":\"#fff\"}",
+            "id" => "4kytn_ax1e0kb_l3mh0dvi"
+        )
+    ),
+    "media_file" => "https://cdn.pickyassist.com/media_gallery/image/7_1672644888_pexels-pixabay-60597.jpg",
+    "type" => "send_normal_message"
+);
+
+
+
+
+transform_to_whatsapp($settings,1,array());
+
+function transform_to_whatsapp($settings,$type,$DATA=array()){
+  $limit = 500;
+  
+  $choice_block = true;
+  $choice_arr = array();
+  if($choice_block && !empty($settings['replies'])){
+    $message = $settings['message']. "\n\n";
+    // $message .= "Please select the one of the options below 👇 \n\n";
+    $iter = 1;
+    foreach($settings['replies'] as $btns){
+      $message .= "$iter 👉 ".$btns['text']."\n";
+      $choice_arr[$iter] = $btns['id'];
+      $iter++;
+    }
+  }
+  
+  print_r($message);exit;
+  
+  $messages = split_messages($settings['message'],$limit);
+  $bot_message = $settings;
+  
+  // print_r($messages);exit;
+  
+  foreach($messages as $ky => $single_message){
+    unset($bot_message['footer']);
+    if((isset($settings['media_file']) || isset($settings['header']) ) && ($ky == 0)){
+      $DATA['globalmedia'] = $settings['media_file'];
+      $DATA['global_headermessage'] = mb_substr($settings['header'], 0, 20);
+      
+      $bot_message['media_file'] =  $settings['media_file'];
+      $bot_message['header'] =  mb_substr($settings['media_file'],0,20);
+      
+    }else{
+      unset($DATA['globalmedia']);
+      unset($DATA['global_headermessage']);
+      
+      unset($bot_message['media_file']);
+      unset($bot_message['header']);
+    }
+    
+    if(isset($settings['footer']) && ($ky == (count($messages)-1)) ){
+      $bot_message['footer'] = $settings['footer'];
+      $DATA['global_footermessage'] = $settings['footer'];
+    }
+    $bot_message['replies'] = false;
+    if(!empty($settings['replies']) && ($ky == (count($messages)-1)) ){
+      $DATA['interactive']['buttons'] = array();
+      $bot_message['replies'] = array();
+      foreach($settings['replies'] as $btns){
+        $snle = array(
+          "button_id" => $btns['id'],
+          'title' => mb_substr($btns['text'],0,20)
+        );
+        array_push($DATA['interactive']['buttons'],$snle);
+        
+        $bot_list = $btns;
+        $bot_list['text'] = mb_substr($btns['text'],0,20);
+        array_push($bot_message['replies'],$bot_list);
+      }
+    }
+    
+    if($settings['type'] == 'send_location_message'){
+      $DATA['location'] = array(
+        "latitude" => $settings['lat'],
+        "longitude" => $settings['lng'],
+        "name" => $settings['name'],
+        "address" => $settings['address']
+      );
+      $bot_message = $settings;
+    }else if($settings['type'] == 'send_contact_message'){
+      $contact_arr = $settings;
+      unset($contact_arr['interaction']);
+      unset($contact_arr['type']);
+      $DATA['contact'] = array(
+        $contact_arr
+      );
+      $bot_message = $settings;
+    }else if($settings['type'] == 'send_voice_message'){
+      $DATA['globalmedia'] = $settings['audio'];
+      $bot_message = $settings;
+      print_r($DATA);
+    }else{
+      $DATA['globalmessage'] = $single_message;
+      // Send to the whatsapp cloud
+      // SendPusHmessgae();
+      
+      $bot_message['message'] = $single_message;
+      print_r($bot_message);
+      // Send to the Chatbot
+    }
+  }
+}
+
+function split_messages($message, $limit) {
+    $chunks = wordwrap($message, $limit, "|PICKYSEPERATOR|");
+    $chunks = explode("|PICKYSEPERATOR|",$chunks);
+    
+    return $chunks;
+}
+function mb_substr($text){ return $text;}
+
+?>
