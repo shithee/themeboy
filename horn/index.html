@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Horn - Private Chat Room</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="singlepage" id="login" style="display: none">
+      <img class="illustr" src="image/welcome.gif" />
+      <p class="head">Welcome to Horn 📯</p>
+      <div class="input-container str">
+        <label>Full Name</label>
+        <input placeholder="Please enter your name" />
+      </div>
+      <button>Continue</button>
+    </section>
+    <section class="singlepage" id="checkin" style="display: none">
+      <img class="illustr" src="image/lock.png" />
+      <p class="head">Enter Secret Room Key</p>
+      <div class="input-container str">
+        <label>Room Key</label>
+        <input placeholder="Please enter your room number" />
+      </div>
+      <button>Verify the Room</button>
+    </section>
+    <section class="singlepage" id="verify" style="display: none">
+      <img class="illustr" src="image/search.png" />
+      <p class="info">Waiting for your chunk to join this room ⏰</p>
+      <button>Join the Room with Sansa</button>
+    </section>
+    <section class="singlepage" id="exit" style="display: none">
+      <img class="illustr" src="image/exit.png" />
+      <p class="info">Shitheesh Wants to exit the room 😴</p>
+      <div class="group">
+        <button class="light">No Way</button>
+        <button>Okay</button>
+      </div>
+    </section>
+    <section class="chatpage" id="chat">
+      <div class="header">
+        <div class="left">
+          <span class="dot"></span>
+          <div>
+            <span>Sansa Stark</span>
+            <span class="status">Typing</span>
+          </div>
+        </div>
+        <div class="right">
+          <svg
+            class="broke"
+            width="30"
+            height="30"
+            fill="currentColor"
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+            stroke-linejoin="round"
+            stroke-miterlimit="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m14.123 19.336c-.468.453-.944.913-1.426 1.381-.194.189-.446.283-.697.283s-.503-.094-.697-.283c-4.958-4.813-9.303-8.815-9.303-12.54 0-5.659 7.376-6.978 10-2.461 2.604-4.483 10-3.217 10 2.461 0 .68-.144 1.369-.41 2.07-1.061-1.02-2.503-1.648-4.089-1.648-3.257 0-5.9 2.644-5.9 5.9 0 2 .997 3.77 2.522 4.837zm3.377-9.336c2.484 0 4.5 2.016 4.5 4.5s-2.016 4.5-4.5 4.5-4.5-2.016-4.5-4.5 2.016-4.5 4.5-4.5zm.707 4.5s.642-.642 1.061-1.061c.187-.187.187-.519 0-.707-.188-.187-.52-.187-.707 0-.419.419-1.061 1.061-1.061 1.061s-.642-.642-1.061-1.061c-.187-.187-.519-.187-.707 0-.187.188-.187.52 0 .707.419.419 1.061 1.061 1.061 1.061s-.642.642-1.061 1.061c-.187.187-.187.519 0 .707.188.187.52.187.707 0 .419-.419 1.061-1.061 1.061-1.061s.642.642 1.061 1.061c.187.187.519.187.707 0 .187-.188.187-.52 0-.707-.419-.419-1.061-1.061-1.061-1.061z"
+              fill-rule="nonzero"
+            />
+          </svg>
+          <svg
+            class="horny active"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+          >
+            <path d="M9.417 0h6.958l-3.375 8h7l-13 16 4.375-11h-7.375z" />
+          </svg>
+          <svg
+            class="exit"
+            width="30"
+            height="30"
+            fill="currentColor"
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+            stroke-linejoin="round"
+            stroke-miterlimit="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m12.002 2.005c5.518 0 9.998 4.48 9.998 9.997 0 5.518-4.48 9.998-9.998 9.998-5.517 0-9.997-4.48-9.997-9.998 0-5.517 4.48-9.997 9.997-9.997zm0 8.933-2.721-2.722c-.146-.146-.339-.219-.531-.219-.404 0-.75.324-.75.749 0 .193.073.384.219.531l2.722 2.722-2.728 2.728c-.147.147-.22.34-.22.531 0 .427.35.75.751.75.192 0 .384-.073.53-.219l2.728-2.728 2.729 2.728c.146.146.338.219.53.219.401 0 .75-.323.75-.75 0-.191-.073-.384-.22-.531l-2.727-2.728 2.717-2.717c.146-.147.219-.338.219-.531 0-.425-.346-.75-.75-.75-.192 0-.385.073-.531.22z"
+              fill-rule="nonzero"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="playground">
+        <div class="moods horny">
+          <div class="author">Sansa Stark</div>
+          <div class="message"><span>Hii dear</span></div>
+          <div class="message"><span>What are you doing?</span></div>
+        </div>
+        <div class="moods">
+          <div class="author">You</div>
+          <div class="message"><span>I am fine, What you are doing?</span></div>
+          <div class="message"><span>Have we do that now?</span></div>
+        </div>
+        <div class="moodswing broke">Sansa turned on Angry Mode</div>
+        <div class="moods broke">
+          <div class="author">Sansa Stark</div>
+          <div class="message"><span>Okay, Thats good</span></div>
+          <div class="message"><span>Simping?</span></div>
+        </div>
+        <div class="moods">
+          <div class="author">Sansa Stark</div>
+          <div class="message"><span>Hii dear</span></div>
+          <div class="message"><span>What are you doing?</span></div>
+        </div>
+        <div class="moods horny">
+          <div class="author">You</div>
+          <div class="message"><span>I am fine, What you are doing?</span></div>
+          <div class="message"><span>Have we do that now?</span></div>
+        </div>
+        <div class="moods">
+          <div class="author">Sansa Stark</div>
+          <div class="message"><span>Okay, Thats good</span></div>
+          <div class="message"><span>Simping?</span></div>
+        </div>
+      </div>
+      <div class="footer">
+        <input placeholder="type your message" />
+        <svg
+          fill="currentColor"
+          class="emoji"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"
+          />
+        </svg>
+        <svg
+          fill="currentColor"
+          class="send"
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m12.007 2c-5.518 0-9.998 4.48-9.998 9.998 0 5.517 4.48 9.997 9.998 9.997s9.998-4.48 9.998-9.997c0-5.518-4.48-9.998-9.998-9.998zm1.523 6.21s1.502 1.505 3.255 3.259c.147.147.22.339.22.531s-.073.383-.22.53c-1.753 1.754-3.254 3.258-3.254 3.258-.145.145-.335.217-.526.217-.192-.001-.384-.074-.531-.221-.292-.293-.294-.766-.003-1.057l1.977-1.977h-6.693c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h6.693l-1.978-1.979c-.29-.289-.287-.762.006-1.054.147-.147.339-.221.53-.222.19 0 .38.071.524.215z"
+            fill-rule="nonzero"
+          />
+        </svg>
+      </div>
+      <div class="emojis">
+        <span>😄</span>
+        <span>😃</span>
+        <span>😀</span>
+        <span>😊</span>
+        <span>😉</span>
+        <span>😍</span>
+        <span>😘</span>
+        <span>😚</span>
+        <span>😗</span>
+        <span>😙</span>
+        <span>😜</span>
+        <span>😝</span>
+        <span>😛</span>
+        <span>😳</span>
+        <span>😁</span>
+        <span>😔</span>
+        <span>😌</span>
+        <span>😒</span>
+        <span>😞</span>
+        <span>😣</span>
+        <span>😢</span>
+        <span>😂</span>
+        <span>😭</span>
+        <span>😪</span>
+        <span>😥</span>
+        <span>😰</span>
+        <span>😅</span>
+        <span>😓</span>
+        <span>😩</span>
+        <span>😫</span>
+        <span>😨</span>
+        <span>😱</span>
+        <span>😠</span>
+        <span>😡</span>
+        <span>😤</span>
+        <span>😖</span>
+        <span>😆</span>
+        <span>😋</span>
+        <span>😷</span>
+        <span>😎</span>
+        <span>😴</span>
+        <span>😵</span>
+        <span>😲</span>
+        <span>😟</span>
+        <span>😦</span>
+        <span>😧</span>
+        <span>👿</span>
+        <span>😮</span>
+        <span>😬</span>
+        <span>😐</span>
+        <span>😕</span>
+        <span>😯</span>
+        <span>😏</span>
+        <span>😑</span>
+      </div>
+    </section>
+  </body>
+</html>
