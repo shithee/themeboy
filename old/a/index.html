@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://test.pickyassist.com/js/bootstrap.min.js"></script>
+    <link href="https://test.pickyassist.com/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link href="https://test.pickyassist.com/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="extra.css">
+    <script type="text/javascript">      
+        $(document).on('mouseover','.custom_scrollbar_element',function(){
+            $(this).addClass('scrolling');
+        });
+        $(document).on('mouseout','.custom_scrollbar_element',function(){
+            $(this).removeClass('scrolling');
+        });
+    </script>
+</head>
+<body>
+
+  <div class="page-wrapper custom_tool_tip picky_notify_toast_parent" style="padding-top: 0px">
+    <div>
+        <div class="anlys_heding heder_main_block_sec pos_rel">
+            <div>
+                <div class="name_block">
+                    <div class="d_flex_ht gap_10px">
+                        <span class=" txt_trey">Yearly Sales Report</span>
+                        <span class="d_flex_ht edit_icon_wt cur_pointer hoverd_icon Edit_btn_name">
+                            <svg width="20" height="20" viewBox="0 0 24 24" class fill="currentColor">
+                                <path d="M20.41 4.94l-1.35-1.35c-.78-.78-2.05-.78-2.83 0L3 16.82V21h4.18L20.41 7.77c.79-.78.79-2.05 0-2.83zm-14 14.12L5 19v-1.36l9.82-9.82 1.41 1.41-9.82 9.83z"></path>
+                                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <input value="659fb4172629e14b6b4a7a82" type="hidden" id="rep_id" />
+                <input value type="hidden" id="published" />
+            </div>
+            <div class="main_right_btn_block ">
+                <div class="btn_data_block cur_pointer hoverd_icon action_btn" role="button">
+                    <span class="arrow_doen d_flex_ht">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_38_773)">
+                                <path d="M7.99992 14.6666C11.6818 14.6666 14.6666 11.6819 14.6666 7.99998C14.6666 4.31808 11.6818 1.33331 7.99992 1.33331C4.31802 1.33331 1.33325 4.31808 1.33325 7.99998C1.33325 11.6819 4.31802 14.6666 7.99992 14.6666Z" fill="#3C3C3C" stroke="#3B3B3B" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.06006 6.00001C6.21679 5.55446 6.52616 5.17875 6.93336 4.93944C7.34056 4.70012 7.81932 4.61264 8.28484 4.69249C8.75036 4.77234 9.1726 5.01436 9.47678 5.3757C9.78095 5.73703 9.94743 6.19436 9.94673 6.66668C9.94673 8.00001 7.94673 8.66668 7.94673 8.66668" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M8 11.3333H8.00667" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_38_773">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span>Help</span>
+                </div>
+                <div class="btn_data_block cur_pointer bg_border" style="display:none;" role="button">
+                    <span>Save as new report</span>
+                </div>
+                <div class="btn_data_block cur_pointer bg_gnftr" role="button">
+                    <span>Save Report</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main_analysis_main_wraper">
+        <div class="fields_sectn_cnt">
+            <div class="left_side_condition">
+                <div class="aroow_nate minimize_lft_sec shw_these" style="display:none;">
+                    <div class="arrow_right cur_pointer hoverd_icon">
+                        <div class="d_flex_ht">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 25 25" fill="none">
+                                <path d="M11.5 17.5L6.5 12.5L11.5 7.5" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M18.5 17.5L13.5 12.5L18.5 7.5" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="pad_10px border_botton h_65 shw_these" style="display:none;">
+                    <div class="hd_list_main  pos_rel">
+                        <div class="search-box " style>
+                            <input class="search-input search_data_fields" type="text" placeholder="Search data fields ...">
+                            <span class="close_btN_hdg clear_field_search clear_search" style="display:none;">
+                                <svg width="14px" height="14px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path>
+                                </svg>
+                            </span>
+                            <button class="search-btn">
+                                <span>
+                                    <svg width="14px" height="14px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="filter_outer cur_pointer hoverd_icon pos_rel filter_btn_tr">
+                            <div class="d_flex_ht filter_data_fields">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"></path>
+                                </svg>
+                            </div>
+                            <span class="added_filterYT" style="display:none;">
+                                <span class="dot_icon"></span>
+                            </span>
+                        </div>
+                        <div class="action_outer_box filter_action_main">
+                            <div class="pad_block_dashSet border_botton">
+                                <div class="d_flex_ht ">
+                                    <div data-block="Data_sources"  class="switch_filter_types btn_data_block cur_pointer Active_filter setting_nav hoverd_icon" role="button"> Data sources </div>
+                                    <div data-block="Field_types" class="switch_filter_types btn_data_block cur_pointer setting_nav hoverd_icon" role="button"> Field types </div>
+                                </div>
+                            </div>
+                            <div id="Data_sources" class="pad_block filter_block">
+                                <div class="d_flex_ht gap_10px Dir_culmn Dir_culmns">
+                                    <div>
+                                        <div class="checkboxes__item">
+                                            <label class="checkbox style-c">
+                                                <input type="checkbox">
+                                                <div class="checkbox__checkmark"></div>
+                                                <div class="checkbox__body">Conatcts</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="checkboxes__item">
+                                            <label class="checkbox style-c">
+                                                <input type="checkbox">
+                                                <div class="checkbox__checkmark"></div>
+                                                <div class="checkbox__body">Notes</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="checkboxes__item">
+                                            <label class="checkbox style-c">
+                                                <input type="checkbox">
+                                                <div class="checkbox__checkmark"></div>
+                                                <div class="checkbox__body">Tasks</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="Field_types" class="pad_block filter_block" style="display: none;">
+                                <div class="d_flex_ht gap_10px Dir_culmn">
+                                    <div class="d_flex_ht gap_10px">
+                                        <div class="checkboxes__item">
+                                            <label class="checkbox style-c">
+                                                <input type="checkbox" data-id="number">
+                                                <div class="checkbox__checkmark"></div>
+                                                <div class="d_flex_ht gap_10px">
+                                                    <div>
+                                                        <span class="text_main_tye mb-0 ">#</span>
+                                                    </div>
+                                                    <div class="checkbox__body">Numbers</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="d_flex_ht gap_10px">
+                                        <div class="checkboxes__item">
+                                            <label class="checkbox style-c">
+                                                <input type="checkbox" data-id="datetime">
+                                                <div class="checkbox__checkmark"></div>
+                                                <div class="d_flex_ht gap_10px">
+                                                    <div>
+                                                        <span class="text_main_tye mb-0 ">
+                                                            <i class="fa fa-calendar-o bold-400" aria-hidden="true"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="checkbox__body">Datetime</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="d_flex_ht gap_10px">
+                                        <div class="checkboxes__item">
+                                            <label class="checkbox style-c">
+                                                <input type="checkbox" data-id="string">
+                                                <div class="checkbox__checkmark"></div>
+                                                <div class="d_flex_ht gap_10px">
+                                                    <div>
+                                                        <span class="text_main_tye mb-0 ">Abc</span>
+                                                    </div>
+                                                    <div class="checkbox__body">String</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="d_flex_ht gap_10px">
+                                        <div class="checkboxes__item">
+                                            <label class="checkbox style-c">
+                                                <input type="checkbox" data-id="dropdown">
+                                                <div class="checkbox__checkmark"></div>
+                                                <div class="d_flex_ht gap_10px">
+                                                    <div>
+                                                        <span class="text_main_tye mb-0 ">
+                                                            <i class="fa fa-angle-double-down  " aria-hidden="true"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="checkbox__body">Dropdown</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="d_flex_ht gap_10px">
+                                        <div class="checkboxes__item">
+                                            <label class="checkbox style-c">
+                                                <input type="checkbox" data-id="formula">
+                                                <div class="checkbox__checkmark"></div>
+                                                <div class="d_flex_ht gap_10px">
+                                                    <div>
+                                                        <span class="text_main_tye mb-0 ">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 18 18" fill="none">
+                                                                <path d="M10.5 9L13.5 12" stroke="#242424" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M13.5 9L10.5 12" stroke="#242424" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M2.25 9.00001H3.3225C3.45266 9.00004 3.58057 9.03393 3.69366 9.09836C3.80675 9.1628 3.90112 9.25555 3.9675 9.36751L6 12.75L8.0925 5.78251C8.14065 5.62308 8.24049 5.48421 8.37629 5.38779C8.51208 5.29138 8.67611 5.2429 8.8425 5.25001H15.75" stroke="#242424" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="checkbox__body">Formula</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main_right_btn_block pad_lr border_top D_flex_end">
+                                <div class="btn_data_block cur_pointer cancel_field_filter hoverd_icon border_bg_none" role="button">
+                                    <span>Cancel</span>
+                                </div>
+                                <div class="btn_data_block cur_pointer do_field_filter bg_gnftr" role="button">
+                                    <span>Apply </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom_scrollbar_element scroll_left">
+                    <div class="main_outer_try mb-3 lster " style="padding: 15px 4px 30px 10px;display:none;"></div>
+                    <div class="fields_loader fields_loader p-2 mt-2">
+                        <div class="tab_menu_main">
+                            <div>
+                                <div class="image_set  bg_vilolet skeleton"></div>
+                            </div>
+                            <div>
+                                <p class="par_txtfr main_btrx skeleton" style="min-width:150px ; height:10px"></p>
+                            </div>
+                        </div>
+                        <div class="tab_menu_main">
+                            <div>
+                                <div class="image_set  bg_vilolet skeleton"></div>
+                            </div>
+                            <div>
+                                <p class="par_txtfr main_btrx skeleton" style="min-width:150px ; height:10px"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chart_sect_cont">
+            <div class="center_sec_anlysi">
+                <div class="right_arrow_tr" style="display: none;">
+                    <div class="arrow_right cur_pointer hoverd_icon">
+                        <div class="d_flex_ht">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 25 25" fill="none">
+                                <path d="M11.5 17.5L6.5 12.5L11.5 7.5" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M18.5 17.5L13.5 12.5L18.5 7.5" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="pad_block border_botton h_65 cnfre_rp_hdr" style="display: none;">
+                    <div class="main_chart_wrap gap_10px">
+                        <div role="button" class="btn_main_nav active_btn configure_btn">
+                            <div class="gap_10px d_flex_ht">
+                                <span class="main_chart_wrap">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="17" viewBox="0 0 23 17" fill="none">
+                                        <path d="M18.6074 4.63201L14.6434 8.71992H17.6164C17.6164 12.1027 14.9506 14.8518 11.6704 14.8518C10.6695 14.8518 9.71809 14.5963 8.89556 14.1364L7.44868 15.6285C8.66762 16.4256 10.1145 16.8957 11.6704 16.8957C16.0506 16.8957 19.5984 13.2371 19.5984 8.71992H22.5715L18.6074 4.63201ZM5.72433 8.71992C5.72433 5.33717 8.39014 2.58805 11.6704 2.58805C12.6713 2.58805 13.6227 2.84355 14.4452 3.30344L15.8921 1.81135C14.6731 1.01421 13.2263 0.544098 11.6704 0.544098C7.29012 0.544098 3.74231 4.20278 3.74231 8.71992H0.769287L4.73332 12.8078L8.69736 8.71992H5.72433Z" fill="#121212" />
+                                    </svg>
+                                </span>
+                                <span>Configure</span>
+                            </div>
+                        </div>
+                        <div role="button" class="btn_main_nav filter_btn_block">
+                            <div class="gap_10px d_flex_ht main_chart_wrap">
+                                <span class="d_flex_ht pos_rel">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 21 14" fill="none">
+                                        <path d="M8.50902 13.8957H13.0511V11.6247H8.50902V13.8957ZM0.560303 0.269379V2.54044H20.9999V0.269379H0.560303ZM3.96689 8.21809H17.5933V5.94703H3.96689V8.21809Z" fill="#121212" />
+                                    </svg>
+                                    <span class="added_filter">
+                                        <span class="dot_icon"></span>
+                                    </span>
+                                </span>
+                                </span>
+                                <span>Filters</span>
+                                <span class="bad_text">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom_scrollbar_element scroll_left">
+                    <div class="main_outer_try pad_block main_block" style="display:none;">
+                        <div class="d_flex_ht  just_spc_btw mb-2 Align_center">
+                            <div>
+                                <span class="  txt_trey">Chart </span>
+                            </div>
+                            <div class="pos_rel">
+                                <span class="filter_outer cur_pointer hoverd_icon settigns_btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 31 31" fill="none">
+                                        <path d="M24.6436 16.938C24.6935 16.5633 24.7185 16.176 24.7185 15.7638C24.7185 15.3641 24.6935 14.9644 24.6311 14.5897L27.1667 12.6162C27.3915 12.4413 27.454 12.104 27.3166 11.8542L24.9184 7.70726C24.7685 7.43246 24.4562 7.34502 24.1814 7.43246L21.1961 8.63158C20.5715 8.15693 19.9095 7.75722 19.1726 7.45744L18.7229 4.28477C18.6729 3.98499 18.4231 3.77264 18.1233 3.77264H13.3269C13.0271 3.77264 12.7898 3.98499 12.7398 4.28477L12.2901 7.45744C11.5532 7.75722 10.8787 8.16942 10.2666 8.63158L7.28129 7.43246C7.0065 7.33253 6.69423 7.43246 6.54434 7.70726L4.15859 11.8542C4.0087 12.1165 4.05866 12.4413 4.30848 12.6162L6.84412 14.5897C6.78166 14.9644 6.7317 15.3766 6.7317 15.7638C6.7317 16.1511 6.75668 16.5633 6.81913 16.938L4.28349 18.9115C4.05866 19.0864 3.99621 19.4237 4.1336 19.6735L6.53184 23.8204C6.68173 24.0952 6.99401 24.1827 7.2688 24.0952L10.2541 22.8961C10.8787 23.3708 11.5407 23.7705 12.2776 24.0703L12.7273 27.2429C12.7898 27.5427 13.0271 27.7551 13.3269 27.7551H18.1233C18.4231 27.7551 18.6729 27.5427 18.7104 27.2429L19.1601 24.0703C19.897 23.7705 20.5715 23.3708 21.1836 22.8961L24.1689 24.0952C24.4437 24.1952 24.756 24.0952 24.9059 23.8204L27.3041 19.6735C27.454 19.3987 27.3915 19.0864 27.1542 18.9115L24.6436 16.938ZM15.7251 20.2605C13.2519 20.2605 11.2284 18.237 11.2284 15.7638C11.2284 13.2907 13.2519 11.2671 15.7251 11.2671C18.1983 11.2671 20.2218 13.2907 20.2218 15.7638C20.2218 18.237 18.1983 20.2605 15.7251 20.2605Z" fill="#313131" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div class="settings_outer_main ">
+                                        <div class=" ">
+                                            <div class="mb-2 pad_lr pb-0">
+                                                <span class="  txt_trey">Vertical bar chart settings </span>
+                                            </div>
+                                            <div class="scrollbar-inner scroll_bar_hegt">
+                                                <div class="pad_lr">
+                                                    <div class="d_flex_ht gap_10px Dir_culmn mb-3">
+                                                        <div>
+                                                            <div class="checkboxes__item">
+                                                                <label class="checkbox style-c">
+                                                                    <input type="checkbox">
+                                                                    <div class="checkbox__checkmark"></div>
+                                                                    <div class="checkbox__body">Cumulative</div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="checkboxes__item">
+                                                                <label class="checkbox style-c">
+                                                                    <input type="checkbox">
+                                                                    <div class="checkbox__checkmark"></div>
+                                                                    <div class="checkbox__body">Show data labels</div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="checkboxes__item">
+                                                                <label class="checkbox style-c">
+                                                                    <input type="checkbox">
+                                                                    <div class="checkbox__checkmark"></div>
+                                                                    <div class="checkbox__body">Stacked</div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-2">
+                                                        <span class="text_main_tye main_btrx">Y - axis Scale</span>
+                                                        <div class=" float-label__wrapper">
+                                                            <span class="close-btn-clear ">
+                                                                <i class="fa fa-times bold-400"></i>
+                                                            </span>
+                                                            <select name class="selectize_custom" placeholder="Select  Y - axis Scale...">
+                                                                <option value="Linear">Linear</option>
+                                                                <option value="Deals">Deals</option>
+                                                                <option value="Organization">Organization</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-2">
+                                                        <span class="text_main_tye main_btrx">Y - axis Label</span>
+                                                        <div class=" float-label__wrapper">
+                                                            <span class="close-btn-clear ">
+                                                                <i class="fa fa-times bold-400"></i>
+                                                            </span>
+                                                            <select name class="selectize_custom" placeholder="Select  Y - axis Label...">
+                                                                <option value="Linear">Count of deals</option>
+                                                                <option value="Deals">Deals</option>
+                                                                <option value="Organization">Organization</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-2">
+                                                        <span class="text_main_tye main_btrx">Legend position</span>
+                                                        <div class=" float-label__wrapper">
+                                                            <span class="close-btn-clear ">
+                                                                <i class="fa fa-times bold-400"></i>
+                                                            </span>
+                                                            <select name class="selectize_custom" placeholder="Select  Legend position...">
+                                                                <option value="Top">Top</option>
+                                                                <option value="Deals">Left</option>
+                                                                <option value="Right">Right</option>
+                                                                <option value="Down">Down</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-2">
+                                                        <div class="d_flex_ht gap_10px">
+                                                            <div>
+                                                                <span class="text_main_tye main_btrx">Min</span>
+                                                                <div class="input_main_ser_Otr">
+                                                                    <input class="input_custom_tye" type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <span class="text_main_tye main_btrx">Max</span>
+                                                                <div class="input_main_ser_Otr">
+                                                                    <input class="input_custom_tye" type="text">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="main_right_btn_block pad_lr border_top D_flex_end">
+                                                    <div class="btn_data_block cur_pointer hoverd_icon border_bg_none" role="button">
+                                                        <span>Cancel</span>
+                                                    </div>
+                                                    <div class="btn_data_block cur_pointer bg_gnftr" role="button">
+                                                        <span>Apply </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mar_btm_20 chart_selc_unt">
+                            <div class="d_flex_ht gap_10px flex_wrap">
+                                <div class="grph_icon Active_graph" data-type="vertical_bar">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <path d="M3.15 16.425V1.575C3.15 0.705152 2.44485 0 1.575 0C0.705151 0 0 0.705152 0 1.575V16.425C0 17.2948 0.705151 18 1.575 18C2.44485 18 3.15 17.2948 3.15 16.425Z" fill="#3AAA55" />
+                                            <path d="M7.65 16.425V5.62499C7.65 4.75514 6.94485 4.04999 6.075 4.04999C5.20515 4.04999 4.5 4.75514 4.5 5.62499V16.425C4.5 17.2948 5.20515 18 6.075 18C6.94485 18 7.65 17.2948 7.65 16.425Z" fill="#E1CE25" />
+                                            <path d="M12.15 16.425V8.54998C12.15 7.68013 11.4448 6.97498 10.575 6.97498C9.70515 6.97498 9 7.68013 9 8.54998V16.425C9 17.2948 9.70515 18 10.575 18C11.4448 18 12.15 17.2948 12.15 16.425Z" fill="#FEA98E" />
+                                            <path d="M16.65 16.425V12.825C16.65 11.9552 15.9448 11.25 15.075 11.25C14.2052 11.25 13.5 11.9552 13.5 12.825V16.425C13.5 17.2948 14.2052 18 15.075 18C15.9448 18 16.65 17.2948 16.65 16.425Z" fill="#7862FF" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon" data-type="horizontal_bar">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <path d="M16.425 0H1.575C0.705152 0 0 0.705151 0 1.575C0 2.44485 0.705152 3.15 1.575 3.15H16.425C17.2948 3.15 18 2.44485 18 1.575C18 0.705151 17.2948 0 16.425 0Z" fill="#3AAA55" />
+                                            <path d="M12.375 4.5H1.575C0.705152 4.5 0 5.20515 0 6.075C0 6.94485 0.705151 7.65 1.575 7.65H12.375C13.2448 7.65 13.95 6.94485 13.95 6.075C13.95 5.20515 13.2448 4.5 12.375 4.5Z" fill="#E1CE25" />
+                                            <path d="M9.45 9H1.575C0.705152 9 0 9.70515 0 10.575C0 11.4448 0.705153 12.15 1.575 12.15H9.45C10.3198 12.15 11.025 11.4448 11.025 10.575C11.025 9.70515 10.3198 9 9.45 9Z" fill="#FEA98E" />
+                                            <path d="M5.175 13.5H1.575C0.705152 13.5 0 14.2052 0 15.075C0 15.9448 0.705152 16.65 1.575 16.65H5.175C6.04485 16.65 6.75 15.9448 6.75 15.075C6.75 14.2052 6.04485 13.5 5.175 13.5Z" fill="#7862FF" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon "  data-type="line_chart">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <g clip-path="url(#clip0_233_42)">
+                                                <path d="M0.900024 16.425L11.7 1.79999L17.1 10.125" stroke="#3AAA55" stroke-width="1.35" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M0.900024 8.77498L5.85002 2.02498L11.25 9.22498L17.1 1.34998" stroke="#666666" stroke-width="1.35" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_233_42">
+                                                    <rect width="18" height="18" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon " data-type="area_chart">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <g clip-path="url(#clip0_233_45)">
+                                                <path d="M0 16.11L6.48 5.6025L18 0V5.805L6.57 9.225L0 16.11Z" fill="#FEA98E" />
+                                                <path d="M0 17.145L6.795 10.0575L18 6.61499V10.8L13.275 11.16L6.975 12.645L0 17.145Z" fill="#E1CE25" />
+                                                <path d="M0 18L7.2 13.455L13.32 12.06L18 11.565V18H0Z" fill="#3AAA55" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_233_45">
+                                                    <rect width="18" height="18" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon " data-type="doughnet">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <path d="M12.8925 2.27247C11.655 1.55247 10.575 1.28247 9 1.28247V4.74747C9.765 4.74747 10.5075 4.94997 11.115 5.30997L12.8925 2.27247Z" fill="#E1CE25" />
+                                            <path d="M12.8925 2.27252L11.1375 5.33252C12.42 6.07502 13.275 7.44752 13.275 9.02252H16.8075C16.785 6.07502 15.3675 3.69002 12.8925 2.27252Z" fill="#7862FF" />
+                                            <path d="M13.2525 9C13.2525 11.34 11.34 13.2525 8.99997 13.2525C8.25747 13.2525 7.53747 13.05 6.92997 12.7125L5.21997 15.795C6.45747 16.515 7.55997 16.695 8.99997 16.695C13.2975 16.695 16.785 13.275 16.785 9H13.2525Z" fill="#FEA98E" />
+                                            <path d="M4.7476 8.99997C4.7476 6.65997 6.6601 4.74747 9.0001 4.74747V1.28247C6.3001 1.28247 3.7576 2.69997 2.3176 5.17497C0.180099 8.88747 1.5076 13.635 5.2201 15.795L6.9301 12.735C5.6251 11.9925 4.7476 10.5975 4.7476 8.99997Z" fill="#3AAA55" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon " data-type="pie_chart">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <path d="M9 9.00003L6.21 16.2675C2.205 14.715 0.202504 10.215 1.7325 6.21003C2.9025 3.17253 5.7375 1.21503 9 1.21503V9.00003Z" fill="#3AAA55" />
+                                            <path d="M8.99996 9L16.65 10.35C15.9075 14.58 11.88 17.415 7.64996 16.65C7.13246 16.56 6.70496 16.4475 6.20996 16.245L8.99996 9Z" fill="#E1CE25" />
+                                            <path d="M9 9.00003V1.21503C13.2975 1.21503 16.785 4.70253 16.785 9.00003C16.785 9.51753 16.7625 9.83253 16.6725 10.35L9 9.00003Z" fill="#FEA98E" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon " data-type="kpi">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <g clip-path="url(#clip0_233_58)">
+                                                <path d="M8.77505 16.875C13.2486 16.875 16.875 13.2485 16.875 8.77499C16.875 4.30148 13.2486 0.674988 8.77505 0.674988C4.30154 0.674988 0.675049 4.30148 0.675049 8.77499C0.675049 13.2485 4.30154 16.875 8.77505 16.875Z" stroke="#444444" stroke-width="1.35" />
+                                                <path d="M8.4149 12.7575V7.85251H6.5249V6.70501C6.7949 6.70501 7.0424 6.68251 7.2899 6.63751C7.5374 6.59251 7.7624 6.50251 7.9649 6.39001C8.1674 6.27751 8.3249 6.12001 8.4599 5.91751C8.5949 5.71501 8.6849 5.49001 8.7299 5.19751H9.9449V12.7575H8.4149Z" fill="#3AAA55" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_233_58">
+                                                    <rect width="18" height="18" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon " data-type="simple_table">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <g clip-path="url(#clip0_233_61)">
+                                                <path d="M1.925 3.375H1C0.447715 3.375 0 3.82271 0 4.375V5.3C0 5.85228 0.447714 6.3 0.999999 6.3H1.925C2.47728 6.3 2.925 5.85229 2.925 5.3V4.375C2.925 3.82272 2.47729 3.375 1.925 3.375Z" fill="#E1CE25" />
+                                                <path d="M1.925 6.97498H1C0.447715 6.97498 0 7.42269 0 7.97497V8.89998C0 9.45226 0.447714 9.89998 0.999999 9.89998H1.925C2.47728 9.89998 2.925 9.45226 2.925 8.89998V7.97498C2.925 7.42269 2.47729 6.97498 1.925 6.97498Z" fill="#E1CE25" />
+                                                <path d="M1.925 10.575H1C0.447715 10.575 0 11.0227 0 11.575V12.5C0 13.0523 0.447714 13.5 0.999999 13.5H1.925C2.47728 13.5 2.925 13.0523 2.925 12.5V11.575C2.925 11.0227 2.47729 10.575 1.925 10.575Z" fill="#E1CE25" />
+                                                <path d="M1.925 14.175H1C0.447715 14.175 0 14.6227 0 15.175V16.1C0 16.6523 0.447714 17.1 0.999999 17.1H1.925C2.47728 17.1 2.925 16.6523 2.925 16.1V15.175C2.925 14.6227 2.47729 14.175 1.925 14.175Z" fill="#E1CE25" />
+                                                <path d="M5.3 0H4.375C3.82272 0 3.375 0.447714 3.375 0.999999V1.925C3.375 2.47728 3.82271 2.925 4.375 2.925H5.3C5.85228 2.925 6.3 2.47729 6.3 1.925V1C6.3 0.447715 5.85229 0 5.3 0Z" fill="#FEA98E" />
+                                                <path d="M8.9001 0H7.9751C7.42281 0 6.9751 0.447714 6.9751 0.999999V1.925C6.9751 2.47728 7.42281 2.925 7.9751 2.925H8.9001C9.45238 2.925 9.9001 2.47729 9.9001 1.925V1C9.9001 0.447715 9.45238 0 8.9001 0Z" fill="#FEA98E" />
+                                                <path d="M12.5 0H11.575C11.0227 0 10.575 0.447714 10.575 0.999999V1.925C10.575 2.47728 11.0227 2.925 11.575 2.925H12.5C13.0522 2.925 13.5 2.47729 13.5 1.925V1C13.5 0.447715 13.0522 0 12.5 0Z" fill="#FEA98E" />
+                                                <path d="M16.1 0H15.175C14.6228 0 14.175 0.447714 14.175 0.999999V1.925C14.175 2.47728 14.6228 2.925 15.175 2.925H16.1C16.6523 2.925 17.1 2.47729 17.1 1.925V1C17.1 0.447715 16.6523 0 16.1 0Z" fill="#FEA98E" />
+                                                <path d="M5.3 3.375H4.375C3.82272 3.375 3.375 3.82271 3.375 4.375V5.3C3.375 5.85228 3.82271 6.3 4.375 6.3H5.3C5.85228 6.3 6.3 5.85229 6.3 5.3V4.375C6.3 3.82272 5.85229 3.375 5.3 3.375Z" fill="#3AAA55" />
+                                                <path d="M5.3 6.97498H4.375C3.82272 6.97498 3.375 7.42269 3.375 7.97497V8.89998C3.375 9.45226 3.82271 9.89998 4.375 9.89998H5.3C5.85228 9.89998 6.3 9.45226 6.3 8.89998V7.97498C6.3 7.42269 5.85229 6.97498 5.3 6.97498Z" fill="#3AAA55" />
+                                                <path d="M5.3 10.575H4.375C3.82272 10.575 3.375 11.0227 3.375 11.575V12.5C3.375 13.0523 3.82271 13.5 4.375 13.5H5.3C5.85228 13.5 6.3 13.0523 6.3 12.5V11.575C6.3 11.0227 5.85229 10.575 5.3 10.575Z" fill="#3AAA55" />
+                                                <path d="M5.3 14.175H4.375C3.82272 14.175 3.375 14.6227 3.375 15.175V16.1C3.375 16.6523 3.82271 17.1 4.375 17.1H5.3C5.85228 17.1 6.3 16.6523 6.3 16.1V15.175C6.3 14.6227 5.85229 14.175 5.3 14.175Z" fill="#3AAA55" />
+                                                <path d="M8.9001 3.375H7.9751C7.42281 3.375 6.9751 3.82271 6.9751 4.375V5.3C6.9751 5.85228 7.42281 6.3 7.9751 6.3H8.9001C9.45238 6.3 9.9001 5.85229 9.9001 5.3V4.375C9.9001 3.82272 9.45238 3.375 8.9001 3.375Z" fill="#3AAA55" />
+                                                <path d="M8.9001 6.97498H7.9751C7.42281 6.97498 6.9751 7.42269 6.9751 7.97497V8.89998C6.9751 9.45226 7.42281 9.89998 7.9751 9.89998H8.9001C9.45238 9.89998 9.9001 9.45226 9.9001 8.89998V7.97498C9.9001 7.42269 9.45238 6.97498 8.9001 6.97498Z" fill="#3AAA55" />
+                                                <path d="M8.9001 10.575H7.9751C7.42281 10.575 6.9751 11.0227 6.9751 11.575V12.5C6.9751 13.0523 7.42281 13.5 7.9751 13.5H8.9001C9.45238 13.5 9.9001 13.0523 9.9001 12.5V11.575C9.9001 11.0227 9.45238 10.575 8.9001 10.575Z" fill="#3AAA55" />
+                                                <path d="M8.9001 14.175H7.9751C7.42281 14.175 6.9751 14.6227 6.9751 15.175V16.1C6.9751 16.6523 7.42281 17.1 7.9751 17.1H8.9001C9.45238 17.1 9.9001 16.6523 9.9001 16.1V15.175C9.9001 14.6227 9.45238 14.175 8.9001 14.175Z" fill="#3AAA55" />
+                                                <path d="M12.5 3.375H11.575C11.0227 3.375 10.575 3.82271 10.575 4.375V5.3C10.575 5.85228 11.0227 6.3 11.575 6.3H12.5C13.0522 6.3 13.5 5.85229 13.5 5.3V4.375C13.5 3.82272 13.0522 3.375 12.5 3.375Z" fill="#3AAA55" />
+                                                <path d="M12.5 6.97498H11.575C11.0227 6.97498 10.575 7.42269 10.575 7.97497V8.89998C10.575 9.45226 11.0227 9.89998 11.575 9.89998H12.5C13.0522 9.89998 13.5 9.45226 13.5 8.89998V7.97498C13.5 7.42269 13.0522 6.97498 12.5 6.97498Z" fill="#3AAA55" />
+                                                <path d="M12.5 10.575H11.575C11.0227 10.575 10.575 11.0227 10.575 11.575V12.5C10.575 13.0523 11.0227 13.5 11.575 13.5H12.5C13.0522 13.5 13.5 13.0523 13.5 12.5V11.575C13.5 11.0227 13.0522 10.575 12.5 10.575Z" fill="#3AAA55" />
+                                                <path d="M12.5 14.175H11.575C11.0227 14.175 10.575 14.6227 10.575 15.175V16.1C10.575 16.6523 11.0227 17.1 11.575 17.1H12.5C13.0522 17.1 13.5 16.6523 13.5 16.1V15.175C13.5 14.6227 13.0522 14.175 12.5 14.175Z" fill="#3AAA55" />
+                                                <path d="M16.1 3.375H15.175C14.6228 3.375 14.175 3.82271 14.175 4.375V5.3C14.175 5.85228 14.6228 6.3 15.175 6.3H16.1C16.6523 6.3 17.1 5.85229 17.1 5.3V4.375C17.1 3.82272 16.6523 3.375 16.1 3.375Z" fill="#3AAA55" />
+                                                <path d="M16.1 6.97498H15.175C14.6228 6.97498 14.175 7.42269 14.175 7.97497V8.89998C14.175 9.45226 14.6228 9.89998 15.175 9.89998H16.1C16.6523 9.89998 17.1 9.45226 17.1 8.89998V7.97498C17.1 7.42269 16.6523 6.97498 16.1 6.97498Z" fill="#3AAA55" />
+                                                <path d="M16.1 10.575H15.175C14.6228 10.575 14.175 11.0227 14.175 11.575V12.5C14.175 13.0523 14.6228 13.5 15.175 13.5H16.1C16.6523 13.5 17.1 13.0523 17.1 12.5V11.575C17.1 11.0227 16.6523 10.575 16.1 10.575Z" fill="#3AAA55" />
+                                                <path d="M16.1 14.175H15.175C14.6228 14.175 14.175 14.6227 14.175 15.175V16.1C14.175 16.6523 14.6228 17.1 15.175 17.1H16.1C16.6523 17.1 17.1 16.6523 17.1 16.1V15.175C17.1 14.6227 16.6523 14.175 16.1 14.175Z" fill="#3AAA55" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_233_61">
+                                                    <rect width="18" height="18" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon " data-type="combination">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <path d="M0.720093 12.24L0.720093 16.56H3.60009L3.60009 12.24H0.720093Z" fill="#3AAA55" />
+                                            <path d="M5.04004 13.68V16.56H7.92004V13.68H5.04004Z" fill="#3AAA55" />
+                                            <path d="M9.36011 6.48V16.56H12.2401V6.48H9.36011Z" fill="#3AAA55" />
+                                            <path d="M13.6799 10.8V16.56H16.5599V10.8H13.6799Z" fill="#3AAA55" />
+                                            <path d="M1.33743 10.724C1.04909 10.9978 0.593361 10.986 0.319531 10.6977C0.0456998 10.4094 0.0574604 9.95362 0.345798 9.67979L8.33993 2.08785C8.52203 1.91491 8.7811 1.84935 9.02355 1.91486L17.0177 4.07486C17.4016 4.17858 17.6287 4.57386 17.5249 4.95774C17.4212 5.34162 17.0259 5.56873 16.6421 5.46501L9.03832 3.41049L1.33743 10.724Z" fill="#444444" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon " data-type="pivot_table">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <g clip-path="url(#clip0_234_94)">
+                                                <path d="M4.77245 0.409119H0V5.18157H4.77245V0.409119Z" fill="#7862FF" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.09119H4.77245V17.5909H0V7.09119Z" fill="#E1CE25" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.4463 9.96547L14.8207 7.05847L17.2032 9.96547H15.8614V16.1665H9.54584V17.5615L6.66748 15.2337L9.54584 12.8226V14.3239H13.8724V9.96547H12.4463Z" fill="#3AAA55" />
+                                                <path d="M17.1819 0.409119H6.68213V5.18157H17.1819V0.409119Z" fill="#FEA98E" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_234_94">
+                                                    <rect width="18" height="18" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grph_icon " data-type="gauge_chart">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+                                            <path d="M1.9126 13.05C2.0251 2.92502 16.0876 3.15002 16.0876 13.05" stroke="#3AAA55" stroke-width="3.375" />
+                                            <path d="M14.625 3.82501L10.125 9.45001" stroke="#444444" stroke-width="2.475" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main_outer_try pad_block filtered_block" style="display:none ;">
+                        <div class="mar_btm_20">
+                            <div>
+                                <div class="field_data tab_menu_main just_spc_btw  block_dlt">
+                                    <div>
+                                        <span class="d_flex_ht gap_10px hd_list_main ">
+                                            <p class="par_txtfr mb-0">Created date is <span class="bold-600 clr_grren">Today</span>
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="edit_main_aroow">
+                                        <div class="d_flex_ht">
+                                            <div class="filter_outer cur_pointer hoverd_icon wid_25_hg">
+                                                <div class="d_flex_ht">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M1.25 3.5H2.75H14.75" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M13.25 3.5V14C13.25 14.3978 13.092 14.7794 12.8107 15.0607C12.5294 15.342 12.1478 15.5 11.75 15.5H4.25C3.85218 15.5 3.47064 15.342 3.18934 15.0607C2.90804 14.7794 2.75 14.3978 2.75 14V3.5M5 3.5V2C5 1.60218 5.15804 1.22064 5.43934 0.93934C5.72064 0.658035 6.10218 0.5 6.5 0.5H9.5C9.89782 0.5 10.2794 0.658035 10.5607 0.93934C10.842 1.22064 11 1.60218 11 2V3.5" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M6.5 7.25V11.75" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M9.5 7.25V11.75" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="field_data tab_menu_main just_spc_btw  block_dlt">
+                                    <div>
+                                        <span class="d_flex_ht gap_10px hd_list_main ">
+                                            <p class="par_txtfr main_btrx oneline_rxt">Contact owner is <span class="bold-600 clr_grren"> Ajeesh </span>
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="edit_main_aroow">
+                                        <div class="d_flex_ht">
+                                            <div class="filter_outer cur_pointer hoverd_icon wid_25_hg">
+                                                <div class="d_flex_ht">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M1.25 3.5H2.75H14.75" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M13.25 3.5V14C13.25 14.3978 13.092 14.7794 12.8107 15.0607C12.5294 15.342 12.1478 15.5 11.75 15.5H4.25C3.85218 15.5 3.47064 15.342 3.18934 15.0607C2.90804 14.7794 2.75 14.3978 2.75 14V3.5M5 3.5V2C5 1.60218 5.15804 1.22064 5.43934 0.93934C5.72064 0.658035 6.10218 0.5 6.5 0.5H9.5C9.89782 0.5 10.2794 0.658035 10.5607 0.93934C10.842 1.22064 11 1.60218 11 2V3.5" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M6.5 7.25V11.75" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M9.5 7.25V11.75" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="acts_loaders w-100 p-2 mt-2">
+                        <div class="d_flex_ht gap_10px flex_wrap mb-4">
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                            <div class="grph_icon skeleton">
+                                <div class="d_flex_ht"></div>
+                            </div>
+                        </div>
+                        <div class="mar_btm_20 mt-3">
+                            <div class="d_flex_ht gap_10px mb-4 Align_center skeleton" style="width:60px ; height:15px"></div>
+                            <div class="tab_menu_main">
+                                <div>
+                                    <div class="image_set  bg_vilolet skeleton"></div>
+                                </div>
+                                <div>
+                                    <p class="par_txtfr main_btrx skeleton" style="min-width:150px ; height:10px"></p>
+                                </div>
+                            </div>
+                            <div class="tab_menu_main">
+                                <div>
+                                    <div class="image_set  bg_vilolet skeleton"></div>
+                                </div>
+                                <div>
+                                    <p class="par_txtfr main_btrx skeleton" style="min-width:150px ; height:10px"></p>
+                                </div>
+                            </div>
+                            <div class="tab_menu_main">
+                                <div>
+                                    <div class="image_set  bg_vilolet skeleton"></div>
+                                </div>
+                                <div>
+                                    <p class="par_txtfr main_btrx skeleton" style="min-width:150px ; height:10px"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 battleground" style="background: white;">
+            <div class="right_side_analys bg-white">
+                <div class="pad_block border_botton h_65 bg-white" style="display:none;">
+                    <div class="hd_list_main">
+                        <div class="hd_list_main pad_main_tru">
+                            <div class="btn_data_block cur_pointer hoverd_icon brd_grt" role="button">
+                                <span class="arrow_doen d_flex_ht">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
+                                        <path d="M3.92812 4.99999H5.5C6.05313 4.99999 6.5 5.44686 6.5 5.99999C6.5 6.55311 6.05313 6.99999 5.5 6.99999H1.5C0.946875 6.99999 0.5 6.55311 0.5 5.99999V1.99999C0.5 1.44686 0.946875 0.999988 1.5 0.999988C2.05313 0.999988 2.5 1.44686 2.5 1.99999V3.59999L3.05 3.04999C5.78437 0.315613 10.2156 0.315613 12.95 3.04999C15.6844 5.78436 15.6844 10.2156 12.95 12.95C10.2156 15.6844 5.78437 15.6844 3.05 12.95C2.65937 12.5594 2.65937 11.925 3.05 11.5344C3.44062 11.1437 4.075 11.1437 4.46562 11.5344C6.41875 13.4875 9.58438 13.4875 11.5375 11.5344C13.4906 9.58124 13.4906 6.41561 11.5375 4.46249C9.58438 2.50936 6.41875 2.50936 4.46562 4.46249L3.92812 4.99999Z" fill="#121212" />
+                                    </svg>
+                                </span>
+                                <span>Undo</span>
+                            </div>
+                            <div class="btn_data_block cur_pointer hoverd_icon brd_grt  ml-2 " role="button">
+                                <span class="arrow_doen d_flex_ht">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
+                                        <path d="M12.0719 4.99999H10.5C9.94692 4.99999 9.50005 5.44686 9.50005 5.99999C9.50005 6.55311 9.94692 6.99999 10.5 6.99999H14.5C15.0532 6.99999 15.5 6.55311 15.5 5.99999V1.99999C15.5 1.44686 15.0532 0.999988 14.5 0.999988C13.9469 0.999988 13.5 1.44686 13.5 1.99999V3.59999L12.95 3.04999C10.2157 0.315613 5.78442 0.315613 3.05005 3.04999C0.315674 5.78436 0.315674 10.2156 3.05005 12.95C5.78442 15.6844 10.2157 15.6844 12.95 12.95C13.3407 12.5594 13.3407 11.925 12.95 11.5344C12.5594 11.1437 11.925 11.1437 11.5344 11.5344C9.5813 13.4875 6.41567 13.4875 4.46255 11.5344C2.50942 9.58124 2.50942 6.41561 4.46255 4.46249C6.41567 2.50936 9.5813 2.50936 11.5344 4.46249L12.0719 4.99999Z" fill="#121212" />
+                                    </svg>
+                                </span>
+                                <span>Redo</span>
+                            </div>
+                            <div class="filter_outer cur_pointer hoverd_icon " data-toggle="tooltip" data-placement="top" title data-original-title="Refresh">
+                                <div class="d_flex_ht">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
+                                        <path d="M14.7273 3.25L11.4545 6.5H13.9091C13.9091 9.18937 11.7082 11.375 9 11.375C8.17364 11.375 7.38818 11.1719 6.70909 10.8062L5.51455 11.9925C6.52091 12.6263 7.71545 13 9 13C12.6164 13 15.5455 10.0913 15.5455 6.5H18L14.7273 3.25ZM4.09091 6.5C4.09091 3.81063 6.29182 1.625 9 1.625C9.82636 1.625 10.6118 1.82812 11.2909 2.19375L12.4855 1.0075C11.4791 0.37375 10.2845 0 9 0C5.38364 0 2.45455 2.90875 2.45455 6.5H0L3.27273 9.75L6.54545 6.5H4.09091Z" fill="#121212" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="checkboxes__item">
+                                <label class="checkbox style-c">
+                                    <input type="checkbox">
+                                    <div class="checkbox__checkmark"></div>
+                                    <div class="checkbox__body">Refresh as make changes</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll_bar_left_main custom_scrollbar_element">
+                    <div class="w-100 pad_box_main" style="display:none;"></div>
+                    <div class="content_loader_chart p-3 mt-3">
+                        <div class="tab_menu_main no_hvr ">
+                            <div>
+                                <div class="image_set  bg_vilolet skeleton"></div>
+                            </div>
+                            <div>
+                                <span class="text_main_tye main_btrx skeleton" style="width:60px ; height: 10px;"></span>
+                                <p class="par_txtfr main_btrx skeleton" style="width:180px; height: 10px;"></p>
+                            </div>
+                        </div>
+                        <div class="tab_menu_main no_hvr ">
+                            <div>
+                                <div class="image_set  bg_vilolet skeleton"></div>
+                            </div>
+                            <div>
+                                <span class="text_main_tye main_btrx skeleton" style="width:60px ; height: 10px;"></span>
+                                <p class="par_txtfr main_btrx skeleton" style="width:180px; height: 10px;"></p>
+                            </div>
+                        </div>
+                        <div class="tab_menu_main no_hvr ">
+                            <div>
+                                <div class="image_set  bg_vilolet skeleton"></div>
+                            </div>
+                            <div>
+                                <span class="text_main_tye main_btrx skeleton" style="width:60px ; height: 10px;"></span>
+                                <p class="par_txtfr main_btrx skeleton" style="width:180px; height: 10px;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 bg-white report_error_cont" style="display:none;">
+        <div class="JUst_con_cntr d_flex_ht Align_center  scrol_main_block errr_bk">
+            <div class="d_flex_ht Dir_culmn Align_center">
+                <img width="100" src="https://test.pickyassist.com/metrics/images/empty-data.png" alt class="mar_btm_20">
+                <p class=" fontsize_16"></p>
+            </div>
+        </div>
+    </div>
+    <div class="field_mdle_sec_html" style="display:none;">
+        <div class="drpable_fld_sectn mb-3 ">
+            <div class="field_data tab_menu_main just_spc_btw agrt_btn">
+                <div class="d_flex_ht bg_tltp">
+                    <span class="text_main_tye main_btrx">Aggregate fields </span>
+                    <span class="tl" flow="right">
+                        <i class="fa fa-info-circle bold-400 ml-2" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="minx_secn_fld">
+                    <span class="d_flex_ht">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="drop_down_block_fld drop_down_block" style="display:none;"></div>
+        </div>
+    </div>
+    <div class="single_droppable_field_html" style="display:none;">
+        <div class="main_right_btn_block  main_outer_try">
+            <div class="tab_menu_main">
+                <div class="idbb">
+                    <div class="image_set">
+                        <span class="upper">#</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="par_txtfr main_btrx">Count of contacts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="checkbox_html_re" style="display:none;">
+        <div>
+            <div class="checkboxes__item">
+                <label class="checkbox style-c">
+                    <input type="checkbox">
+                    <div class="checkbox__checkmark"></div>
+                    <div class="checkbox__body">Conatcts</div>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="chart_field_builder_html" style="display:none;">        
+        <div>
+            <div class="mar_btm_20">
+                <div class="d_flex_ht gap_10px mb-2 Align_center">
+                    <span class="d_flex_ht">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21" fill="none">
+                            <rect x="1.11536" y="1.02194" width="19.4396" height="19.4396" rx="2.5" fill="white" stroke="#B8B8B8" />
+                            <path d="M3.34058 16.8736C3.34058 16.121 3.95065 15.511 4.70321 15.511H16.9669C17.7195 15.511 18.3296 16.121 18.3296 16.8736C18.3296 17.6262 17.7195 18.2362 16.9669 18.2362H4.70321C3.95065 18.2362 3.34058 17.6262 3.34058 16.8736Z" fill="#3AAA55" />
+                        </svg>
+                    </span>
+                    <span class="  txt_trey">X - axis <span data-toggle="tooltip" data-placement="top" title data-original-title="Infomation">
+                            <i class="fa fa-info-circle text_grey bold-400 ml-2" aria-hidden="true"></i>
+                        </span>
+                    </span>
+                </div>
+                <div>
+                    <div class="field_data tab_menu_main just_spc_btw pointing_drag ">
+                        <div>
+                            <span class="d_flex_ht gap_10px hd_list_main ">
+                                <p class="par_txtfr main_btrx oneline_rxt">Count of deals</p>
+                                <span>
+                                    <div class="sm_l_btn cur_pointer hoverd_icon" role="button"> Sum </div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="edit_main_aroow">
+                            <div class="d_flex_ht">
+                                <div class="filter_outer cur_pointer hoverd_icon wid_25_hg">
+                                    <div class="d_flex_ht ">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" class fill="currentColor">
+                                            <path d="M20.41 4.94l-1.35-1.35c-.78-.78-2.05-.78-2.83 0L3 16.82V21h4.18L20.41 7.77c.79-.78.79-2.05 0-2.83zm-14 14.12L5 19v-1.36l9.82-9.82 1.41 1.41-9.82 9.83z"></path>
+                                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="filter_outer cur_pointer hoverd_icon wid_25_hg">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                            <path d="M12.0986 0.91748L1.19751 11.8186" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1.19751 0.91748L12.0986 11.8186" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mar_btm_20">
+                <div class="d_flex_ht gap_10px mb-2 Align_center">
+                    <span class="d_flex_ht">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <rect x="1.11536" y="1.28561" width="19.4396" height="19.4396" rx="2.5" fill="white" stroke="#B8B8B8" />
+                            <path d="M4.70321 18.4999C3.95065 18.4999 3.34058 17.8898 3.34058 17.1373L3.34058 4.87354C3.34058 4.12098 3.95065 3.51091 4.70321 3.51091C5.45578 3.51091 6.06585 4.12098 6.06585 4.87354L6.06585 17.1373C6.06585 17.8898 5.45578 18.4999 4.70321 18.4999Z" fill="#3AAA55" />
+                        </svg>
+                    </span>
+                    <span class="  txt_trey">Y - axis <span data-toggle="tooltip" data-placement="top" title data-original-title="Infomation">
+                            <i class="fa fa-info-circle text_grey bold-400 ml-2" aria-hidden="true"></i>
+                        </span>
+                    </span>
+                </div>
+                <div>
+                    <div class="field_data tab_menu_main just_spc_btw pointing_drag active_list">
+                        <div>
+                            <span class="d_flex_ht gap_10px hd_list_main ">
+                                <p class="par_txtfr main_btrx oneline_rxt">Count of deals</p>
+                                <span>
+                                    <div class="sm_l_btn cur_pointer hoverd_icon" role="button"> Count </div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="edit_main_aroow">
+                            <div class="d_flex_ht">
+                                <div class="filter_outer cur_pointer hoverd_icon wid_25_hg edit_btn_icon">
+                                    <div class="d_flex_ht ">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" class fill="currentColor">
+                                            <path d="M20.41 4.94l-1.35-1.35c-.78-.78-2.05-.78-2.83 0L3 16.82V21h4.18L20.41 7.77c.79-.78.79-2.05 0-2.83zm-14 14.12L5 19v-1.36l9.82-9.82 1.41 1.41-9.82 9.83z"></path>
+                                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="filter_outer cur_pointer hoverd_icon wid_25_hg">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                            <path d="M12.0986 0.91748L1.19751 11.8186" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1.19751 0.91748L12.0986 11.8186" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edit_outer_box_wrap">
+                            <div>
+                                <div class="mb-2 pad_lr pb-0">
+                                    <span class="  txt_trey">Vertical bar chart settings </span>
+                                </div>
+                            </div>
+                            <div class="scrollbar-inner scroll_bar_hegt">
+                                <div class="pad_lr">
+                                    <div class="mb-3">
+                                        <div>
+                                            <span class="text_main_tye main_btrx">Name</span>
+                                            <div class="input_main_ser_Otr">
+                                                <input class="input_custom_tye" type="text" placeholder="Lifecircle stage">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <span class="text_main_tye main_btrx">Y - axis Scale</span>
+                                        <div class=" float-label__wrapper">
+                                            <span class="close-btn-clear ">
+                                                <i class="fa fa-times bold-400"></i>
+                                            </span>
+                                            <select name class="selectize_custom" placeholder="Select  Y - axis Scale...">
+                                                <option value="Linear">Linear</option>
+                                                <option value="Deals">Deals</option>
+                                                <option value="Organization">Organization</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="d_flex_ht gap_10px ">
+                                            <div class="w-100">
+                                                <span class="text_main_tye main_btrx">Sort</span>
+                                                <div class="input_main_ser_Otr">
+                                                    <div class=" float-label__wrapper">
+                                                        <span class="close-btn-clear ">
+                                                            <i class="fa fa-times bold-400"></i>
+                                                        </span>
+                                                        <select name class="selectize_custom" placeholder="Select  Sort...">
+                                                            <option value="Value">Value</option>
+                                                            <option value="Deals">Deals</option>
+                                                            <option value="Organization">Organization</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="w-100">
+                                                <span class="text_main_tye main_btrx">Ascending</span>
+                                                <div class="input_main_ser_Otr">
+                                                    <div class=" float-label__wrapper">
+                                                        <span class="close-btn-clear ">
+                                                            <i class="fa fa-times bold-400"></i>
+                                                        </span>
+                                                        <select name class="selectize_custom" placeholder="Select  Y - axis Scale...">
+                                                            <option value="Linear">Linear</option>
+                                                            <option value="Deals">Deals</option>
+                                                            <option value="Organization">Organization</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d_flex_ht gap_10px Align_center">
+                                            <div class="min_wid_th">
+                                                <span class="text_main_tye main_btrx">By</span>
+                                            </div>
+                                            <div class="w-100">
+                                                <div class="input_main_ser_Otr">
+                                                    <div class=" float-label__wrapper">
+                                                        <span class="close-btn-clear ">
+                                                            <i class="fa fa-times bold-400"></i>
+                                                        </span>
+                                                        <select name class="selectize_custom" placeholder="Select  Y - axis Scale...">
+                                                            <option value="Linear">Linear</option>
+                                                            <option value="Deals">Deals</option>
+                                                            <option value="Organization">Organization</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="main_right_btn_block pad_lr border_top D_flex_end">
+                                    <div class="btn_data_block cur_pointer hoverd_icon border_bg_none" role="button">
+                                        <span>Cancel</span>
+                                    </div>
+                                    <div class="btn_data_block cur_pointer bg_gnftr" role="button">
+                                        <span>Apply </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mar_btm_20">
+                <div class="d_flex_ht gap_10px mb-2 Align_center">
+                    <span class="d_flex_ht">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <rect x="1.11536" y="1.28558" width="19.4396" height="19.4396" rx="2.5" fill="white" stroke="#B8B8B8" />
+                            <path d="M10.865 18.989C9.83499 18.989 9 18.154 9 17.124L9 5.86395C9 4.83394 9.83499 3.99895 10.865 3.99895V3.99895C11.895 3.99895 12.73 4.83394 12.73 5.86395L12.73 17.124C12.73 18.154 11.895 18.989 10.865 18.989V18.989Z" fill="#3AAA55" />
+                            <path d="M3.37 13.494C3.37 12.4639 4.20498 11.629 5.235 11.629L16.495 11.629C17.525 11.629 18.36 12.4639 18.36 13.494V13.494C18.36 14.524 17.525 15.359 16.495 15.359L5.235 15.359C4.20499 15.359 3.37 14.524 3.37 13.494V13.494Z" fill="white" />
+                        </svg>
+                    </span>
+                    <span class="  txt_trey">Break down <span data-toggle="tooltip" data-placement="top" title data-original-title="Infomation">
+                            <i class="fa fa-info-circle text_grey bold-400 ml-2" aria-hidden="true"></i>
+                        </span>
+                    </span>
+                </div>
+                <div>
+                    <div class="field_data tab_menu_main just_spc_btw pointing_drag active_list">
+                        <div>
+                            <span class="d_flex_ht gap_10px hd_list_main ">
+                                <p class="par_txtfr main_btrx oneline_rxt">Count of deals</p>
+                                <span>
+                                    <div class="sm_l_btn cur_pointer hoverd_icon" role="button"> Count </div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="edit_main_aroow">
+                            <div class="d_flex_ht">
+                                <div class="filter_outer cur_pointer hoverd_icon wid_25_hg">
+                                    <div class="d_flex_ht ">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" class fill="currentColor">
+                                            <path d="M20.41 4.94l-1.35-1.35c-.78-.78-2.05-.78-2.83 0L3 16.82V21h4.18L20.41 7.77c.79-.78.79-2.05 0-2.83zm-14 14.12L5 19v-1.36l9.82-9.82 1.41 1.41-9.82 9.83z"></path>
+                                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="filter_outer cur_pointer hoverd_icon wid_25_hg">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                            <path d="M12.0986 0.91748L1.19751 11.8186" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1.19751 0.91748L12.0986 11.8186" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mar_btm_20">
+                <div class="d_flex_ht gap_10px mb-2 Align_center">
+                    <span class="d_flex_ht">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <rect x="1.11536" y="1.28564" width="19.4396" height="19.4396" rx="2.5" fill="white" stroke="#B8B8B8" />
+                            <path d="M5.43896 9C4.3344 9 3.43896 8.10457 3.43896 7L3.43896 6C3.43896 4.89543 4.3344 4 5.43896 4L6.43896 4C7.54353 4 8.43896 4.89543 8.43896 6L8.43896 7C8.43896 8.10457 7.54353 9 6.43896 9L5.43896 9Z" fill="#3AAA55" />
+                            <path d="M15.439 9C14.3344 9 13.439 8.10457 13.439 7L13.439 6C13.439 4.89543 14.3344 4 15.439 4L16.439 4C17.5435 4 18.439 4.89543 18.439 6L18.439 7C18.439 8.10457 17.5435 9 16.439 9L15.439 9Z" fill="#3AAA55" />
+                            <path d="M5.43896 18C4.3344 18 3.43896 17.1046 3.43896 16L3.43896 15C3.43896 13.8954 4.3344 13 5.43896 13L6.43896 13C7.54353 13 8.43896 13.8954 8.43896 15L8.43896 16C8.43896 17.1046 7.54353 18 6.43896 18L5.43896 18Z" fill="#3AAA55" />
+                            <path d="M15.439 18C14.3344 18 13.439 17.1046 13.439 16L13.439 15C13.439 13.8954 14.3344 13 15.439 13L16.439 13C17.5435 13 18.439 13.8954 18.439 15L18.439 16C18.439 17.1046 17.5435 18 16.439 18L15.439 18Z" fill="#3AAA55" />
+                        </svg>
+                    </span>
+                    <span class="  txt_trey">Fields <span data-toggle="tooltip" data-placement="top" title data-original-title="Infomation">
+                            <i class="fa fa-info-circle text_grey bold-400 ml-2" aria-hidden="true"></i>
+                        </span>
+                    </span>
+                </div>
+                <div>
+                    <div class="field_data tab_menu_main just_spc_btw pointing_drag">
+                        <div>
+                            <span class="d_flex_ht gap_10px hd_list_main ">
+                                <p class="par_txtfr main_btrx oneline_rxt">Count of deals</p>
+                                <span>
+                                    <div class="sm_l_btn cur_pointer hoverd_icon" role="button"> Count </div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="edit_main_aroow">
+                            <div class="d_flex_ht">
+                                <div class="filter_outer cur_pointer hoverd_icon wid_25_hg">
+                                    <div class="d_flex_ht ">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" class fill="currentColor">
+                                            <path d="M20.41 4.94l-1.35-1.35c-.78-.78-2.05-.78-2.83 0L3 16.82V21h4.18L20.41 7.77c.79-.78.79-2.05 0-2.83zm-14 14.12L5 19v-1.36l9.82-9.82 1.41 1.41-9.82 9.83z"></path>
+                                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="filter_outer cur_pointer hoverd_icon wid_25_hg">
+                                    <div class="d_flex_ht">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                            <path d="M12.0986 0.91748L1.19751 11.8186" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1.19751 0.91748L12.0986 11.8186" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mar_btm_20">
+                <div class="wrapper_input">
+                    <span>Drop fields Here</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            window.active_report_id = $('#rep_id').val();
+            window.prl = 'http://127.0.0.1:8080/api.json';
+            if (!window.active_report_id) {
+                $('.report_error_cont').siblings('div').hide();
+                $('.report_error_cont').show();
+            } else {
+                load_report_builder(window.active_report_id);
+            }
+
+            $(document).on('keyup','.search_data_fields', function(){
+                let key = $(this).val().toLowerCase();
+                let cont = $(this).closest('.fields_sectn_cnt');
+                if(key){
+                    $(this).siblings('.clear_search').show();
+                    cont.find('.main_outer_try .drpable_fld_sectn').each(function(){
+                        let has_it = false;
+                        let sec = $(this);
+                        sec.find('.main_right_btn_block').each(function(){
+                            let txt = $(this).find('.main_btrx').text().toLowerCase();
+                            // console.log(txt,key);
+                            if(txt.includes(key)){
+                                has_it = true;
+                                $(this).show();
+                            }else{
+                                $(this).hide();
+                            }
+                        });
+                        (!has_it) ? sec.hide() : sec.show();
+                    });
+                }else{                    
+                    $(this).siblings('.clear_search').hide();
+                    cont.find('.main_outer_try .drpable_fld_sectn').show();
+                    cont.find('.main_outer_try .drpable_fld_sectn .main_right_btn_block').show();
+                }
+            });
+
+            $(document).on('click','.clear_field_search', function(){
+                $(this).siblings('input').val('').trigger('keyup');
+            });
+
+            $(document).on('click','.filter_data_fields', function(){
+                let cont = $(this).closest('.fields_sectn_cnt');
+                let el = $(this).closest('.filter_btn_tr').siblings('.action_outer_box');
+                el.find('.Dir_culmns').empty();
+                cont.find('.main_outer_try .drpable_fld_sectn').each(function(){
+                    let mdle = $(this).find('.text_main_tye.main_btrx').text();
+                    let ht = $($('.checkbox_html_re').html());
+                    ht.find('.checkbox__body').text(mdle);
+                    ht.find('input').data('id',$(this).data('id'));
+                    if($(this).hasClass('hide_any_cost')){
+                        ht.find('input').prop('checked',true);
+                    }
+                    el.find('.Dir_culmns').append(ht);
+                });
+                el.show();
+            });
+
+            $(document).on('click','.switch_filter_types', function(){
+                $(this).siblings().removeClass('Active_filter');
+                $(this).addClass('Active_filter');
+                let blk = $(this).data('block');
+                let ct = $(this).closest('.filter_action_main');
+                ct.find('.filter_block').hide();
+                ct.find(`#${blk}`).show();
+            });
+
+            $(document).on('click','.do_field_filter', function(){
+                let data_sources = [];
+                let field_types = [];
+                let ct = $(this).closest('.filter_action_main');
+                ct.find('#Data_sources').find('input').each(function(){
+                    if($(this).is(':checked')){
+                        data_sources.push($(this).data('id'));
+                    }
+                });
+                ct.find('#Field_types').find('input').each(function(){
+                    if($(this).is(':checked')){
+                        field_types.push($(this).data('id'));
+                    }
+                });
+                let cont = ct.closest('.fields_sectn_cnt');
+                cont.find('.main_outer_try .drpable_fld_sectn').each(function(){
+                    let sec = $(this);
+                    let mdle_id = $(this).data('id');
+                    if(data_sources.length && (!data_sources.includes(mdle_id))){
+                        $(this).addClass('hide_any_cost');
+                    }else{
+                        $(this).removeClass('hide_any_cost');
+                    }
+                    sec.find('.main_right_btn_block').each(function(){
+                        let type = $(this).data('type');
+                        if(field_types.length && (!filter_field_type(type,field_types))){
+                           $(this).addClass('hide_any_cost');
+                        }else{
+                            $(this).removeClass('hide_any_cost');
+                        }
+                    });
+                });
+                ct.hide();
+                if(data_sources.length || field_types.length){
+                    ct.siblings('.filter_btn_tr').find('.added_filterYT').show();
+                }else{
+                    ct.siblings('.filter_btn_tr').find('.added_filterYT').hide();
+                }
+            });    
+ 
+            $(document).on('click','.cancel_field_filter', function(){
+                $(this).closest('.filter_action_main').hide();
+            });
+
+            $(document).on('click','.minx_secn_fld', function(){
+                $(this).closest('.field_data').siblings('.drop_down_block').toggle();
+            });
+
+            $(document).on('click','.minimize_lft_sec', function(){
+                $(this).hide();
+                $(this).closest('.fields_sectn_cnt').hide();
+                $('.right_arrow_tr').show();
+            });
+
+            $(document).on('click','.chart_selc_unt .grph_icon', function(){
+                let type = $(this).data('type');
+                let html = $($('.chart_field_builder_html').html());
+                let cont = $(this).closest('.chart_sect_cont');
+                cont.find('.chart_selc_unt').after(html);
+            })
+
+        });
+
+
+        function load_report_builder(report_id) {
+            $.get(window.prl, {
+                    action: 'get_report_data',
+                    id: report_id
+                }, function(res) {
+                    // let data = JSON.parse(res);
+                    let data = res;
+                    // console.log(data);
+                    if (data.status == 'success' && data.data && data.data.length) {
+                        let cnt = $('.main_analysis_main_wraper');
+                        let el = cnt.find('.fields_sectn_cnt .main_outer_try');
+                        el.empty();
+                        show_report_fields(el, data.data);
+                        el.append(' <div style = "height: 150px;"></div>');
+                        el.show().siblings('.fields_loader').hide(); cnt.find('.fields_sectn_cnt .shw_these').show();
+                        if(data.settings){
+                            // Have already saved settings
+                        }else{
+                            let bld = cnt.find('.chart_sect_cont');
+                            bld.find('.cnfre_rp_hdr,.main_block').show();
+                            bld.find('.acts_loaders').hide();
+                            bld.find('.grph_icon.Active_graph').trigger('click');
+                        }
+                    }else {
+                            $('.report_error_cont').siblings('div').hide();
+                            $('.report_error_cont').show().find('.fontsize_16').text(data.message);
+                        }
+                    });
+            }
+
+            function show_report_fields(el, data) {
+                data.map(module => {
+                    let html = $($('.field_mdle_sec_html').html());
+                    html.find('.main_btrx').text(module.name);
+                    html.find('.tl').attr('tooltip', module.info);
+                    html.data('id', module.id);
+                    if (module.fields && module.fields.length) {
+                        module.fields.map(field => {
+                            let fl = generate_single_field(field);
+                            html.find('.drop_down_block_fld').append(fl);
+                        });
+                        html.find('.drop_down_block_fld').show();
+                    }
+                    el.append(html);
+                })
+            }
+
+            function filter_field_type(type,filter){
+                let act_type = 'string';
+                if(['number','aggregate'].includes(type)){
+                    act_type = 'number';
+                }else if(['user','channel','category','dropdown','language','country','timezone','checkbox'].includes(type)){
+                    act_type = 'dropdown';
+                }else if(['datetime'].includes(type)){
+                    act_type = 'datetime';
+                }else if(['formula'].includes(type)){
+                    act_type = 'formula';
+                }
+                return filter.includes(act_type);
+            }
+
+            function generate_single_field(field){
+                let fl = $($('.single_droppable_field_html').html());
+                fl.find('.main_btrx').text(field.name);
+                fl.data('id',field.id);
+                fl.data('type',field.type);
+                if(['number','aggregate'].includes(field.type)){
+                    fl.data('aggr_type',field.type);
+                    fl.find('.idbb').html(`<div class="image_set  bg_vilolet"><span class="upper">#</span></div>`);
+                }else if(['user','channel','category','dropdown','language','country','timezone','checkbox'].includes(field.type)){
+                    fl.data('aggr_type','dropdown');
+                    fl.find('.idbb').html('<div class="image_set  bg_orange"><span class="upper"><i class="fa fa-angle-double-down bold-400" aria-hidden="true"></i></span></div>');
+                }else if(['datetime'].includes(field.type)){
+                    fl.data('aggr_type','datetime');
+                    fl.find('.idbb').html('<div class="image_set  bg_green"><span class="upper"><i class="fa fa-calendar-o bold-400" aria-hidden="true"></i></span></div>');
+                }else{
+                    fl.data('aggr_type','string');
+                    fl.find('.idbb').html('<div class="image_set  bg_sky_blue"><span class="upper" style="font-size: 11px;">Aa</span></div>');
+                }
+                return fl;
+            }
+            
+    </script>
+</div>
+
+</body>
+</html>

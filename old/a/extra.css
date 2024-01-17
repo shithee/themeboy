@@ -1,0 +1,84 @@
+body{font-family: Inter; }
+                
+.skeleton {
+/*animation: skeleton-loading 1s linear infinite alternate;*/
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 800px 104px;
+  /*height: 50px;*/
+  position: relative;
+}
+
+@keyframes skeleton-loading {
+0% {
+  background-color: #e1e1e1  ;
+}
+100% {
+  background-color: hsl(200, 20%, 95%);
+}
+}
+
+.custom_scrollbar_element{
+    scrollbar-color: rgba(145, 145, 145, 0.4) transparent;
+    scrollbar-width: thin;
+}
+.custom_scrollbar_element.scrolling{
+    scrollbar-width: thin;
+}
+.bigger_scrollbar .custom_scrollbar_element{ scrollbar-width: auto; }
+.bigger_scrollbar .custom_scrollbar_element.scrolling{ scrollbar-width: auto; }
+.custom_scrollbar_element::-webkit-scrollbar {
+    width: 8px !important;
+    background : transparent !important;
+    display: block;
+    opacity: 0;
+    height: 8px;
+}
+.custom_scrollbar_element::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    border-radius : 5px !important;
+    border : none !important;
+    box-shadow : none !important;
+}
+.custom_scrollbar_element::-webkit-scrollbar-thumb:hover {
+   background: transparent !important; 
+   box-shadow : none !important;
+}
+.custom_scrollbar_element::-webkit-scrollbar-thumb:active {
+   background: transparent !important; 
+   box-shadow : none !important;
+}
+.custom_scrollbar_element::-webkit-scrollbar-button{
+   display : none !important;
+}
+
+.custom_scrollbar_element.scrolling::-webkit-scrollbar{
+    width : 8px !important;
+    display: block;
+    opacity: 1;
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-track {
+    background: rgba(224, 224, 224, 0.4) !important;
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-thumb {
+    background: rgba(145, 145, 145, 0.4) !important;
+    border-radius : 5px !important;
+    border : none !important;
+    box-shadow : none !important;
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-thumb:hover {
+   background: #c2c2c2 !important; 
+   box-shadow : none !important;
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-thumb:active {
+   background: #c2c2c2 !important; 
+   box-shadow : none !important;
+}
+.custom_scrollbar_element.scrolling::-webkit-scrollbar-button{
+   display : none !important;
+}

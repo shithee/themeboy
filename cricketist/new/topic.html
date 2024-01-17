@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home Page.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&family=Inter:wght@100;200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/new.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../assets/js/core.js"></script>
+</head>
+
+<body class="">
+    <div class="fixedheader w100">
+        <div class="header h100 f mw">
+            <img class="wauto logo point btn1" src="https://www.cricketist.in/favicon.ico" />
+            <div class="header_set f cent">
+                <div class="preferences f cent">
+                    <button class="toggle f cent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                            <path d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z"></path>
+                           <!--  <path d="M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path> -->
+                        </svg>
+                        <span class="nav_info">Home</span>
+                    </button>
+                    <button class="toggle f cent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                            <path
+                                d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z" />
+                        </svg>
+                        <span class="nav_info">Explore</span>
+                    </button>
+                    <button class="toggle f cent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                            <path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z"></path>
+                        </svg>
+                        <span class="nav_info">Favourites</span>
+                    </button>
+                    <button class="toggle f cent" style="display:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+                            <path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="promotion">
+                    <div class="icn_btn prmy_background">
+                        <svg viewBox="0 0 40 40" class="svgicon fill point" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M31.788 9.3c0-2.813-2.069-5.075-4.625-5.075A227.074 227.074 0 0016.563 4h-1.125c-3.6 0-7.137.063-10.6.225C2.288 4.225.219 6.5.219 9.312A91.857 91.857 0 000 15.987c-.006 2.225.063 4.45.212 6.681 0 2.813 2.069 5.094 4.619 5.094 3.637.169 7.369.244 11.162.238 3.8.012 7.519-.063 11.162-.238 2.556 0 4.625-2.281 4.625-5.094a95.12 95.12 0 00.212-6.688 91.544 91.544 0 00-.206-6.681zm-18.85 12.819V9.838l9.063 6.137-9.063 6.144z"></path>
+                        </svg>
+                        <span>Subscribe</span>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <div class="maincontainer w100">
+        <section class="customize themegrid f cent jstart">
+            <div class="profile_section prof w100 single_section f">
+                <div class="userprofile main f point cent">
+                    <img src="../assets/image/1.jpg" />
+                    <div class="right f fcol cent">
+                        <p class="prof-name">Shitheesh Unnikrishnan</p>
+                        <!-- <p class="prof-email">shitheeshakash@gmail.com</p> -->
+                        <p class="prof-desc">Loves cricket, Following cricket from childhood. Steve smith is my favourite player.Loves cricket, Following cricket from childhood. Steve smith is my favourite player.</p>
+                        <div class="linebtn">Edit Profile</div>
+                    </div>
+                </div>                
+            </div>            
+            <section class="lists mw f">
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/4.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/5.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/1.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/2.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/3.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/6.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/2.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/5.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/3.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/4.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/1.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/4.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/6.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/5.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/3.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/1.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="vertical">
+                    <img class="w100 post" src="../assets/image/1.jpeg" />
+                    <div class="post-content">
+                        <h1>Emotional Content: Make People Stick to Your Articles in 6 Easy Steps</h1>
+                        <p class="desc">Learn to keep the readers attention first, and then talk about your experience.</p>
+                        <div class="author f">
+                            <img class="w100 circle img40" src="../assets/image/profile.jpg" />
+                            <div class="info">
+                                <div class="">Cosmin Angheluta</div>
+                                <p class="small">Mar 22 . 2 min read</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </section>
+            
+        </section>
+        <section class="footer mw f ">
+            <span>© 2022 Cricketist. All Rights Reserved.</span>
+            <div class="links ">
+                <a href="/sillypoint "><span>Instagram</span></a>
+                <a href="/sillypoint "><span>Twitter</span></a>
+                <a href="/about "><span>Youtube</span></a>
+                <a href="/privacy-policy "><span>Privacy Policy</span></a>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
